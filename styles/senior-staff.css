@@ -1,0 +1,256 @@
+/* =============================================
+   SENIOR STAFF PAGE STYLES
+   Enhanced design for leadership profiles
+============================================= */
+
+.senior-staff-hero {
+  background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-primary-dk) 100%);
+  color: white;
+  padding: 3rem 0;
+  margin-bottom: 3rem;
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.senior-staff-hero h1 {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.senior-staff-hero p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 0;
+}
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.staff-card {
+  background: var(--clr-bg-card);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition: all var(--tr);
+  border: 1px solid var(--clr-border);
+  position: relative;
+}
+
+.staff-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(11, 45, 72, 0.15);
+  border-color: var(--clr-primary);
+}
+
+.staff-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--clr-primary), var(--clr-teal));
+  transform: scaleX(0);
+  transition: transform var(--tr);
+}
+
+.staff-card:hover::before {
+  transform: scaleX(1);
+}
+
+.staff-image-container {
+  position: relative;
+  overflow: hidden;
+  height: 280px;
+}
+
+.staff-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.staff-card:hover .staff-image {
+  transform: scale(1.05);
+}
+
+.staff-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(14, 165, 201, 0.1), rgba(20, 184, 166, 0.1));
+  opacity: 0;
+  transition: opacity var(--tr);
+}
+
+.staff-card:hover .staff-overlay {
+  opacity: 1;
+}
+
+.staff-content {
+  padding: 1.5rem;
+}
+
+.staff-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--clr-text);
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.staff-role {
+  color: var(--clr-primary);
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.staff-bio {
+  color: var(--clr-text-muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.staff-contact {
+  display: block;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.staff-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--clr-text-muted);
+  font-size: 0.9rem;
+  transition: color var(--tr);
+}
+
+.staff-contact-item span,
+.staff-contact-item a {
+  white-space: nowrap;
+}
+
+.staff-contact-item:hover {
+  color: var(--clr-primary);
+}
+
+.staff-contact-item i {
+  font-size: 1rem;
+}
+
+/* Stats section */
+.staff-stats {
+  background: var(--clr-bg);
+  padding: 2rem 0;
+  margin: 3rem 0;
+  border-radius: var(--r-lg);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+
+.stat-item {
+  padding: 1.5rem;
+  background: var(--clr-bg-card);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--clr-border);
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--clr-primary);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: var(--clr-text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .senior-staff-hero {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .senior-staff-hero h1 {
+    font-size: 2rem;
+  }
+
+  .staff-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .staff-image-container {
+    height: 240px;
+  }
+
+  .staff-content {
+    padding: 1.25rem;
+  }
+
+  .staff-name {
+    font-size: 1.25rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .staff-contact {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .staff-card {
+  background: var(--clr-bg-card);
+  border-color: var(--clr-border);
+}
+
+[data-theme="dark"] .staff-card:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .stat-item {
+  background: var(--clr-bg-card);
+  border-color: var(--clr-border);
+}

@@ -1,0 +1,22 @@
+/* Knowledge page styles - inherits from styles-shared.css and styles-home.css for layout and components */
+
+/* Additional styles for knowledge page detail sections */
+.detail-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Ensure breadcrumb styling consistency */
+.back-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--clr-text-muted);
+}
+
+.back-breadcrumb span {
+  color: var(--clr-text);
+  font-weight: 500;
+}

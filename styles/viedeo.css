@@ -1,0 +1,39 @@
+/* Training / embed page — complements Bootstrap */
+
+.video-page {
+  background: var(--clr-bg, #f0f4f8);
+}
+
+.video-page .page-intro {
+  max-width: 42rem;
+}
+
+.video-tile {
+  display: flex;
+  flex-direction: column;
+}
+
+.video-tile-title {
+  font-family: var(--font-body, system-ui, sans-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  color: var(--clr-text, #1e293b);
+}
+
+.video-tile .ratio {
+  border-radius: var(--r-sm, 8px);
+  overflow: hidden;
+  box-shadow: var(--shadow-card, 0 2px 8px rgba(11, 45, 72, 0.07));
+  background: #000;
+}
+
+.video-tile iframe {
+  border: 0;
+}
+
+[data-theme="dark"] .video-tile-title {
+  color: var(--clr-text, #e2e8f0);
+}
