@@ -302,50 +302,6 @@
 }
 
 /* =============================================
-   CONTROLS BAR
-============================================= */
-/* .controls-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-bottom: 24px;
-}
-.filter-pills {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-.pill {
-  padding: 6px 15px;
-  border-radius: 20px;
-  font-size: 12.5px;
-  font-weight: 500;
-  color: var(--clr-text-muted);
-  border: 1px solid var(--clr-border);
-  background: var(--clr-bg-card);
-  transition: all var(--tr);
-  white-space: nowrap;
-  cursor: pointer;
-}
-.pill.active,
-.pill:hover {
-  background: var(--clr-primary);
-  color: #fff;
-  border-color: var(--clr-primary);
-}
-.results-info {
-  font-size: 13px;
-  color: var(--clr-text-muted);
-  white-space: nowrap;
-}
-.results-info strong {
-  color: var(--clr-text);
-  font-weight: 600;
-} */
-
-/* =============================================
    CARDS GRID
 ============================================= */
 .cards-grid {

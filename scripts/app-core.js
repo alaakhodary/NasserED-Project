@@ -170,6 +170,15 @@ function esc(s) {
 
 /* ---- Theme (persisted in localStorage) ---- */
 const THEME_STORAGE_KEY = "emnasser-theme";
+const LOGO_LIGHT_SRC = "img/logo.png";
+const LOGO_DARK_SRC = "img/logo-dark.png";
+
+function updateBrandLogo(isDark) {
+  const logo = document.getElementById("brandLogo");
+  if (!logo) return;
+  const base = getAppBase();
+  logo.src = (base || "") + (isDark ? LOGO_DARK_SRC : LOGO_LIGHT_SRC);
+}
 
 function getStoredTheme() {
   try {
@@ -194,6 +203,7 @@ function applyTheme(mode) {
   const themeBtn = document.getElementById("themeToggleBtn");
   const icon = themeBtn?.querySelector("i");
   if (icon) icon.className = isDark ? "bi bi-sun-fill" : "bi bi-moon-stars";
+  updateBrandLogo(isDark);
 }
 
 function initThemeFromStorage() {
@@ -415,3 +425,13 @@ if (fy) fy.textContent = String(new Date().getFullYear());
     event.stopPropagation();
   });
 })();
+
+/* ---- External Trigger For Header Search ---- */
+document.addEventListener("click", (event) => {
+  const trigger = event.target.closest(".js-open-header-search");
+  if (!trigger) return;
+
+  event.preventDefault();
+  const searchBtn = document.getElementById("searchBtn");
+  if (searchBtn) searchBtn.click();
+});

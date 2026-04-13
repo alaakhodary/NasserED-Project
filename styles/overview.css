@@ -1,0 +1,40 @@
+/* Overview page (minimal custom styles) */
+
+.card-block {
+  background: var(--clr-bg-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.overview-kicker {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--clr-primary);
+  font-weight: 700;
+}
+
+.overview-title {
+  font-family: var(--font-display);
+  color: var(--clr-text);
+}
+
+.overview-muted {
+  color: var(--clr-text-muted);
+}
+
+.overview-bullets {
+  list-style: disc;
+  padding-inline-start: 1.25rem;
+}
+
+.section-image-wrap {
+  border: 1px solid var(--clr-border);
+}
+
+@media (max-width: 768px) {
+  .section-image {
+    height: 220px;
+  }
+}
