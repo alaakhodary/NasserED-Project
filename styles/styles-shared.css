@@ -88,7 +88,9 @@ button {
   color: #fff;
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.32s ease, visibility 0.32s ease;
+  transition:
+    opacity 0.32s ease,
+    visibility 0.32s ease;
   pointer-events: auto;
 }
 
@@ -283,7 +285,7 @@ a.brand {
   top: var(--topbar-h);
   z-index: 750;
   box-shadow: 0 2px 12px rgba(11, 45, 72, 0.18);
-  margin-top: 5.1rem;
+  margin-top: 5.3rem;
 }
 
 /* Mobile: open / close full menu */
@@ -606,11 +608,7 @@ a.brand {
   padding: 48px 48px 36px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
-.footer-brand-icon {
-  font-size: 24px;
-  color: var(--clr-primary);
-  margin-bottom: 8px;
-}
+
 .footer-brand-name {
   font-family: var(--font-display);
   font-size: 22px;

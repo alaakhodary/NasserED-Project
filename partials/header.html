@@ -2,7 +2,7 @@
 <header class="topbar fixed-top">
   <a class="brand" href="{{BASE}}index.html">
     <div class="brand-icon">
-      <img src="img/logo.png" alt="NasserED" width="80px" />
+      <img id="brandLogo" src="{{BASE}}img/logo.png" alt="NasserED" width="80px" />
     </div>
     <div>
       <div class="brand-name">NasserED</div>
@@ -12,28 +12,12 @@
 
   <div class="topbar-right">
     <div class="search-container">
-      <input
-        type="text"
-        class="search-input"
-        id="searchInput"
-        placeholder="Search..."
-        aria-label="Search"
-      />
-      <button
-        class="topbar-btn search-btn"
-        id="searchBtn"
-        title="Search"
-        aria-label="Search"
-      >
+      <input type="text" class="search-input" id="searchInput" placeholder="Search..." aria-label="Search" />
+      <button class="topbar-btn search-btn" id="searchBtn" title="Search" aria-label="Search">
         <i class="bi bi-search"></i>
       </button>
     </div>
-    <button
-      class="topbar-btn"
-      id="themeToggleBtn"
-      title="Toggle theme"
-      aria-label="Toggle dark mode"
-    >
+    <button class="topbar-btn" id="themeToggleBtn" title="Toggle theme" aria-label="Toggle dark mode">
       <i class="bi bi-moon-stars"></i>
     </button>
   </div>
@@ -48,68 +32,50 @@
 
 <!-- DEPARTMENTS NAV BAR -->
 <nav class="dept-navbar" aria-label="Departments Navigation">
-  <button
-    type="button"
-    class="dept-nav-toggle"
-    id="deptNavToggle"
-    aria-expanded="false"
-    aria-controls="deptNavPanel"
-  >
+  <button type="button" class="dept-nav-toggle" id="deptNavToggle" aria-expanded="false" aria-controls="deptNavPanel">
     <i class="bi bi-list" aria-hidden="true"></i>
     <span class="dept-nav-toggle-label">Departments menu</span>
   </button>
   <div class="dept-navbar-inner" id="deptNavPanel">
     <div class="dept-item">
-      <a class="dept-link" href="{{BASE}}index.html">
-        <i class="bi bi-house-fill"></i> Home
-      </a>
+      <a class="dept-link" href="{{BASE}}overview.html"> <i class="bi bi-grid-1x2-fill"></i> Overview </a>
     </div>
 
     <div class="dept-item">
-      <a class="dept-link" href="{{BASE}}Senior-Staff.html">
-        <i class="bi bi-heart-pulse"></i> Senior Staff
-      </a>
+      <a class="dept-link" href="{{BASE}}Senior-Staff.html"> <i class="bi bi-person-badge-fill"></i> Senior Staff </a>
     </div>
 
     <div class="dept-item">
-      <a class="dept-link" href="{{BASE}}mci-plan.html">
-        <i class="bi bi-activity"></i> MCI Plan
-      </a>
+      <a class="dept-link" href="{{BASE}}mci-plan.html"> <i class="bi bi-activity"></i> MCI Plan </a>
     </div>
 
     <div class="dept-item">
-      <a class="dept-link" href="#">
-        <i class="bi bi-bandaid-fill"></i> Registration
-      </a>
+      <a class="dept-link" href="{{BASE}}Registration.html"> <i class="bi bi-person-plus-fill"></i> Registration </a>
+    </div>
+
+    <div class="dept-item">
+      <a class="dept-link" href="{{BASE}}Triage.html"> <i class="bi bi-clipboard2-pulse"></i> Triage </a>
     </div>
 
     <div class="dept-item">
       <a class="dept-link" href="#">
-        <i class="bi bi-heart-fill"></i> Triage
-      </a>
-    </div>
-
-    <div class="dept-item">
-      <a class="dept-link" href="#">
-        <i class="bi bi-brain"></i> Nursing
+        <i class="bi bi-hospital"></i> Nursing
         <i class="bi bi-chevron-down dept-arrow"></i>
       </a>
       <div class="dept-dropdown">
-        <div class="dd-item"><a class="dd-link" href="#">Stroke Unit</a></div>
+        <div class="dd-item"><a class="dd-link" href="#">ICP</a></div>
         <div class="dd-item">
-          <a class="dd-link" href="#">Epilepsy Clinic</a>
+          <a class="dd-link" href="#">Monitoring</a>
         </div>
         <div class="dd-item">
-          <a class="dd-link" href="#">Headache Center</a>
+          <a class="dd-link" href="#">Checking and stoking</a>
         </div>
-        <div class="dd-item"><a class="dd-link" href="#">Neuro-ICU</a></div>
+        <div class="dd-item"><a class="dd-link" href="#">Training</a></div>
       </div>
     </div>
 
     <div class="dept-item">
-      <a class="dept-link" href="#">
-        <i class="bi bi-person-hearts"></i> Safeguarding
-      </a>
+      <a class="dept-link" href="{{BASE}}Safeguarding.html"> <i class="bi bi-person-hearts"></i> Safeguarding </a>
     </div>
 
     <div class="dept-item">
@@ -118,147 +84,135 @@
 
     <div class="dept-item">
       <a class="dept-link" href="#">
-        <i class="bi bi-clipboard2-pulse"></i> Knowledge
+        <i class="bi bi-journal-medical"></i> Knowledge
         <i class="bi bi-chevron-down dept-arrow"></i>
       </a>
       <div class="dept-dropdown">
         <div class="dd-item">
-          <a class="dd-link dd-sub-link-has-children" href="#">
-            Resus Protocols <i class="bi bi-chevron-right dd-arrow"></i>
-          </a>
+          <a class="dd-link dd-sub-link-has-children" href="#"> Resus Protocols <i class="bi bi-chevron-right dd-arrow"></i> </a>
           <div class="dept-subdropdown">
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="{{BASE}}knowledge.html"
-                >NLS/APLS/ALS Drowning choking sepsis
-              </a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">NLS/APLS/ALS Drowning choking sepsis </a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Video guides in resus </a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Video guides in resus </a>
             </div>
           </div>
         </div>
 
         <div class="dd-item">
-          <a class="dd-link dd-sub-link-has-children" href="#">
-            Medicine <i class="bi bi-chevron-right dd-arrow"></i>
-          </a>
+          <a class="dd-link dd-sub-link-has-children" href="#"> Medicine <i class="bi bi-chevron-right dd-arrow"></i> </a>
           <div class="dept-subdropdown">
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Neurology</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Neurology</a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Respiratory</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Respiratory</a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#"> Cardiovascular </a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html"> Cardiovascular </a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Gastrointestinal</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Gastrointestinal</a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Rheumatological</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Rheumatological</a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Endocrine</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Endocrine</a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Oncology</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Oncology</a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Dermatological</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Dermatological</a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Hematology</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Hematology</a>
             </div>
           </div>
         </div>
 
         <div class="dd-item">
-          <a class="dd-link dd-sub-link-has-children" href="#">
-            Surgery <i class="bi bi-chevron-right dd-arrow"></i>
-          </a>
+          <a class="dd-link dd-sub-link-has-children" href="#"> Surgery <i class="bi bi-chevron-right dd-arrow"></i> </a>
           <div class="dept-subdropdown">
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Neurosurgery </a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Neurosurgery </a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Ophthalmology</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Ophthalmology</a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">ENT</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">ENT</a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Cardiothoracic</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Cardiothoracic</a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">General surgery </a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">General surgery </a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Orthopaedics and MSK </a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Orthopaedics and MSK </a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Obstetric and Gynaecology</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Obstetric and Gynaecology</a>
             </div>
           </div>
         </div>
 
         <div class="dd-item">
-          <a class="dd-link dd-sub-link-has-children" href="#">
-            Paediatrics <i class="bi bi-chevron-right dd-arrow"></i>
-          </a>
+          <a class="dd-link dd-sub-link-has-children" href="#"> Paediatrics <i class="bi bi-chevron-right dd-arrow"></i> </a>
           <div class="dept-subdropdown">
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Neurology</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Neurology</a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Respiratory</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Respiratory</a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Cardiovascular</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Cardiovascular</a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Gastrointestinal</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Gastrointestinal</a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Rheumatological </a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Rheumatological </a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Endocrine</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Endocrine</a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Oncology</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Oncology</a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Dermatological</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Dermatological</a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Hematology</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Hematology</a>
             </div>
           </div>
         </div>
 
         <div class="dd-item">
-          <a class="dd-link dd-sub-link-has-children" href="#">
-            Paediatric Surgery <i class="bi bi-chevron-right dd-arrow"></i>
-          </a>
+          <a class="dd-link dd-sub-link-has-children" href="#"> Paediatric Surgery <i class="bi bi-chevron-right dd-arrow"></i> </a>
           <div class="dept-subdropdown">
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Neurosurgery </a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Neurosurgery </a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Ophthalmology</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Ophthalmology</a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">ENT</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">ENT</a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Cardiothoracic</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Cardiothoracic</a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">General surgery </a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">General surgery </a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Orthopaedics and MSK</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Orthopaedics and MSK</a>
             </div>
           </div>
         </div>
@@ -270,28 +224,28 @@
           </a>
           <div class="dept-subdropdown">
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Catastrophic Bleeding</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Catastrophic Bleeding</a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Spine injuries</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Spine injuries</a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Airway</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Airway</a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Chest</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Chest</a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Abdo</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Abdo</a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Pelvis</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Pelvis</a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Brain injuries</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Brain injuries</a>
             </div>
             <div class="dd-sub-item">
-              <a class="dd-sub-link" href="#">Burns</a>
+              <a class="dd-sub-link" href="{{BASE}}knowledge.html">Burns</a>
             </div>
           </div>
         </div>
@@ -299,21 +253,15 @@
     </div>
 
     <div class="dept-item">
-      <a class="dept-link" href="#">
-        <i class="bi bi-radioactive"></i> ED Research
-      </a>
+      <a class="dept-link" href="{{BASE}}ED-Research.html"> <i class="bi bi-graph-up-arrow"></i> ED Research </a>
     </div>
 
     <div class="dept-item">
-      <a class="dept-link" href="#">
-        <i class="bi bi-journal-richtext"></i> Telemedicine
-      </a>
+      <a class="dept-link" href="{{BASE}}Telemedicine.html"> <i class="bi bi-camera-video-fill"></i> Telemedicine </a>
     </div>
 
     <div class="dept-item">
-      <a class="dept-link" href="{{BASE}}viedeo.html">
-        <i class="bi bi-envelope-fill"></i> Podcast
-      </a>
+      <a class="dept-link" href="{{BASE}}viedeo.html"> <i class="bi bi-mic-fill"></i> Podcast </a>
     </div>
   </div>
 </nav>
