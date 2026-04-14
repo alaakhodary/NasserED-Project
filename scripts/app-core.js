@@ -238,12 +238,8 @@ if (themeBtn) {
   const toggleIcon = toggle.querySelector("i");
 
   function closeAllDeptSubmenus() {
-    nav
-      .querySelectorAll(".dept-item.is-submenu-open")
-      .forEach((el) => el.classList.remove("is-submenu-open"));
-    nav
-      .querySelectorAll(".dd-item.is-submenu-open")
-      .forEach((el) => el.classList.remove("is-submenu-open"));
+    nav.querySelectorAll(".dept-item.is-submenu-open").forEach((el) => el.classList.remove("is-submenu-open"));
+    nav.querySelectorAll(".dd-item.is-submenu-open").forEach((el) => el.classList.remove("is-submenu-open"));
   }
 
   function setNavOpen(open) {
@@ -272,9 +268,7 @@ if (themeBtn) {
 
   nav.querySelectorAll(".dd-item").forEach((item) => {
     const sub = item.querySelector(":scope > .dept-subdropdown");
-    const subTrigger = item.querySelector(
-      ":scope > a.dd-sub-link-has-children",
-    );
+    const subTrigger = item.querySelector(":scope > a.dd-sub-link-has-children");
     if (!sub || !subTrigger) return;
     subTrigger.addEventListener("click", (e) => {
       if (!mqMobile.matches) return;
@@ -299,45 +293,37 @@ if (themeBtn) {
       closeAllDeptSubmenus();
     });
   });
-  panel
-    .querySelectorAll("a.dd-link:not(.dd-sub-link-has-children), a.dd-sub-link")
-    .forEach((a) => {
-      a.addEventListener("click", () => {
-        if (!mqMobile.matches) return;
-        if (a.getAttribute("href") === "#") return;
-        setNavOpen(false);
-        closeAllDeptSubmenus();
-      });
+  panel.querySelectorAll("a.dd-link:not(.dd-sub-link-has-children), a.dd-sub-link").forEach((a) => {
+    a.addEventListener("click", () => {
+      if (!mqMobile.matches) return;
+      if (a.getAttribute("href") === "#") return;
+      setNavOpen(false);
+      closeAllDeptSubmenus();
     });
+  });
 })();
 
-const PAGE_LOADER_DELAY_MS = 220;
 const pageLoader = document.getElementById("pageLoader");
 
 function hidePageLoader() {
   if (!pageLoader) return;
   pageLoader.classList.add("page-loader-hidden");
   pageLoader.classList.remove("page-loader-fade");
+  pageLoader.setAttribute("aria-hidden", "true");
   document.body.classList.remove("page-loading");
 }
 
 function showPageLoader() {
   if (!pageLoader) return;
   pageLoader.classList.remove("page-loader-hidden");
+  pageLoader.setAttribute("aria-hidden", "false");
   document.body.classList.add("page-loading");
 }
 
 function isInternalPageLink(anchor) {
   if (!anchor || anchor.target === "_blank") return false;
   const href = anchor.getAttribute("href");
-  if (
-    !href ||
-    href.startsWith("#") ||
-    href.startsWith("javascript:") ||
-    href.startsWith("mailto:") ||
-    href.startsWith("tel:")
-  )
-    return false;
+  if (!href || href.startsWith("#") || href.startsWith("javascript:") || href.startsWith("mailto:") || href.startsWith("tel:")) return false;
   if (anchor.hasAttribute("download")) return false;
   try {
     const url = new URL(href, location.href);
@@ -350,21 +336,18 @@ function isInternalPageLink(anchor) {
 document.addEventListener("click", (event) => {
   const anchor = event.target.closest("a");
   if (!anchor || !isInternalPageLink(anchor)) return;
+  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
   showPageLoader();
 });
 
 function initPageLoader() {
   if (!pageLoader) return;
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () =>
-      window.setTimeout(hidePageLoader, PAGE_LOADER_DELAY_MS),
-    );
+    document.addEventListener("DOMContentLoaded", hidePageLoader);
   } else {
-    window.setTimeout(hidePageLoader, PAGE_LOADER_DELAY_MS);
+    hidePageLoader();
   }
-  window.addEventListener("load", () =>
-    window.setTimeout(hidePageLoader, PAGE_LOADER_DELAY_MS),
-  );
+  window.addEventListener("load", hidePageLoader);
 }
 initPageLoader();
 
@@ -394,10 +377,7 @@ if (fy) fy.textContent = String(new Date().getFullYear());
   }
 
   function closeSearchOnClickOutside(event) {
-    if (
-      !searchBtn.contains(event.target) &&
-      !searchInput.contains(event.target)
-    ) {
+    if (!searchBtn.contains(event.target) && !searchInput.contains(event.target)) {
       searchInput.classList.remove("active");
       searchInput.value = "";
     }

@@ -1,10 +1,15 @@
 /* Overview page (minimal custom styles) */
 
 .card-block {
-  background: var(--clr-bg-card);
-  border: 1px solid var(--clr-border);
+  background: transparent;
+  /* border: 1px solid var(--clr-border); */
   border-radius: var(--r-lg);
   box-shadow: var(--shadow-sm);
+}
+
+.page-wrap {
+  background: var(--clr-bg-card);
+  border-radius: var(--r-lg);
 }
 
 .overview-kicker {
@@ -29,9 +34,9 @@
   padding-inline-start: 1.25rem;
 }
 
-.section-image-wrap {
+/* .section-image-wrap {
   border: 1px solid var(--clr-border);
-}
+} */
 
 @media (max-width: 768px) {
   .section-image {

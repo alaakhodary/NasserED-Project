@@ -5,11 +5,7 @@ const state = { cat: "all", sub: "all", page: 1 };
 
 function initCategoryFromUrl() {
   const params = new URLSearchParams(location.search);
-  const candidate = (
-    params.get("cat") ||
-    location.hash.slice(1) ||
-    ""
-  ).toLowerCase();
+  const candidate = (params.get("cat") || location.hash.slice(1) || "").toLowerCase();
   if (candidate && SUBCATEGORY_MAP[candidate]) {
     state.cat = candidate;
     state.sub = "all";
@@ -27,55 +23,42 @@ function syncCategoryPills() {
 const NEWS_ITEMS = [
   {
     id: "n1",
-    category: "Emergency",
     title: "New Mass Casualty Protocol Implemented Across All Emergency Units",
-    excerpt:
-      "The Emergency Department has adopted an updated mass casualty protocol to improve response time and coordination during large-scale incidents.",
+    excerpt: "The Emergency Department has adopted an updated mass casualty protocol to improve response time and coordination during large-scale incidents.",
     author: "Dr. Ahmad Nassar",
     authorInitials: "AN",
     date: "Apr 8, 2026",
-    image:
-      "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=400&q=80",
+    image: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=400&q=80",
     color: "#ef4444",
   },
   {
     id: "n2",
-    category: "Training",
     title: "Advanced Trauma Life Support (ATLS) Workshop – Registration Open",
-    excerpt:
-      "The department is hosting a 2-day ATLS certification workshop for all emergency physicians and nurses. Limited seats available.",
+    excerpt: "The department is hosting a 2-day ATLS certification workshop for all emergency physicians and nurses. Limited seats available.",
     author: "Nursing Education Dept.",
     authorInitials: "NE",
     date: "Apr 6, 2026",
-    image:
-      "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=400&q=80",
+    image: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=400&q=80",
     color: "#0ea5c9",
   },
   {
     id: "n3",
-    category: "Guidelines",
     title: "Updated Sepsis Management Pathway – Effective Immediately",
-    excerpt:
-      "Following the latest international guidelines, the sepsis screening and management bundle has been revised with a new 1-hour treatment target.",
+    excerpt: "Following the latest international guidelines, the sepsis screening and management bundle has been revised with a new 1-hour treatment target.",
     author: "Dr. Sara Al-Khalil",
     authorInitials: "SK",
     date: "Apr 3, 2026",
-    image:
-      "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&q=80",
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&q=80",
     color: "#14b8a6",
   },
   {
     id: "n4",
-    category: "Equipment",
-    title:
-      "New Point-of-Care Ultrasound Machines Now Available in Resuscitation Bay",
-    excerpt:
-      "Three new portable ultrasound units have been installed in the resus bay, providing real-time imaging capabilities for critical patients.",
+    title: "New Point-of-Care Ultrasound Machines Now Available in Resuscitation Bay",
+    excerpt: "Three new portable ultrasound units have been installed in the resus bay, providing real-time imaging capabilities for critical patients.",
     author: "Equipment Management",
     authorInitials: "EM",
     date: "Mar 28, 2026",
-    image:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&q=80",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&q=80",
     color: "#8b5cf6",
   },
 ];
@@ -103,10 +86,9 @@ function renderNews() {
     (n) => `
     <div class="news-card">
       <div class="news-card-img" style="background: linear-gradient(135deg, ${n.color}22, ${n.color}44);">
-        <img src="${n.image}" alt="${n.category} news" loading="lazy" />
+        <img src="${n.image}" alt="News image" loading="lazy" />
       </div>
       <div class="news-card-body">
-        <span class="news-category-badge" style="background:${n.color}18; color:${n.color}; border-color:${n.color}33;">${esc(n.category)}</span>
         <div class="news-card-title">${esc(n.title)}</div>
         <div class="news-card-excerpt">${esc(n.excerpt)}</div>
         <div class="news-card-meta">
@@ -182,14 +164,12 @@ function renderPagination(totalPages) {
   let html = `<button class="pg-btn" id="pgPrev" ${state.page === 1 ? "disabled" : ""} aria-label="Previous page"><i class="bi bi-chevron-left"></i></button>`;
   const pages = [];
   for (let i = 1; i <= totalPages; i++) {
-    if (i === 1 || i === totalPages || Math.abs(i - state.page) <= 1)
-      pages.push(i);
+    if (i === 1 || i === totalPages || Math.abs(i - state.page) <= 1) pages.push(i);
     else if (pages[pages.length - 1] !== "...") pages.push("...");
   }
   pages.forEach((p) => {
     if (p === "...") html += `<span class="pg-ellipsis">…</span>`;
-    else
-      html += `<button class="pg-btn${p === state.page ? " active" : ""}" data-pg="${p}" aria-label="Page ${p}" ${p === state.page ? 'aria-current="page"' : ""}>${p}</button>`;
+    else html += `<button class="pg-btn${p === state.page ? " active" : ""}" data-pg="${p}" aria-label="Page ${p}" ${p === state.page ? 'aria-current="page"' : ""}>${p}</button>`;
   });
   html += `<button class="pg-btn" id="pgNext" ${state.page === totalPages ? "disabled" : ""} aria-label="Next page"><i class="bi bi-chevron-right"></i></button>`;
   wrap.innerHTML = html;
@@ -213,9 +193,7 @@ function renderPagination(totalPages) {
 }
 
 function scrollToGrid() {
-  document
-    .getElementById("cardsGrid")
-    ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  document.getElementById("cardsGrid")?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 function openDetail(id) {
@@ -229,8 +207,7 @@ function openDetail(id) {
   document.getElementById("dCategory").textContent = catMeta.label;
   document.getElementById("dSubLabel").textContent = subLabel;
   document.getElementById("dDate").textContent = formatDate(ref.timestamp);
-  document.getElementById("bcSection").textContent =
-    ref.title.length > 40 ? ref.title.slice(0, 40) + "…" : ref.title;
+  document.getElementById("bcSection").textContent = ref.title.length > 40 ? ref.title.slice(0, 40) + "…" : ref.title;
   const notesWrap = document.getElementById("dNotesWrap");
   if (ref.notes) {
     document.getElementById("dNotes").textContent = ref.notes;
@@ -240,8 +217,7 @@ function openDetail(id) {
   }
   const linkWrap = document.getElementById("dLinkWrap");
   if (ref.url) {
-    document.getElementById("dUrl").innerHTML =
-      `<a href="${esc(ref.url)}" target="_blank" rel="noopener noreferrer">${esc(ref.url)}</a>`;
+    document.getElementById("dUrl").innerHTML = `<a href="${esc(ref.url)}" target="_blank" rel="noopener noreferrer">${esc(ref.url)}</a>`;
     document.getElementById("dOpenLink").href = ref.url;
     linkWrap.style.display = "block";
   } else {
@@ -268,9 +244,7 @@ if (catRow) {
   catRow.addEventListener("click", (e) => {
     const pill = e.target.closest("[data-cat]");
     if (!pill) return;
-    document
-      .querySelectorAll("#catRow .pill")
-      .forEach((p) => p.classList.remove("active"));
+    document.querySelectorAll("#catRow .pill").forEach((p) => p.classList.remove("active"));
     pill.classList.add("active");
     state.cat = pill.dataset.cat;
     state.sub = "all";
@@ -289,20 +263,11 @@ function renderSubPills() {
     return;
   }
   const subs = SUBCATEGORY_MAP[state.cat];
-  subPills.innerHTML =
-    `<button class="pill sub active" data-sub="all">All</button>` +
-    subs
-      .map(
-        (s) =>
-          `<button class="pill sub" data-sub="${s.value}">${s.label}</button>`,
-      )
-      .join("");
+  subPills.innerHTML = `<button class="pill sub active" data-sub="all">All</button>` + subs.map((s) => `<button class="pill sub" data-sub="${s.value}">${s.label}</button>`).join("");
   subRow.style.display = "flex";
   subPills.querySelectorAll("[data-sub]").forEach((btn) => {
     btn.addEventListener("click", () => {
-      subPills
-        .querySelectorAll("[data-sub]")
-        .forEach((b) => b.classList.remove("active"));
+      subPills.querySelectorAll("[data-sub]").forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
       state.sub = btn.dataset.sub;
       state.page = 1;

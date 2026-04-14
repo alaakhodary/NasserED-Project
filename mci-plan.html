@@ -17,27 +17,227 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="styles/styles-shared.css" />
-    <link rel="stylesheet" href="styles/mci-plan.css" />
+    <style>
+      .mci-content ul {
+        list-style: disc;
+      }
+    </style>
   </head>
   <body>
     <div id="layout-header-root"></div>
 
-    <div class="page-wrap">
-      <!-- Coming Soon Section -->
-      <div class="coming-soon-container">
-        <div class="coming-soon-content">
-          <div class="coming-soon-icon">
-            <i class="bi bi-activity"></i>
+    <main class="page-wrap mci-content">
+      <div class="container-fluid px-0 bg-white rounded-4 p-3 p-md-4">
+        <div class="card border-0 shadow-sm bg-transparent mb-4">
+          <div class="card-body p-4 p-md-5">
+            <h1 class="display-6 mb-2">Mass Casualty Incident Management Protocol</h1>
+            <p class="text-secondary mb-0">Nasser Medical Complex Emergency Department Operating procedures</p>
           </div>
-          <h1 class="coming-soon-title">MCI Plan</h1>
-          <p class="coming-soon-subtitle">Mass Casualty Incident Response Plan</p>
-          <div class="coming-soon-message">
-            <h2>Coming Soon</h2>
-            <p>We're working hard to bring you comprehensive MCI planning resources and protocols. Stay tuned for detailed guidelines, checklists, and training materials.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-12">
+            <section class="card border-0 shadow-sm bg-transparent">
+              <div class="card-body p-4">
+                <h2 class="h4 mb-3">Introduction</h2>
+                <p class="mb-0">This mass casualty plan outlines operating procedures of mass casualty incidents (MCIs) that overwhelm resource capacity at Nasser Medical Complex (NMC). The plan prioritises effective resource allocation, effective communication, and coordination to ensure the most appropriate response under high-stress circumstances. This protocol requires frequent review and updates as the situation in Gaza progresses.</p>
+              </div>
+            </section>
+          </div>
+
+          <div class="col-12 col-lg-6">
+            <section class="card border-0 shadow-sm bg-transparent h-100">
+              <div class="card-body p-4">
+                <h2 class="h4 mb-3">Goal</h2>
+                <ul class="mb-0 ps-3">
+                  <li class="mb-2">Remain calm and work in an ordered and structured manner.</li>
+                  <li class="mb-2">Provide the most amount of care for the most amount of people.</li>
+                  <li class="mb-2">Ensure rapid triage and treatment to patients.</li>
+                  <li class="mb-2">Allocate all staff to work areas by the clinical lead.</li>
+                  <li class="mb-2">Ensure only necessary staff are present in work areas.</li>
+                  <li class="mb-2">Maintain overall hospital function and staff safety.</li>
+                  <li>Coordinate with external healthcare providers and facilities.</li>
+                </ul>
+              </div>
+            </section>
+          </div>
+
+          <div class="col-12 col-lg-6">
+            <section class="card border-0 shadow-sm bg-transparent h-100">
+              <div class="card-body p-4">
+                <h2 class="h4 mb-3">Triage System</h2>
+                <p>Prioritise triage based on severity of injury and likelihood of survival:</p>
+                <ul class="mb-0 ps-3">
+                  <li class="mb-2"><span class="badge text-bg-danger me-2">RED</span>Immediate treatment needed for life-threatening injuries.</li>
+                  <li class="mb-2"><span class="badge text-bg-warning me-2">YELLOW</span>Serious injuries requiring treatment but not immediately life-threatening.</li>
+                  <li class="mb-2"><span class="badge text-bg-success me-2">GREEN</span>Minor injuries that can wait for treatment.</li>
+                  <li class="mb-2"><span class="badge text-bg-dark me-2">BLACK</span>Dead on arrival.</li>
+                  <li><span class="badge text-bg-primary me-2">BLUE</span>Unlikely to survive.</li>
+                </ul>
+              </div>
+            </section>
+          </div>
+
+          <div class="col-12">
+            <section class="card border-0 shadow-sm bg-transparent">
+              <div class="card-body p-4">
+                <h2 class="h4 mb-3">Triage Location and Areas</h2>
+                <p>Two trained triage staff are assigned to the front door of emergency to sort RED, YELLOW, and GREEN patients. Staff in each area reassess and escalate or de-escalate care as needed.</p>
+                <div class="table-responsive">
+                  <table class="table table-bordered align-middle mb-0">
+                    <thead class="table-light">
+                      <tr>
+                        <th>Zone</th>
+                        <th>Location</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Red Zone</td>
+                        <td>Main ED</td>
+                      </tr>
+                      <tr>
+                        <td>Yellow Zone</td>
+                        <td>Rub Hall (medical ED tent)</td>
+                      </tr>
+                      <tr>
+                        <td>Overflow Yellow</td>
+                        <td>Maternity and paediatric building (activation with MSF Spain)</td>
+                      </tr>
+                      <tr>
+                        <td>Green Zone</td>
+                        <td>Fast Track</td>
+                      </tr>
+                      <tr>
+                        <td>Black Zone</td>
+                        <td>Morgue</td>
+                      </tr>
+                      <tr>
+                        <td>Blue Zone</td>
+                        <td>Allocated within Main ED</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <figure class="mt-4 mb-0">
+                  <img src="img/red-green-blue.jpeg" alt="MCI red yellow green area layout" class="img-fluid rounded" />
+                </figure>
+              </div>
+            </section>
+          </div>
+
+          <div class="col-12">
+            <section class="card border-0 shadow-sm bg-transparent">
+              <div class="card-body p-4">
+                <h2 class="h4 mb-3">Actions</h2>
+                <ul class="mb-4 ps-3">
+                  <li class="mb-2">Formally declare MCI.</li>
+                  <li class="mb-2">Inform surge staff and surge areas.</li>
+                  <li class="mb-2">Clear OT and prepare rooms for MCI patients.</li>
+                  <li class="mb-2">Clear all available ICU beds to receive MCI patients.</li>
+                  <li class="mb-2">Clear ED as per ED clearance plan and step down stable patients to Yellow ED or wards as appropriate.</li>
+                  <li class="mb-2">Lift all curtains to maintain full visual overview.</li>
+                  <li class="mb-2">Place two senior triage clinicians at front entrance for ambulance reception.</li>
+                  <li class="mb-2">Maintain patient flow to wards, discharge, or transfer facilities.</li>
+                  <li>Formally stand down or place MCI on standby when appropriate.</li>
+                </ul>
+                <h3 class="h5 mb-3">Actions for International Partners in Nasser Medical Complex</h3>
+                <ul class="mb-0 ps-3">
+                  <li class="mb-2">Partners identify an MCI lead on call per shift.</li>
+                  <li class="mb-2">Following MCI declaration, ED runner communicates readiness to partner organisations.</li>
+                  <li>Partners manage internal referrals according to their specialties.</li>
+                </ul>
+              </div>
+            </section>
+          </div>
+
+          <div class="col-12">
+            <section class="card border-0 shadow-sm bg-transparent">
+              <div class="card-body p-4">
+                <h2 class="h4 mb-3">Conduct</h2>
+                <h3 class="h5 mb-2">Staffing</h3>
+                <ul class="mb-3 ps-3">
+                  <li class="mb-2">All staff are assigned roles by the Clinical Lead.</li>
+                  <li class="mb-2">Only assigned staff should be active in work areas.</li>
+                  <li class="mb-2">Staff remain in assigned areas unless moved by Clinical Lead.</li>
+                  <li class="mb-2">ED staff allocation is made at the start of every shift.</li>
+                  <li class="mb-2">Clinical Lead is always present in ED during MCI.</li>
+                  <li>Senior Clinician (Yellow) and Clinical Lead (Red) can transfer patients between areas based on deterioration/re-prioritisation.</li>
+                </ul>
+
+                <h3 class="h5 mb-2">Assessment</h3>
+                <ul class="mb-3 ps-3">
+                  <li class="mb-2">&lt;C&gt;ABCDE primary survey and COMA (clothes off, oxygen, monitoring, access) should be completed, summarised, and vocalised.</li>
+                  <li class="mb-2">Use closed-loop communication for all assessments and interventions.</li>
+                  <li>Declare immediate treatment and priorities for the next 5 to 15 minutes.</li>
+                </ul>
+
+                <h3 class="h5 mb-2">Surge Capacity</h3>
+                <ul class="mb-3 ps-3">
+                  <li class="mb-2">Surge staff report to Clinical Lead for area allocation on arrival.</li>
+                  <li class="mb-2">When MCI is declared, communicate standby to MSF Spain.</li>
+                  <li>When overwhelmed, request MSF Spain MCI surge plan activation and start allocating yellow patients to maternity and paediatric building.</li>
+                </ul>
+
+                <h3 class="h5 mb-2">General</h3>
+                <ul class="mb-0 ps-3">
+                  <li class="mb-2">Ensure dignified movement of deceased patients to the morgue.</li>
+                  <li class="mb-2">Security remains at allocated entry/exit points for crowd control and enters clinical areas only on request.</li>
+                  <li class="mb-2">Reviews by other departments should be by request only.</li>
+                  <li class="mb-2">Move patients onward promptly once plans are established to sustain patient flow.</li>
+                  <li class="mb-2">Use reduced inflow periods to restock and clean.</li>
+                  <li>Encourage staff hydration whenever possible.</li>
+                </ul>
+              </div>
+            </section>
+          </div>
+
+          <div class="col-12">
+            <section class="card border-0 shadow-sm bg-transparent">
+              <div class="card-body p-4">
+                <h2 class="h4 mb-3">Treatment</h2>
+                <h3 class="h5 mb-2">1) Treatment in Clinical Areas</h3>
+                <ul class="mb-3 ps-3">
+                  <li class="mb-2">Calm, repetitive, standardised care.</li>
+                  <li class="mb-2">&lt;C&gt;ABCDE and COMA framework.</li>
+                  <li class="mb-2">Verbalise findings, immediate interventions, and 5-minute / 15-minute intent.</li>
+                  <li>Seek early invited surgical opinion with a specific clinical question.</li>
+                </ul>
+
+                <h3 class="h5 mb-2">2) Treatment Recommendations</h3>
+                <ul class="mb-3 ps-3">
+                  <li class="mb-2">1 g TXA for all incoming trauma patients; 2 g TXA in hypovolaemic shock or TBI (30 mg/kg in paediatrics).</li>
+                  <li class="mb-2">Avoid 0.9% saline in normotensive trauma.</li>
+                  <li class="mb-2">Give oxygen only if SpO2 is below 94% or patient is sedated.</li>
+                  <li class="mb-2">Consider FAST scan or X-ray in ED when available.</li>
+                  <li class="mb-2">Do not insert chest drains based only on primary survey if other assessment tools are available.</li>
+                  <li class="mb-2">Not all pneumothoraces or haemothoraces require intervention.</li>
+                  <li class="mb-2">Perform early ABO typing and venous blood gas (VBG).</li>
+                  <li class="mb-2">Use O+ blood initially (male, post-menopause women).</li>
+                  <li class="mb-2">Use O- blood initially (women of reproductive age), or O+ if required.</li>
+                  <li class="mb-2">Use 1:1 PRBC:FFP typed products once ABO is available.</li>
+                  <li class="mb-2">Give 10 ml of 10% calcium every 2 units of red blood cells.</li>
+                  <li class="mb-2">Fresh whole blood from relatives/friends may be used in extremis.</li>
+                  <li class="mb-2">Early haemoglobin values may be inaccurate.</li>
+                  <li>Treat based on vitals and examination (BP/HR), plus VBG; if Hb below 7 g/dl, give 1 unit PRBC and reassess.</li>
+                </ul>
+
+                <h3 class="h5 mb-2">3) Traumatic Cardiac Arrest and Peri-Arrest</h3>
+                <ul class="mb-0 ps-3">
+                  <li class="mb-2">Do not prioritise CPR and do not give adrenaline/inotropes/vasopressors routinely in traumatic arrest during MCI.</li>
+                  <li class="mb-2">Apply HOTT principles: Hypovolaemia, Oxygenation, Tension, Tamponade.</li>
+                  <li class="mb-2">Use blood products, BVM and OPA, lung/cardiac ultrasound, and thoracostomy/drain as indicated.</li>
+                  <li class="mb-2">If no response after HOTT (maximum 15 minutes), terminate resuscitation.</li>
+                  <li class="mb-2">No role for ED thoracotomy in traumatic arrest during MCIs.</li>
+                  <li class="mb-2">GCS below 5 with GSW/shrapnel/penetrating head injury: discuss with senior lead and consider palliation.</li>
+                  <li>GCS below 5 with closed head injury: discuss neurosurgery availability and long-term survivability for resource allocation decisions.</li>
+                </ul>
+              </div>
+            </section>
           </div>
         </div>
       </div>
-    </div>
+    </main>
 
     <div id="layout-footer-root"></div>
 
