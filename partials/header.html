@@ -23,13 +23,6 @@
   </div>
 </header>
 
-<div id="pageLoader" class="page-loader" aria-hidden="true">
-  <div class="page-loader-inner">
-    <div class="page-loader-spinner" aria-hidden="true"></div>
-    <div class="page-loader-text">Loading page, please wait…</div>
-  </div>
-</div>
-
 <!-- DEPARTMENTS NAV BAR -->
 <nav class="dept-navbar" aria-label="Departments Navigation">
   <button type="button" class="dept-nav-toggle" id="deptNavToggle" aria-expanded="false" aria-controls="deptNavPanel">
@@ -37,6 +30,10 @@
     <span class="dept-nav-toggle-label">Departments menu</span>
   </button>
   <div class="dept-navbar-inner" id="deptNavPanel">
+    <div class="dept-item">
+      <a class="dept-link" href="{{BASE}}index.html"> <i class="bi bi-house-door-fill"></i> Home </a>
+    </div>
+
     <div class="dept-item">
       <a class="dept-link" href="{{BASE}}overview.html"> <i class="bi bi-grid-1x2-fill"></i> Overview </a>
     </div>
@@ -46,15 +43,15 @@
     </div>
 
     <div class="dept-item">
-      <a class="dept-link" href="{{BASE}}mci-plan.html"> <i class="bi bi-activity"></i> MCI Plan </a>
-    </div>
-
-    <div class="dept-item">
-      <a class="dept-link" href="{{BASE}}Registration.html"> <i class="bi bi-person-plus-fill"></i> Registration </a>
-    </div>
-
-    <div class="dept-item">
-      <a class="dept-link" href="{{BASE}}Triage.html"> <i class="bi bi-clipboard2-pulse"></i> Triage </a>
+      <a class="dept-link" href="#">
+        <i class="bi bi-hospital"></i> theED
+        <i class="bi bi-chevron-down dept-arrow"></i>
+      </a>
+      <div class="dept-dropdown">
+        <div class="dd-item"><a class="dd-link" href="{{BASE}}mci-plan.html">MCI Plan</a></div>
+        <div class="dd-item"><a class="dd-link" href="{{BASE}}Registration.html">Registration</a></div>
+        <div class="dd-item"><a class="dd-link" href="{{BASE}}Triage.html">Triage</a></div>
+      </div>
     </div>
 
     <div class="dept-item">
@@ -63,23 +60,30 @@
         <i class="bi bi-chevron-down dept-arrow"></i>
       </a>
       <div class="dept-dropdown">
-        <div class="dd-item"><a class="dd-link" href="#">ICP</a></div>
+        <div class="dd-item"><a class="dd-link" href="#">IPC</a></div>
         <div class="dd-item">
           <a class="dd-link" href="#">Monitoring</a>
         </div>
         <div class="dd-item">
-          <a class="dd-link" href="#">Checking and stoking</a>
+          <a class="dd-link" href="#">Checking and Stocking</a>
         </div>
         <div class="dd-item"><a class="dd-link" href="#">Training</a></div>
       </div>
     </div>
 
     <div class="dept-item">
-      <a class="dept-link" href="{{BASE}}Safeguarding.html"> <i class="bi bi-person-hearts"></i> Safeguarding </a>
+      <a class="dept-link" href="#">
+        <i class="bi bi-person-hearts"></i> Safeguarding
+        <i class="bi bi-chevron-down dept-arrow"></i>
+      </a>
+      <div class="dept-dropdown">
+        <div class="dd-item"><a class="dd-link" href="{{BASE}}Safeguarding.html">GBV</a></div>
+        <div class="dd-item"><a class="dd-link" href="{{BASE}}Safeguarding.html">Child Protection</a></div>
+      </div>
     </div>
 
     <div class="dept-item">
-      <a class="dept-link" href="../uk-med.html"> <i class="bi bi-capsule"></i> UK-MED </a>
+      <a class="dept-link" href="../uk-med.html"> <i class="bi bi-shield-check"></i> UK-MED </a>
     </div>
 
     <div class="dept-item">
@@ -261,7 +265,7 @@
     </div>
 
     <div class="dept-item">
-      <a class="dept-link" href="{{BASE}}viedeo.html"> <i class="bi bi-mic-fill"></i> Podcast </a>
+      <a class="dept-link" href="{{BASE}}Hand-Over.html"> <i class="bi bi-box-arrow-right"></i> Hand Over </a>
     </div>
   </div>
 </nav>

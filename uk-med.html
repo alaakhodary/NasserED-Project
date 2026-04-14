@@ -16,7 +16,6 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/styles-shared.css" />
     <link rel="stylesheet" href="styles/uk-med.css" />
   </head>
@@ -31,7 +30,15 @@
             <div class="uk-med-logo">
               <i class="bi bi-shield-check"></i>
             </div>
-            <h1 class="uk-med-title">UK-MED</h1>
+            <h1 class="uk-med-title">
+              <img
+                id="ukMedTitleImage"
+                src="img/uk-med.png"
+                data-light-src="img/uk-med.png"
+                data-dark-src="img/uk-med-dark.png"
+                alt="UK-MED"
+                class="img-fluid w-75" />
+            </h1>
             <p class="uk-med-subtitle">Medical Excellence Partner</p>
           </div>
 
@@ -82,5 +89,22 @@
 
     <!-- Scripts -->
     <script src="scripts/layout-loader.js"></script>
+    <script>
+      (function () {
+        const ukMedTitleImage = document.getElementById("ukMedTitleImage");
+        if (!ukMedTitleImage) return;
+
+        const syncUkMedImage = () => {
+          const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+          ukMedTitleImage.src = isDark ? ukMedTitleImage.dataset.darkSrc : ukMedTitleImage.dataset.lightSrc;
+        };
+
+        syncUkMedImage();
+        new MutationObserver(syncUkMedImage).observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ["data-theme"],
+        });
+      })();
+    </script>
   </body>
 </html>

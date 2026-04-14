@@ -29,13 +29,36 @@ function loadScript(src) {
 
 function setActiveNavLink() {
   const currentPath = location.pathname.split("/").pop() || "index.html";
-  document
-    .querySelectorAll(".dept-navbar .dept-link.active")
-    .forEach((el) => el.classList.remove("active"));
-  const activeLink = document.querySelector(
-    `.dept-navbar a.dept-link[href$="${currentPath}"]`,
-  );
+  document.querySelectorAll(".dept-navbar .dept-link.active").forEach((el) => el.classList.remove("active"));
+  const activeLink = document.querySelector(`.dept-navbar a.dept-link[href$="${currentPath}"]`);
   if (activeLink) activeLink.classList.add("active");
+}
+
+function ensureGlobalPageLoader() {
+  if (document.getElementById("pageLoader")) return;
+  const loader = document.createElement("div");
+  loader.id = "pageLoader";
+  loader.className = "page-loader page-loader-hidden";
+  loader.setAttribute("aria-hidden", "true");
+  loader.innerHTML = `
+    <div class="page-loader-inner">
+      <div class="page-loader-orb" aria-hidden="true"></div>
+      <div class="page-loader-medical-badge" aria-hidden="true">
+        <span class="page-loader-cross-h"></span>
+        <span class="page-loader-cross-v"></span>
+      </div>
+      <div class="page-loader-spinner" aria-hidden="true"></div>
+      <div class="page-loader-title">Emergency Response Hub</div>
+      <div class="page-loader-text">Preparing medical dashboard and patient pathways...</div>
+      <div class="page-loader-ecg" aria-hidden="true">
+        <span class="page-loader-ecg-line"></span>
+      </div>
+      <div class="page-loader-dots" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(loader);
 }
 
 async function injectLayout() {
@@ -43,9 +66,7 @@ async function injectLayout() {
   const headerRoot = document.getElementById("layout-header-root");
   const footerRoot = document.getElementById("layout-footer-root");
   if (!headerRoot || !footerRoot) {
-    console.warn(
-      "layout-loader: missing #layout-header-root or #layout-footer-root",
-    );
+    console.warn("layout-loader: missing #layout-header-root or #layout-footer-root");
     return;
   }
 
@@ -66,6 +87,7 @@ async function injectLayout() {
 }
 
 async function start() {
+  ensureGlobalPageLoader();
   try {
     await injectLayout();
   } catch (e) {
@@ -73,10 +95,8 @@ async function start() {
     const root = document.getElementById("layout-header-root");
     if (root) {
       const p = document.createElement("p");
-      p.style.cssText =
-        "padding:12px 16px;background:#7f1d1d;color:#fff;font-size:14px;margin:0;";
-      p.textContent =
-        "تعذّر تحميل الهيدر/الفوتر. شغّل الموقع عبر خادم محلي (مثل Live Server) وليس بفتح الملف مباشرة من القرص.";
+      p.style.cssText = "padding:12px 16px;background:#7f1d1d;color:#fff;font-size:14px;margin:0;";
+      p.textContent = "تعذّر تحميل الهيدر/الفوتر. شغّل الموقع عبر خادم محلي (مثل Live Server) وليس بفتح الملف مباشرة من القرص.";
       root.appendChild(p);
     }
     return;
