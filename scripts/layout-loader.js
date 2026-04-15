@@ -42,19 +42,10 @@ function ensureGlobalPageLoader() {
   loader.setAttribute("aria-hidden", "true");
   loader.innerHTML = `
     <div class="page-loader-inner">
-      <div class="page-loader-orb" aria-hidden="true"></div>
-      <div class="page-loader-medical-badge" aria-hidden="true">
-        <span class="page-loader-cross-h"></span>
-        <span class="page-loader-cross-v"></span>
-      </div>
-      <div class="page-loader-spinner" aria-hidden="true"></div>
-      <div class="page-loader-title">Emergency Response Hub</div>
-      <div class="page-loader-text">Preparing medical dashboard and patient pathways...</div>
-      <div class="page-loader-ecg" aria-hidden="true">
-        <span class="page-loader-ecg-line"></span>
-      </div>
-      <div class="page-loader-dots" aria-hidden="true">
-        <span></span><span></span><span></span>
+      <div class="page-loader-comets" aria-hidden="true">
+        <span class="page-loader-comet page-loader-comet-1"></span>
+        <span class="page-loader-comet page-loader-comet-2"></span>
+        <span class="page-loader-comet page-loader-comet-3"></span>
       </div>
     </div>
   `;

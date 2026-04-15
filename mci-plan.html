@@ -21,23 +21,52 @@
       .mci-content ul {
         list-style: disc;
       }
+
+      .mci-shell {
+        background: var(--clr-bg-card);
+      }
+
+      .mci-card {
+        background: var(--clr-bg-card);
+        color: var(--clr-text);
+        border: 1px solid var(--clr-border);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .mci-muted {
+        color: var(--clr-text-muted);
+      }
+
+      .mci-table {
+        --bs-table-bg: var(--clr-bg-card);
+        --bs-table-color: var(--clr-text);
+        --bs-table-border-color: var(--clr-border);
+      }
+
+      .mci-table-head {
+        background: color-mix(in srgb, var(--clr-primary) 10%, var(--clr-bg-card) 90%);
+      }
+
+      [data-theme="dark"] .mci-table-head {
+        background: color-mix(in srgb, var(--clr-primary) 18%, var(--clr-bg-card) 82%);
+      }
     </style>
   </head>
   <body>
     <div id="layout-header-root"></div>
 
     <main class="page-wrap mci-content">
-      <div class="container-fluid px-0 bg-white rounded-4 p-3 p-md-4">
-        <div class="card border-0 shadow-sm bg-transparent mb-4">
+      <div class="container-fluid px-0 mci-shell rounded-4 p-3 p-md-4">
+        <div class="card border-0 mb-4 mci-card">
           <div class="card-body p-4 p-md-5">
             <h1 class="display-6 mb-2">Mass Casualty Incident Management Protocol</h1>
-            <p class="text-secondary mb-0">Nasser Medical Complex Emergency Department Operating procedures</p>
+            <p class="mci-muted mb-0">Nasser Medical Complex Emergency Department Operating procedures</p>
           </div>
         </div>
 
         <div class="row g-4">
           <div class="col-12">
-            <section class="card border-0 shadow-sm bg-transparent">
+            <section class="card border-0 mci-card">
               <div class="card-body p-4">
                 <h2 class="h4 mb-3">Introduction</h2>
                 <p class="mb-0">This mass casualty plan outlines operating procedures of mass casualty incidents (MCIs) that overwhelm resource capacity at Nasser Medical Complex (NMC). The plan prioritises effective resource allocation, effective communication, and coordination to ensure the most appropriate response under high-stress circumstances. This protocol requires frequent review and updates as the situation in Gaza progresses.</p>
@@ -46,7 +75,7 @@
           </div>
 
           <div class="col-12 col-lg-6">
-            <section class="card border-0 shadow-sm bg-transparent h-100">
+            <section class="card border-0 h-100 mci-card">
               <div class="card-body p-4">
                 <h2 class="h4 mb-3">Goal</h2>
                 <ul class="mb-0 ps-3">
@@ -63,7 +92,7 @@
           </div>
 
           <div class="col-12 col-lg-6">
-            <section class="card border-0 shadow-sm bg-transparent h-100">
+            <section class="card border-0 h-100 mci-card">
               <div class="card-body p-4">
                 <h2 class="h4 mb-3">Triage System</h2>
                 <p>Prioritise triage based on severity of injury and likelihood of survival:</p>
@@ -79,13 +108,13 @@
           </div>
 
           <div class="col-12">
-            <section class="card border-0 shadow-sm bg-transparent">
+            <section class="card border-0 mci-card">
               <div class="card-body p-4">
                 <h2 class="h4 mb-3">Triage Location and Areas</h2>
                 <p>Two trained triage staff are assigned to the front door of emergency to sort RED, YELLOW, and GREEN patients. Staff in each area reassess and escalate or de-escalate care as needed.</p>
                 <div class="table-responsive">
-                  <table class="table table-bordered align-middle mb-0">
-                    <thead class="table-light">
+                  <table class="table table-bordered align-middle mb-0 mci-table">
+                    <thead class="mci-table-head">
                       <tr>
                         <th>Zone</th>
                         <th>Location</th>
@@ -127,7 +156,7 @@
           </div>
 
           <div class="col-12">
-            <section class="card border-0 shadow-sm bg-transparent">
+            <section class="card border-0 mci-card">
               <div class="card-body p-4">
                 <h2 class="h4 mb-3">Actions</h2>
                 <ul class="mb-4 ps-3">
@@ -152,7 +181,7 @@
           </div>
 
           <div class="col-12">
-            <section class="card border-0 shadow-sm bg-transparent">
+            <section class="card border-0 mci-card">
               <div class="card-body p-4">
                 <h2 class="h4 mb-3">Conduct</h2>
                 <h3 class="h5 mb-2">Staffing</h3>
@@ -193,7 +222,7 @@
           </div>
 
           <div class="col-12">
-            <section class="card border-0 shadow-sm bg-transparent">
+            <section class="card border-0 mci-card">
               <div class="card-body p-4">
                 <h2 class="h4 mb-3">Treatment</h2>
                 <h3 class="h5 mb-2">1) Treatment in Clinical Areas</h3>

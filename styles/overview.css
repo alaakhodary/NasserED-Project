@@ -1,13 +1,6 @@
 /* Overview page (minimal custom styles) */
 
-.card-block {
-  background: transparent;
-  /* border: 1px solid var(--clr-border); */
-  border-radius: var(--r-lg);
-  box-shadow: var(--shadow-sm);
-}
-
-.page-wrap {
+.overview-sections {
   background: var(--clr-bg-card);
   border-radius: var(--r-lg);
 }
