@@ -47,7 +47,7 @@ const REFERENCES = [
     sub: "heart-failure",
     title: "ACC/AHA Heart Failure Guidelines 2022",
     url: "https://www.acc.org",
-    notes: "Comprehensive management of HFrEF and HFpEF.",
+    notes: "Comprehensive management of HFrEF and HFpEF111.Comprehensive management of HFrEF and HFpEF111Comprehensive management of HFrEF and HFpEF111Comprehensive management of HFrEF and HFpEF111Comprehensive management of HFrEF and HFpEF111Comprehensive management of HFrEF and HFpEF111Comprehensive management of HFrEF and HFpEF111Comprehensive management of HFrEF and HFpEF111Comprehensive management of HFrEF and HFpEF111Comprehensive management of HFrEF and HFpEF111Comprehensive management of HFrEF and HFpEF111Comprehensive management of HFrEF and HFpEF111Comprehensive management of HFrEF and HFpEF111Comprehensive management of HFrEF and HFpEF111Comprehensive management of HFrEF and HFpEF111Comprehensive management of HFrEF and HFpEF111Comprehensive management of HFrEF and HFpEF111Comprehensive management of HFrEF and HFpEF111Comprehensive management of HFrEF and HFpEF111",
     timestamp: new Date("2024-01-10"),
   },
   {

@@ -97,7 +97,8 @@ async function start() {
   await loadScript(base + "scripts/app-core.js");
   const app = document.documentElement.getAttribute("data-app");
   if (app === "home") await loadScript(base + "scripts/app-home.js");
-  if (app === "knowledge") await loadScript(base + "scripts/app-knowledge.js");
+  // Knowledge pages are now HTML-only (manual cards + manual detail),
+  // so we intentionally do not load app-knowledge.js.
 }
 
 start();

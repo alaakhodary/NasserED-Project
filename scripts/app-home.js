@@ -20,49 +20,6 @@ function syncCategoryPills() {
   });
 }
 
-const NEWS_ITEMS = [
-  {
-    id: "n1",
-    title: "New Mass Casualty Protocol Implemented Across All Emergency Units",
-    excerpt: "The Emergency Department has adopted an updated mass casualty protocol to improve response time and coordination during large-scale incidents.",
-    author: "Dr. Ahmad Nassar",
-    authorInitials: "AN",
-    date: "Apr 8, 2026",
-    image: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=400&q=80",
-    color: "#ef4444",
-  },
-  {
-    id: "n2",
-    title: "Advanced Trauma Life Support (ATLS) Workshop – Registration Open",
-    excerpt: "The department is hosting a 2-day ATLS certification workshop for all emergency physicians and nurses. Limited seats available.",
-    author: "Nursing Education Dept.",
-    authorInitials: "NE",
-    date: "Apr 6, 2026",
-    image: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=400&q=80",
-    color: "#0ea5c9",
-  },
-  {
-    id: "n3",
-    title: "Updated Sepsis Management Pathway – Effective Immediately",
-    excerpt: "Following the latest international guidelines, the sepsis screening and management bundle has been revised with a new 1-hour treatment target.",
-    author: "Dr. Sara Al-Khalil",
-    authorInitials: "SK",
-    date: "Apr 3, 2026",
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&q=80",
-    color: "#14b8a6",
-  },
-  {
-    id: "n4",
-    title: "New Point-of-Care Ultrasound Machines Now Available in Resuscitation Bay",
-    excerpt: "Three new portable ultrasound units have been installed in the resus bay, providing real-time imaging capabilities for critical patients.",
-    author: "Equipment Management",
-    authorInitials: "EM",
-    date: "Mar 28, 2026",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&q=80",
-    color: "#8b5cf6",
-  },
-];
-
 function formatDate(d) {
   return new Intl.DateTimeFormat("en-US", {
     month: "short",
@@ -77,31 +34,6 @@ function filteredRefs() {
     const matchSub = state.sub === "all" || r.sub === state.sub;
     return matchCat && matchSub;
   });
-}
-
-function renderNews() {
-  const grid = document.getElementById("newsGrid");
-  if (!grid) return;
-  grid.innerHTML = NEWS_ITEMS.map(
-    (n) => `
-    <div class="news-card">
-      <div class="news-card-img" style="background: linear-gradient(135deg, ${n.color}22, ${n.color}44);">
-        <img src="${n.image}" alt="News image" loading="lazy" />
-      </div>
-      <div class="news-card-body">
-        <div class="news-card-title">${esc(n.title)}</div>
-        <div class="news-card-excerpt">${esc(n.excerpt)}</div>
-        <div class="news-card-meta">
-          <div class="news-author">
-            <div class="news-author-avatar" style="background: linear-gradient(135deg, ${n.color}, #0ea5c9);">${esc(n.authorInitials)}</div>
-            <span>${esc(n.author)}</span>
-          </div>
-          <div class="news-date"><i class="bi bi-calendar3"></i> ${esc(n.date)}</div>
-        </div>
-      </div>
-    </div>
-  `,
-  ).join("");
 }
 
 function renderCards() {
@@ -319,7 +251,6 @@ if (sliderPrev) {
 }
 
 initCategoryFromUrl();
-renderNews();
 renderSubPills();
 syncCategoryPills();
 renderCards();

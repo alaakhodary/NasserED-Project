@@ -48,6 +48,50 @@
   margin-bottom: 3rem;
 }
 
+.uk-med-story {
+  max-width: 760px;
+  margin: 0 auto 2.5rem;
+  text-align: left;
+}
+
+.uk-med-story-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--clr-text);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.uk-med-story p {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--clr-text-muted);
+}
+
+.uk-med-activities {
+  max-width: 760px;
+  margin: 0 auto 2.5rem;
+  text-align: left;
+}
+
+.uk-med-activities-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--clr-text);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.uk-med-activities p {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--clr-text-muted);
+}
+
 .sponsor-badge {
   display: inline-flex;
   align-items: center;
@@ -159,6 +203,19 @@
 
   .feature-card {
     padding: 1.5rem 1rem;
+  }
+
+  .uk-med-story-title {
+    font-size: 1.7rem;
+  }
+
+  .uk-med-activities-title {
+    font-size: 1.35rem;
+  }
+
+  .uk-med-story p,
+  .uk-med-activities p {
+    font-size: 0.95rem;
   }
 
   .sponsor-badge {

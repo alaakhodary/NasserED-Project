@@ -7,22 +7,13 @@
     <title>EMnasser | Medical References</title>
 
     <!-- Bootstrap 5 -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
     <!-- Bootstrap Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
 
     <!-- Styles -->
     <link rel="stylesheet" href="styles/styles.css" />
@@ -36,30 +27,99 @@
       <div id="page-list">
         <!-- References Section Heading -->
         <div class="section-heading" style="margin-top: 24px">
-          <span class="section-badge"
-            ><i class="bi bi-journals"></i> References</span
-          >
+          <span class="section-badge"><i class="bi bi-journals"></i> References</span>
           <h2>Clinical References</h2>
           <div class="section-heading-line"></div>
         </div>
 
         <!-- Cards Grid -->
-        <div class="cards-grid" id="cardsGrid"></div>
+        <div class="cards-grid" id="cardsGrid">
+          <a class="ref-card" href="details-references.html" aria-label="Open ACC/AHA Heart Failure Guidelines 2022">
+            <div class="card-badges">
+              <span class="badge-cat">Cardiology</span>
+              <span class="badge-sub">Heart Failure</span>
+            </div>
+            <div class="card-title">ACC/AHA Heart Failure Guidelines 2022</div>
+            <div class="card-notes">Comprehensive management of HFrEF and HFpEF.</div>
+            <div class="card-footer">
+              <span class="card-date"><i class="bi bi-calendar3"></i> Jan 10, 2024</span>
+              <span class="card-open-btn"><i class="bi bi-eye"></i> View</span>
+            </div>
+          </a>
 
-        <!-- Pagination -->
-        <div class="pagination-wrap" id="paginationWrap"></div>
+          <a class="ref-card" href="details-references.html" aria-label="Open ESC Guidelines on Cardiac Arrhythmias">
+            <div class="card-badges">
+              <span class="badge-cat">Cardiology</span>
+              <span class="badge-sub">Arrhythmia</span>
+            </div>
+            <div class="card-title">ESC Guidelines on Cardiac Arrhythmias</div>
+            <div class="card-notes">Diagnosis and management of atrial fibrillation.</div>
+            <div class="card-footer">
+              <span class="card-date"><i class="bi bi-calendar3"></i> Jan 12, 2024</span>
+              <span class="card-open-btn"><i class="bi bi-eye"></i> View</span>
+            </div>
+          </a>
+
+          <a class="ref-card" href="details-references.html" aria-label="Open JNC 8 Hypertension Guidelines">
+            <div class="card-badges">
+              <span class="badge-cat">Cardiology</span>
+              <span class="badge-sub">Hypertension</span>
+            </div>
+            <div class="card-title">JNC 8 Hypertension Guidelines</div>
+            <div class="card-notes">Evidence-based blood pressure management targets.</div>
+            <div class="card-footer">
+              <span class="card-date"><i class="bi bi-calendar3"></i> Feb 1, 2024</span>
+              <span class="card-open-btn"><i class="bi bi-eye"></i> View</span>
+            </div>
+          </a>
+
+          <a class="ref-card" href="details-references.html" aria-label="Open AHA/ASA Acute Ischemic Stroke Guidelines">
+            <div class="card-badges">
+              <span class="badge-cat">Neurology</span>
+              <span class="badge-sub">Stroke</span>
+            </div>
+            <div class="card-title">AHA/ASA Acute Ischemic Stroke Guidelines</div>
+            <div class="card-notes">tPA thrombolysis and thrombectomy protocols.</div>
+            <div class="card-footer">
+              <span class="card-date"><i class="bi bi-calendar3"></i> Feb 10, 2024</span>
+              <span class="card-open-btn"><i class="bi bi-eye"></i> View</span>
+            </div>
+          </a>
+
+          <a class="ref-card" href="details-references.html" aria-label="Open ILAE Epilepsy Classification 2017">
+            <div class="card-badges">
+              <span class="badge-cat">Neurology</span>
+              <span class="badge-sub">Epilepsy</span>
+            </div>
+            <div class="card-title">ILAE Epilepsy Classification 2017</div>
+            <div class="card-notes">Updated operational classification of seizures.</div>
+            <div class="card-footer">
+              <span class="card-date"><i class="bi bi-calendar3"></i> Feb 15, 2024</span>
+              <span class="card-open-btn"><i class="bi bi-eye"></i> View</span>
+            </div>
+          </a>
+
+          <a class="ref-card" href="details-references.html" aria-label="Open NCCN Clinical Practice Guidelines – Oncology">
+            <div class="card-badges">
+              <span class="badge-cat">Oncology</span>
+              <span class="badge-sub">Chemotherapy</span>
+            </div>
+            <div class="card-title">NCCN Clinical Practice Guidelines – Oncology</div>
+            <div class="card-notes">Chemotherapy regimens for solid tumors.</div>
+            <div class="card-footer">
+              <span class="card-date"><i class="bi bi-calendar3"></i> Mar 1, 2024</span>
+              <span class="card-open-btn"><i class="bi bi-eye"></i> View</span>
+            </div>
+          </a>
+        </div>
       </div>
       <!-- /#page-list -->
 
       <!-- ===== DETAIL PAGE ===== -->
-      <div id="page-detail">
+      <!-- <div id="page-detail">
         <div class="back-bar">
-          <button class="back-btn" id="backBtn">
-            <i class="bi bi-arrow-left"></i> Back to all references
-          </button>
-          <div class="back-breadcrumb">
-            References &rsaquo; <span id="bcSection"></span>
-          </div>
+          <button class="back-btn" id="backBtn"><i class="bi bi-arrow-left"></i> Back to all references</button>
+          <div class="back-breadcrumb">References &rsaquo; <span id="bcSection"></span></div>
         </div>
         <div class="detail-card">
           <div class="detail-header">
@@ -71,52 +131,33 @@
           </div>
           <div class="detail-body">
             <div class="detail-section" id="dNotesWrap" style="display: none">
-              <div class="ds-label">
-                <i class="bi bi-card-text"></i> &nbsp;About This Reference
-              </div>
+              <div class="ds-label"><i class="bi bi-card-text"></i> &nbsp;About This Reference</div>
               <div class="ds-value" id="dNotes"></div>
             </div>
             <div id="dLinkWrap" style="display: none">
               <div class="detail-divider"></div>
               <div class="detail-section">
-                <div class="ds-label">
-                  <i class="bi bi-link-45deg"></i> &nbsp;External Resource
-                </div>
+                <div class="ds-label"><i class="bi bi-link-45deg"></i> &nbsp;External Resource</div>
                 <div class="detail-link-box">
                   <div class="dlb-url" id="dUrl"></div>
-                  <a
-                    class="btn-open-link"
-                    id="dOpenLink"
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="bi bi-box-arrow-up-right"></i> Visit Resource
-                  </a>
+                  <a class="btn-open-link" id="dOpenLink" href="#" target="_blank" rel="noopener noreferrer"> <i class="bi bi-box-arrow-up-right"></i> Visit Resource </a>
                 </div>
               </div>
             </div>
             <div class="detail-divider"></div>
             <div class="detail-meta-row">
-              <div class="meta-chip">
-                <i class="bi bi-calendar3"></i> <span id="dDate"></span>
-              </div>
-              <div class="meta-chip">
-                <i class="bi bi-folder2"></i> <span id="dCategory"></span>
-              </div>
-              <div class="meta-chip">
-                <i class="bi bi-tag"></i> <span id="dSubLabel"></span>
-              </div>
+              <div class="meta-chip"><i class="bi bi-calendar3"></i> <span id="dDate"></span></div>
+              <div class="meta-chip"><i class="bi bi-folder2"></i> <span id="dCategory"></span></div>
+              <div class="meta-chip"><i class="bi bi-tag"></i> <span id="dSubLabel"></span></div>
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- /#page-detail -->
     </div>
 
     <div id="layout-footer-root"></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="scripts/layout-loader.js"></script>
-    <script type="module" src="scripts/app-knowledge.js"></script>
   </body>
 </html>
