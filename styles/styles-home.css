@@ -3,7 +3,7 @@
 ============================================= */
 .hero-slider {
   position: relative;
-  height: 480px;
+  height: 492px;
   overflow: hidden;
   background: #0b2d48;
 }
@@ -23,7 +23,7 @@
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.35;
+  opacity: 0.45;
   transform: scale(1.05);
   transition: transform 8s ease;
 }
