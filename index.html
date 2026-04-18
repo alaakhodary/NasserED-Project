@@ -16,7 +16,8 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/styles-home.css" />
+    <link rel="stylesheet" href="styles/styles-shared.css" />
   </head>
   <body>
     <div id="layout-header-root"></div>
@@ -24,51 +25,51 @@
     <!-- ===================== HERO SLIDER ===================== -->
     <section class="hero-slider" aria-label="Emergency Department Highlights">
       <!-- Slide 1 -->
-      <div class="slide active">
+      <div class="slide active d-flex align-items-center">
         <div class="slide-bg" style="background-image: url(&quot;img/doctor-2.jpeg&quot;)"></div>
         <div class="slide-overlay"></div>
-        <div class="slide-content">
-          <div class="slide-eyebrow"><i class="bi bi-shield-plus-fill"></i> NMC Emergency Department</div>
-          <h1 class="slide-title">Rapid Response.<br />Expert Care.</h1>
-          <p class="slide-desc">24/7 emergency services with a dedicated team of specialists ready to handle any critical situation with precision and speed.</p>
+        <div class="slide-content container px-4 px-lg-5">
+          <div class="slide-eyebrow d-inline-flex align-items-center gap-2 text-uppercase fw-bold rounded-pill mb-3"><i class="bi bi-shield-plus-fill"></i> NMC Emergency Department</div>
+          <h1 class="slide-title text-white mb-3">Rapid Response.<br />Expert Care.</h1>
+          <p class="slide-desc mb-4">24/7 emergency services with a dedicated team of specialists ready to handle any critical situation with precision and speed.</p>
           <a href="knowledge.html" class="slide-cta"><i class="bi bi-arrow-right-circle-fill"></i> Explore References.</a>
         </div>
       </div>
 
       <!-- Slide 2 -->
-      <div class="slide">
+      <div class="slide d-flex align-items-center">
         <div class="slide-bg" style="background-image: url(&quot;https://images.unsplash.com/photo-1504813184591-01572f98c85f?w=1600&q=80&quot;)"></div>
         <div class="slide-overlay"></div>
-        <div class="slide-content">
-          <div class="slide-eyebrow"><i class="bi bi-heart-pulse-fill"></i> Advanced Resuscitation</div>
-          <h1 class="slide-title">Life-Saving<br />Protocols On Hand</h1>
-          <p class="slide-desc">Access up-to-date ACLS, BLS, and ATLS protocols designed to guide clinicians through every critical moment.</p>
+        <div class="slide-content container px-4 px-lg-5">
+          <div class="slide-eyebrow d-inline-flex align-items-center gap-2 text-uppercase fw-bold rounded-pill mb-3"><i class="bi bi-heart-pulse-fill"></i> Advanced Resuscitation</div>
+          <h1 class="slide-title text-white mb-3">Life-Saving<br />Protocols On Hand</h1>
+          <p class="slide-desc mb-4">Access up-to-date ACLS, BLS, and ATLS protocols designed to guide clinicians through every critical moment.</p>
           <a href="mci-plan.html" class="slide-cta"><i class="bi bi-journals"></i> View Protocols</a>
         </div>
       </div>
 
       <!-- Slide 3 -->
-      <div class="slide">
+      <div class="slide d-flex align-items-center">
         <div class="slide-bg" style="background-image: url(&quot;img/doctor-3.jpeg&quot;)"></div>
         <div class="slide-overlay"></div>
-        <div class="slide-content">
-          <div class="slide-eyebrow"><i class="bi bi-clipboard2-pulse-fill"></i> Clinical Guidelines</div>
-          <h1 class="slide-title">Evidence-Based<br />Decision Making</h1>
-          <p class="slide-desc">Curated clinical references and guidelines across all emergency specialties — all in one place for your team.</p>
+        <div class="slide-content container px-4 px-lg-5">
+          <div class="slide-eyebrow d-inline-flex align-items-center gap-2 text-uppercase fw-bold rounded-pill mb-3"><i class="bi bi-clipboard2-pulse-fill"></i> Clinical Guidelines</div>
+          <h1 class="slide-title text-white mb-3">Evidence-Based<br />Decision Making</h1>
+          <p class="slide-desc mb-4">Curated clinical references and guidelines across all emergency specialties — all in one place for your team.</p>
           <a href="#" class="slide-cta js-open-header-search"><i class="bi bi-search"></i> Browse Guidelines</a>
         </div>
       </div>
 
       <!-- Controls -->
-      <button class="slider-prev" id="sliderPrev" aria-label="Previous slide">
+      <button class="slider-prev d-flex align-items-center justify-content-center" id="sliderPrev" aria-label="Previous slide">
         <i class="bi bi-chevron-left"></i>
       </button>
-      <button class="slider-next" id="sliderNext" aria-label="Next slide">
+      <button class="slider-next d-flex align-items-center justify-content-center" id="sliderNext" aria-label="Next slide">
         <i class="bi bi-chevron-right"></i>
       </button>
 
       <!-- Dots -->
-      <div class="slider-dots">
+      <div class="slider-dots d-flex gap-2">
         <div class="slider-dot active"></div>
         <div class="slider-dot"></div>
         <div class="slider-dot"></div>
@@ -79,81 +80,96 @@
     <div class="page-wrap">
       <!-- ===== LIST PAGE ===== -->
       <div id="page-list">
-        <!-- News Section -->
-        <div class="section-heading" style="margin-top: 8px">
-          <span class="section-badge"><i class="bi bi-newspaper"></i> Latest</span>
-          <h2>Department News</h2>
-          <div class="section-heading-line"></div>
-        </div>
-        <div class="news-grid" id="newsGrid">
-          <div class="news-card">
-            <div class="news-card-img" style="background: linear-gradient(135deg, #ef444422, #ef444444)">
-              <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=400&q=80" alt="News image" loading="lazy" />
-            </div>
-            <div class="news-card-body">
-              <div class="news-card-title">New Mass Casualty Protocol Implemented Across All Emergency Units</div>
-              <div class="news-card-excerpt">The Emergency Department has adopted an updated mass casualty protocol to improve response time and coordination during large-scale incidents.</div>
-              <div class="news-card-meta">
-                <div class="news-author">
-                  <div class="news-author-avatar" style="background: linear-gradient(135deg, #ef4444, #0ea5c9)">AN</div>
-                  <span>Dr. Ahmad Nassar</span>
-                </div>
-                <div class="news-date"><i class="bi bi-calendar3"></i> Apr 8, 2026</div>
-              </div>
-            </div>
+        <section class="research-news-section mt-5">
+          <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+            <h2 class="h3 mb-0 fw-bold text-body-emphasis">Research News</h2>
+            <span class="badge rounded-pill text-bg-primary px-3 py-2">Latest Scientific Paper</span>
           </div>
 
-          <div class="news-card">
-            <div class="news-card-img" style="background: linear-gradient(135deg, #0ea5c922, #0ea5c944)">
-              <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=400&q=80" alt="News image" loading="lazy" />
-            </div>
-            <div class="news-card-body">
-              <div class="news-card-title">Advanced Trauma Life Support (ATLS) Workshop – Registration Open</div>
-              <div class="news-card-excerpt">The department is hosting a 2-day ATLS certification workshop for all emergency physicians and nurses. Limited seats available.</div>
-              <div class="news-card-meta">
-                <div class="news-author">
-                  <div class="news-author-avatar" style="background: linear-gradient(135deg, #0ea5c9, #0ea5c9)">NE</div>
-                  <span>Nursing Education Dept.</span>
-                </div>
-                <div class="news-date"><i class="bi bi-calendar3"></i> Apr 6, 2026</div>
-              </div>
-            </div>
-          </div>
+          <article class="card border-0 shadow-sm research-news-card mt-4">
+            <div class="row g-0">
+              <div class="col-12">
+                <div class="card-body p-4 p-lg-4">
+                  <div class="d-flex align-items-center flex-wrap gap-2 mb-2">
+                    <span class="badge rounded-pill text-bg-light border">Artificial Intelligence</span>
+                    <span class="text-secondary small d-inline-flex align-items-center gap-1">
+                      <i class="bi bi-calendar3"></i>
+                      March 25, 2026
+                    </span>
+                  </div>
 
-          <div class="news-card">
-            <div class="news-card-img" style="background: linear-gradient(135deg, #14b8a622, #14b8a644)">
-              <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&q=80" alt="News image" loading="lazy" />
-            </div>
-            <div class="news-card-body">
-              <div class="news-card-title">Updated Sepsis Management Pathway – Effective Immediately</div>
-              <div class="news-card-excerpt">Following the latest international guidelines, the sepsis screening and management bundle has been revised with a new 1-hour treatment target.</div>
-              <div class="news-card-meta">
-                <div class="news-author">
-                  <div class="news-author-avatar" style="background: linear-gradient(135deg, #14b8a6, #0ea5c9)">SK</div>
-                  <span>Dr. Sara Al-Khalil</span>
-                </div>
-                <div class="news-date"><i class="bi bi-calendar3"></i> Apr 3, 2026</div>
-              </div>
-            </div>
-          </div>
+                  <h3 class="h2 research-paper-title mb-3">AI-Assisted Early Sepsis Detection in Emergency Department Triage: A Prospective Clinical Study</h3>
 
-          <div class="news-card">
-            <div class="news-card-img" style="background: linear-gradient(135deg, #8b5cf622, #8b5cf644)">
-              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&q=80" alt="News image" loading="lazy" />
-            </div>
-            <div class="news-card-body">
-              <div class="news-card-title">New Point-of-Care Ultrasound Machines Now Available in Resuscitation Bay</div>
-              <div class="news-card-excerpt">Three new portable ultrasound units have been installed in the resus bay, providing real-time imaging capabilities for critical patients.</div>
-              <div class="news-card-meta">
-                <div class="news-author">
-                  <div class="news-author-avatar" style="background: linear-gradient(135deg, #8b5cf6, #0ea5c9)">EM</div>
-                  <span>Equipment Management</span>
+                  <div class="text-secondary mb-3">
+                    <strong class="text-body">What does it cover?</strong>
+                    This paper evaluates a machine learning triage model designed to detect high-risk sepsis patients during the first 30 minutes of Emergency Department assessment.
+                  </div>
+
+                  <p class="text-secondary mb-3">
+                    <strong class="text-body">Summary:</strong>
+                    The study analyzes vital signs, initial laboratory indicators, and triage notes to predict sepsis progression and ICU admission risk. Results demonstrate improved early recognition, faster antibiotic initiation, and better protocol adherence when compared with standard triage workflows.
+                  </p>
+
+                  <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 pt-3 border-top">
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="publisher-avatar d-flex align-items-center justify-content-center rounded-circle text-white fw-semibold">MQ</div>
+                      <div>
+                        <div class="fw-semibold text-body">Published by Mohammed Qandil</div>
+                        <div class="small text-secondary">Emergency Department</div>
+                      </div>
+                    </div>
+                    <a href="https://arxiv.org/" target="_blank" rel="noopener noreferrer" class="btn btn-primary d-inline-flex align-items-center gap-2 px-4">
+                      Read More
+                      <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </div>
                 </div>
-                <div class="news-date"><i class="bi bi-calendar3"></i> Mar 28, 2026</div>
               </div>
             </div>
-          </div>
-        </div>
+          </article>
+
+          <article class="card border-0 shadow-sm research-news-card mt-4">
+            <div class="row g-0">
+              <div class="col-12">
+                <div class="card-body p-4 p-lg-4">
+                  <div class="d-flex align-items-center flex-wrap gap-2 mb-2">
+                    <span class="badge rounded-pill text-bg-light border">Emergency Medicine</span>
+                    <span class="text-secondary small d-inline-flex align-items-center gap-1">
+                      <i class="bi bi-calendar3"></i>
+                      April 12, 2026
+                    </span>
+                  </div>
+
+                  <h3 class="h2 research-paper-title mb-3">Point-of-Care Ultrasound in Undifferentiated Shock: Impact on Early Decision-Making in the ED</h3>
+
+                  <div class="text-secondary mb-3">
+                    <strong class="text-body">What does it cover?</strong>
+                    This study examines the role of bedside ultrasound protocols in identifying shock etiology during initial emergency department resuscitation.
+                  </div>
+
+                  <p class="text-secondary mb-3">
+                    <strong class="text-body">Summary:</strong>
+                    Investigators compared standard clinical assessment with focused ultrasound-supported assessment. Findings show shorter diagnostic time, more targeted fluid and vasopressor use, and improved early disposition planning for critically ill patients.
+                  </p>
+
+                  <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 pt-3 border-top">
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="publisher-avatar d-flex align-items-center justify-content-center rounded-circle text-white fw-semibold">MQ</div>
+                      <div>
+                        <div class="fw-semibold text-body">Published by Mohammed Qandil</div>
+                        <div class="small text-secondary">Emergency Department</div>
+                      </div>
+                    </div>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener noreferrer" class="btn btn-primary d-inline-flex align-items-center gap-2 px-4">
+                      Read More
+                      <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
       </div>
     </div>
     <!-- /.page-wrap -->
@@ -161,6 +177,7 @@
     <div id="layout-footer-root"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="scripts/layout-loader.js"></script>
+    <script src="scripts/global.js"></script>
+    <script src="scripts/app-home.js"></script>
   </body>
 </html>
