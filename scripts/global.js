@@ -326,16 +326,7 @@ function initPageLoader() {
 }
 
 /* =============================================================================
-   8) FOOTER — CURRENT YEAR
-============================================================================= */
-
-function initFooterYear() {
-  const fy = document.getElementById("footerYear");
-  if (fy) fy.textContent = String(new Date().getFullYear());
-}
-
-/* =============================================================================
-   9) AFTER LAYOUT: WIRE ALL CHROME (order matters)
+   8) AFTER LAYOUT: WIRE ALL CHROME (order matters)
 ============================================================================= */
 
 function initChromeAfterLayout() {
@@ -343,13 +334,12 @@ function initChromeAfterLayout() {
   bindThemeToggle();
   initDeptNav();
   initPageLoader();
-  initFooterYear();
   initSearchToggle();
   bindOpenHeaderSearchTriggers();
 }
 
 /* =============================================================================
-   10) ENTRY — callable manually if needed
+   9) ENTRY — callable manually if needed
 ============================================================================= */
 
 NasserED.startLayout = async function startLayout() {
