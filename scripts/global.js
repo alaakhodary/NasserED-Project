@@ -82,8 +82,8 @@ function ensureGlobalPageLoader() {
 ============================================================================= */
 
 const THEME_STORAGE_KEY = "emnasser-theme";
-const LOGO_LIGHT_SRC = "img/logo.png";
-const LOGO_DARK_SRC = "img/logo-dark.png";
+const LOGO_LIGHT_SRC = "img/logo.webp";
+const LOGO_DARK_SRC = "img/logo-dark.webp";
 
 function updateBrandLogo(isDark) {
   const logo = document.getElementById("brandLogo");
@@ -306,6 +306,28 @@ function hidePageLoader() {
   document.body.classList.remove("page-loading");
 }
 
+// Smoothly scrolls to top before navigating to the next internal page.
+function smoothScrollTopThenNavigate(anchor) {
+  const href = anchor.getAttribute("href");
+  if (!href) return;
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const startY = window.scrollY || window.pageYOffset || 0;
+  const alreadyNearTop = startY < 24;
+
+  // Skip animation when motion should be reduced or page is already near top.
+  if (prefersReducedMotion || alreadyNearTop) {
+    window.location.href = anchor.href;
+    return;
+  }
+
+  const durationMs = Math.min(650, Math.max(250, Math.round(startY * 0.35)));
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.setTimeout(() => {
+    window.location.href = anchor.href;
+  }, durationMs);
+}
+
 function initPageLoader() {
   const pageLoader = document.getElementById("pageLoader");
   if (!pageLoader) return;
@@ -314,7 +336,9 @@ function initPageLoader() {
     const anchor = event.target.closest("a");
     if (!anchor || !isInternalPageLink(anchor)) return;
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
     showPageLoader();
+    smoothScrollTopThenNavigate(anchor);
   });
 
   if (document.readyState === "loading") {
