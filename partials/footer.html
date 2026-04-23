@@ -1,20 +1,8 @@
-<footer class="site-footer" role="contentinfo">
-  <div class="footer-inner">
-    <div
-      class="footer-brand d-flex flex-column flex-md-row align-items-center gap-2 gap-md-3 text-center text-md-start"
-    >
-      <img
-        class="d-none d-md-block"
-        src="{{BASE}}img/logo-dark.png"
-        alt="NasserED"
-        width="200"
-      />
-      <img
-        class="d-md-none"
-        src="{{BASE}}img/logo-dark.png"
-        alt="NasserED"
-        width="150"
-      />
+<footer class="site-footer text-center text-lg-start mt-auto" role="contentinfo">
+  <div class="footer-inner container-xxl mx-auto d-grid gap-4 gap-lg-5 px-3 px-lg-4 px-xl-5 py-5 pb-4">
+    <div class="footer-brand d-flex flex-column flex-md-row align-items-center gap-2 gap-md-3 text-center text-md-start">
+      <img class="d-none d-md-block" src="{{BASE}}img/logo-dark.webp" alt="NasserED" width="200" />
+      <img class="d-md-none" src="{{BASE}}img/logo-dark.webp" alt="NasserED" width="150" />
       <div>
         <span class="footer-brand-name">NasserED</span>
         <p class="footer-tagline">NMC EMERGENCY DEPARTMENT</p>
@@ -22,7 +10,7 @@
     </div>
     <div class="footer-links">
       <h3 class="footer-heading">Specialties</h3>
-      <ul>
+      <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
         <li><a href="#">Emergency Medicine</a></li>
         <li><a href="#">Cardiology</a></li>
         <li><a href="#">Neurology</a></li>
@@ -31,72 +19,38 @@
     </div>
     <div class="footer-links">
       <h3 class="footer-heading">Resources</h3>
-      <ul>
+      <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
         <li><a href="#">Clinical Guidelines</a></li>
         <li><a href="#">Drug Database</a></li>
         <li><a href="#">Research Library</a></li>
         <li><a href="#">Case Studies</a></li>
       </ul>
     </div>
-    <div class="footer-contact">
+    <div class="footer-contact mx-auto mx-lg-0">
       <h3 class="footer-heading">Contact</h3>
-      <ul>
-        <li>
-          <i class="bi bi-envelope-fill" aria-hidden="true"></i
-          ><a href="mailto:info@emnasser.com">Qandil@emnasser.com</a>
-        </li>
-        <li>
-          <i class="bi bi-telephone-fill" aria-hidden="true"></i
-          ><a href="tel:+18005551234">+1 800 555 1234</a>
-        </li>
-        <li>
-          <i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Palestine, Gaza
-        </li>
+      <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+        <li class="d-flex align-items-center gap-2 justify-content-center justify-content-lg-start"><i class="bi bi-envelope-fill flex-shrink-0" aria-hidden="true"></i><a href="mailto:info@emnasser.com">Qandil@emnasser.com</a></li>
+        <li class="d-flex align-items-center gap-2 justify-content-center justify-content-lg-start"><i class="bi bi-telephone-fill flex-shrink-0" aria-hidden="true"></i><a href="tel:+18005551234">+1 800 555 1234</a></li>
+        <li class="d-flex align-items-center gap-2 justify-content-center justify-content-lg-start"><i class="bi bi-geo-alt-fill flex-shrink-0" aria-hidden="true"></i> Palestine, Gaza</li>
       </ul>
-      <div class="footer-social" aria-label="Social media links">
-        <a href="#" aria-label="Twitter/X" class="social-btn"
-          ><i class="bi bi-twitter-x"></i
-        ></a>
-        <a href="#" aria-label="LinkedIn" class="social-btn"
-          ><i class="bi bi-linkedin"></i
-        ></a>
-        <a href="#" aria-label="YouTube" class="social-btn"
-          ><i class="bi bi-youtube"></i
-        ></a>
-        <a href="#" aria-label="GitHub" class="social-btn"
-          ><i class="bi bi-github"></i
-        ></a>
+      <div class="footer-social d-flex flex-wrap justify-content-center justify-content-lg-start gap-2 mt-3" aria-label="Social media links">
+        <a href="#" aria-label="Twitter/X" class="social-btn d-inline-flex align-items-center justify-content-center rounded-3"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" aria-label="LinkedIn" class="social-btn d-inline-flex align-items-center justify-content-center rounded-3"><i class="bi bi-linkedin"></i></a>
+        <a href="#" aria-label="YouTube" class="social-btn d-inline-flex align-items-center justify-content-center rounded-3"><i class="bi bi-youtube"></i></a>
+        <a href="#" aria-label="GitHub" class="social-btn d-inline-flex align-items-center justify-content-center rounded-3"><i class="bi bi-github"></i></a>
       </div>
     </div>
   </div>
-  <div class="footer-bottom">
-    <span>&copy; <span id="footerYear"></span> NasserED.</span>
+  <div class="footer-bottom d-flex flex-column flex-md-row flex-wrap align-items-center justify-content-center justify-content-md-between gap-2 gap-md-3 py-3 px-3 px-lg-4 px-xl-5 small">
+    <span>&copy; 2026 NasserED.</span>
     <span class="footer-sponsor">
       <i class="bi bi-shield-check"></i> Sponsored by
-      <a href="uk-med.html">UK-MED</a>
+      <a href="https://www.uk-med.org/gaza-crisis-appeal/" target="_blank">UK-MED</a>
     </span>
-    <span class="footer-bottom-links">
+    <span class="footer-bottom-links d-flex flex-wrap justify-content-center justify-content-md-end gap-3 gap-md-4">
       <a href="#">Privacy Policy</a>
       <a href="#">Terms of Use</a>
       <a href="#">Disclaimer</a>
     </span>
   </div>
 </footer>
-
-<div
-  class="toast-container position-fixed bottom-0 end-0 p-3"
-  style="z-index: 9999"
-  aria-live="polite"
-  aria-atomic="true"
->
-  <div id="liveToast" class="toast align-items-center border-0" role="alert">
-    <div class="d-flex">
-      <div class="toast-body" id="toastMsg"></div>
-      <button
-        type="button"
-        class="btn-close btn-close-white me-2 m-auto"
-        data-bs-dismiss="toast"
-      ></button>
-    </div>
-  </div>
-</div>

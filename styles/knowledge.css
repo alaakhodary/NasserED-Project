@@ -1,22 +1,139 @@
-/* Knowledge page styles - inherits from styles-shared.css and styles-home.css for layout and components */
-
-/* Additional styles for knowledge page detail sections */
-.detail-section {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+/* Knowledge cards — Bootstrap utilities first, minimal custom rules */
+.ref-card {
+  background: var(--clr-bg-card);
+  border-color: var(--clr-border) !important;
+  transition:
+    transform var(--tr),
+    box-shadow var(--tr),
+    border-color var(--tr);
+  cursor: pointer;
 }
 
-/* Ensure breadcrumb styling consistency */
-.back-breadcrumb {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
+.ref-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--clr-primary), var(--clr-teal));
+  opacity: 0;
+  transition: opacity var(--tr);
+}
+
+.ref-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md) !important;
+  border-color: rgba(14, 165, 201, 0.3) !important;
+}
+
+.ref-card:hover::before {
+  opacity: 1;
+}
+
+.badge-cat {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  background: rgba(14, 165, 201, 0.1);
+  color: var(--clr-primary);
+  border: 1px solid rgba(14, 165, 201, 0.2);
+}
+
+.badge-sub {
+  font-size: 0.68rem;
+  font-weight: 500;
+  background: rgba(20, 184, 166, 0.08);
+  color: var(--clr-teal);
+  border: 1px solid rgba(20, 184, 166, 0.2);
+}
+
+.card-title {
+  font-family: var(--font-display);
+  color: var(--clr-text);
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-notes {
+  color: var(--clr-text-muted);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-footer {
+  border-top-color: var(--clr-border) !important;
+}
+
+.card-date {
   color: var(--clr-text-muted);
 }
 
-.back-breadcrumb span {
-  color: var(--clr-text);
+.card-open-btn {
+  --bs-btn-color: var(--clr-primary);
+  --bs-btn-border-color: rgba(14, 165, 201, 0.35);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--clr-primary);
+  --bs-btn-hover-border-color: var(--clr-primary);
+  --bs-btn-active-bg: var(--clr-primary);
+  --bs-btn-active-border-color: var(--clr-primary);
+}
+
+/* =============================================
+   PAGINATION
+============================================= */
+.pagination-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.25rem;
+}
+
+.knowledge-pagination {
+  --bs-pagination-color: var(--clr-text-muted);
+  --bs-pagination-bg: var(--clr-bg-card);
+  --bs-pagination-border-color: var(--clr-border);
+  --bs-pagination-hover-color: var(--clr-primary);
+  --bs-pagination-hover-bg: rgba(14, 165, 201, 0.12);
+  --bs-pagination-hover-border-color: var(--clr-primary);
+  --bs-pagination-active-color: #fff;
+  --bs-pagination-active-bg: var(--clr-primary);
+  --bs-pagination-active-border-color: var(--clr-primary);
+  --bs-pagination-disabled-color: #94a3b8;
+  --bs-pagination-disabled-bg: var(--clr-bg-card);
+  --bs-pagination-disabled-border-color: var(--clr-border);
+  gap: 0.35rem;
+}
+
+.knowledge-pagination .page-link {
+  min-width: 2.6rem;
+  text-align: center;
+  border-radius: var(--r-sm);
+  font-size: 0.95rem;
   font-weight: 500;
+  box-shadow: var(--shadow-sm);
+}
+
+.knowledge-pagination .page-item.active .page-link {
+  font-weight: 600;
+}
+
+[data-theme="dark"] .ref-card {
+  border-color: var(--clr-border) !important;
+  box-shadow: var(--shadow-card) !important;
+}
+
+[data-theme="dark"] .card-date,
+[data-theme="dark"] .card-notes {
+  color: var(--clr-text-muted);
+}
+
+[data-theme="dark"] .badge-sub {
+  color: #7dd3c7;
 }

@@ -1,93 +1,67 @@
-/* ED Research Coming Soon Page Styles */
-
-.coming-soon-container {
-  min-height: calc(100vh - 120px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 1rem;
-  background: linear-gradient(135deg, var(--clr-bg) 0%, var(--clr-bg-card) 100%);
-}
-
-.coming-soon-content {
-  text-align: center;
-  max-width: 600px;
-  width: 100%;
-  background: var(--clr-bg-card);
-  border-radius: var(--r-lg);
-  padding: 3rem 2rem;
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--clr-border);
-}
-
-.coming-soon-icon {
-  font-size: 4rem;
-  color: var(--clr-primary);
+/* =============================================
+   RESEARCH NEWS — ED Research page
+============================================= */
+.research-news-section {
   margin-bottom: 1.5rem;
 }
 
-.coming-soon-title {
+.research-news-card {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(14, 165, 201, 0.15) !important;
+}
+
+.research-news-card .card-body {
+  background: linear-gradient(180deg, rgba(14, 165, 201, 0.03) 0%, rgba(14, 165, 201, 0) 100%);
+}
+
+.research-paper-title {
   font-family: var(--font-display);
-  font-size: 2.5rem;
-  font-weight: 400;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  line-height: 1.25;
+}
+
+.publisher-avatar {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--clr-primary), #6d28d9);
+  font-size: 0.78rem;
+}
+
+/* ---- Dark theme ---- */
+[data-theme="dark"] .research-news-section .research-news-card {
+  background-color: var(--clr-bg-card);
   color: var(--clr-text);
-  margin-bottom: 0.5rem;
+  border-color: var(--clr-border) !important;
+  box-shadow: var(--shadow-card);
 }
 
-.coming-soon-subtitle {
-  font-size: 1.1rem;
-  color: var(--clr-text-muted);
-  margin-bottom: 2rem;
-  font-weight: 300;
+[data-theme="dark"] .research-news-section .research-news-card .card-body {
+  background: linear-gradient(180deg, rgba(14, 165, 201, 0.12) 0%, rgba(14, 165, 201, 0) 100%);
 }
 
-.coming-soon-message h2 {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  color: var(--clr-primary);
-  margin-bottom: 1rem;
-  font-weight: 400;
+[data-theme="dark"] .research-news-section .research-paper-title {
+  color: var(--clr-text);
 }
 
-.coming-soon-message p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--clr-text-muted);
-  margin-bottom: 2rem;
+[data-theme="dark"] .research-news-section .text-body-emphasis {
+  color: var(--clr-text) !important;
 }
 
-@media (max-width: 768px) {
-  .coming-soon-content {
-    padding: 2rem 1.5rem;
-  }
-
-  .coming-soon-title {
-    font-size: 2rem;
-  }
-
-  .coming-soon-message h2 {
-    font-size: 1.5rem;
-  }
+[data-theme="dark"] .research-news-section .text-secondary {
+  color: var(--clr-text-muted) !important;
 }
 
-@media (max-width: 480px) {
-  .coming-soon-icon {
-    font-size: 3rem;
-  }
+[data-theme="dark"] .research-news-section .fw-semibold.text-body {
+  color: #f8fafc !important;
+}
 
-  .coming-soon-title {
-    font-size: 1.8rem;
-  }
+[data-theme="dark"] .research-news-section .text-bg-light {
+  background-color: var(--clr-bg) !important;
+  color: var(--clr-text) !important;
+  border-color: var(--clr-border) !important;
+}
 
-  .coming-soon-subtitle {
-    font-size: 1rem;
-  }
-
-  .coming-soon-message h2 {
-    font-size: 1.3rem;
-  }
-
-  .coming-soon-message p {
-    font-size: 0.9rem;
-  }
+[data-theme="dark"] .research-news-section .border-top {
+  border-color: var(--clr-border) !important;
 }

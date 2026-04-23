@@ -25,7 +25,8 @@
     />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/styles-home.css" />
+    <link rel="stylesheet" href="styles/styles-shared.css" />
   </head>
   <body>
     <div id="layout-header-root"></div>
@@ -34,89 +35,50 @@
     <section class="hero-slider" aria-label="Emergency Department Highlights">
       <!-- Slide 1 -->
       <div class="slide active">
-        <div
-          class="slide-bg"
-          style="
-            background-image: url(&quot;https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1600&q=80&quot;);
-          "
-        ></div>
-        <div
-          class="slide-bg"
-          style="background-image: url(&quot;img/doctor-2.jpeg&quot;)"
-        ></div>
+        <div class="slide-bg" style="background-image: url(&quot;img/doctor-2.jpeg&quot;)"></div>
         <div class="slide-overlay"></div>
         <div class="slide-content">
-          <div class="slide-eyebrow">
-            <i class="bi bi-shield-plus-fill"></i> NMC Emergency Department
-          </div>
+          <div class="slide-eyebrow"><i class="bi bi-shield-plus-fill"></i> NMC Emergency Department</div>
           <h1 class="slide-title">Rapid Response.<br />Expert Care.</h1>
-          <p class="slide-desc">
-            24/7 emergency services with a dedicated team of specialists ready
-            to handle any critical situation with precision and speed.
-          </p>
-          <a href="knowledge.html" class="slide-cta"
-            ><i class="bi bi-arrow-right-circle-fill"></i> Explore
-            References.</a
-          >
+          <p class="slide-desc">24/7 emergency services with a dedicated team of specialists ready to handle any critical situation with precision and speed.</p>
+          <a href="knowledge.html" class="slide-cta"><i class="bi bi-arrow-right-circle-fill"></i> Explore References.</a>
         </div>
       </div>
 
       <!-- Slide 2 -->
       <div class="slide">
-        <div
-          class="slide-bg"
-          style="
-            background-image: url(&quot;https://images.unsplash.com/photo-1504813184591-01572f98c85f?w=1600&q=80&quot;);
-          "
-        ></div>
+        <div class="slide-bg" style="background-image: url(&quot;https://images.unsplash.com/photo-1504813184591-01572f98c85f?w=1600&q=80&quot;)"></div>
         <div class="slide-overlay"></div>
         <div class="slide-content">
-          <div class="slide-eyebrow">
-            <i class="bi bi-heart-pulse-fill"></i> Advanced Resuscitation
-          </div>
+          <div class="slide-eyebrow"><i class="bi bi-heart-pulse-fill"></i> Advanced Resuscitation</div>
           <h1 class="slide-title">Life-Saving<br />Protocols On Hand</h1>
-          <p class="slide-desc">
-            Access up-to-date ACLS, BLS, and ATLS protocols designed to guide
-            clinicians through every critical moment.
-          </p>
-          <a href="mci-plan.html" class="slide-cta"
-            ><i class="bi bi-journals"></i> View Protocols</a
-          >
+          <p class="slide-desc">Access up-to-date ACLS, BLS, and ATLS protocols designed to guide clinicians through every critical moment.</p>
+          <a href="mci-plan.html" class="slide-cta"><i class="bi bi-journals"></i> View Protocols</a>
         </div>
       </div>
 
       <!-- Slide 3 -->
       <div class="slide">
-        <div
-          class="slide-bg"
-          style="background-image: url(&quot;img/doctor-3.jpeg&quot;)"
-        ></div>
+        <div class="slide-bg" style="background-image: url(&quot;img/doctor-3.jpeg&quot;)"></div>
         <div class="slide-overlay"></div>
         <div class="slide-content">
-          <div class="slide-eyebrow">
-            <i class="bi bi-clipboard2-pulse-fill"></i> Clinical Guidelines
-          </div>
+          <div class="slide-eyebrow"><i class="bi bi-clipboard2-pulse-fill"></i> Clinical Guidelines</div>
           <h1 class="slide-title">Evidence-Based<br />Decision Making</h1>
-          <p class="slide-desc">
-            Curated clinical references and guidelines across all emergency
-            specialties — all in one place for your team.
-          </p>
-          <a href="#" class="slide-cta js-open-header-search"
-            ><i class="bi bi-search"></i> Browse Guidelines</a
-          >
+          <p class="slide-desc">Curated clinical references and guidelines across all emergency specialties — all in one place for your team.</p>
+          <a href="#" class="slide-cta js-open-header-search"><i class="bi bi-search"></i> Browse Guidelines</a>
         </div>
       </div>
 
       <!-- Controls -->
-      <button class="slider-prev" id="sliderPrev" aria-label="Previous slide">
+      <button class="slider-prev d-flex align-items-center justify-content-center" id="sliderPrev" aria-label="Previous slide">
         <i class="bi bi-chevron-left"></i>
       </button>
-      <button class="slider-next" id="sliderNext" aria-label="Next slide">
+      <button class="slider-next d-flex align-items-center justify-content-center" id="sliderNext" aria-label="Next slide">
         <i class="bi bi-chevron-right"></i>
       </button>
 
       <!-- Dots -->
-      <div class="slider-dots">
+      <div class="slider-dots d-flex gap-2">
         <div class="slider-dot active"></div>
         <div class="slider-dot"></div>
         <div class="slider-dot"></div>
@@ -129,9 +91,7 @@
       <div id="page-list">
         <!-- News Section -->
         <div class="section-heading" style="margin-top: 8px">
-          <span class="section-badge"
-            ><i class="bi bi-newspaper"></i> Latest</span
-          >
+          <span class="section-badge"><i class="bi bi-newspaper"></i> Latest</span>
           <h2>Department News</h2>
           <div class="section-heading-line"></div>
         </div>
@@ -142,12 +102,8 @@
       <!-- ===== DETAIL PAGE ===== -->
       <div id="page-detail">
         <div class="back-bar">
-          <button class="back-btn" id="backBtn">
-            <i class="bi bi-arrow-left"></i> Back to References
-          </button>
-          <div class="back-breadcrumb">
-            References &rsaquo; <span id="bcSection"></span>
-          </div>
+          <button class="back-btn" id="backBtn"><i class="bi bi-arrow-left"></i> Back to References</button>
+          <div class="back-breadcrumb">References &rsaquo; <span id="bcSection"></span></div>
         </div>
         <div class="detail-card">
           <div class="detail-header">
@@ -159,27 +115,15 @@
           </div>
           <div class="detail-body">
             <div class="detail-section" id="dNotesWrap">
-              <div class="ds-label">
-                <i class="bi bi-card-text"></i> &nbsp;Content
-              </div>
+              <div class="ds-label"><i class="bi bi-card-text"></i> &nbsp;Content</div>
               <div class="ds-value" id="dNotes"></div>
             </div>
             <div class="detail-divider"></div>
             <div class="detail-section" id="dLinkWrap">
-              <div class="ds-label">
-                <i class="bi bi-link-45deg"></i> &nbsp;Reference Link
-              </div>
+              <div class="ds-label"><i class="bi bi-link-45deg"></i> &nbsp;Reference Link</div>
               <div class="detail-link-box">
                 <div class="dlb-url" id="dUrl"></div>
-                <a
-                  class="btn-open-link"
-                  id="dOpenLink"
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i class="bi bi-box-arrow-up-right"></i> Open Reference
-                </a>
+                <a class="btn-open-link" id="dOpenLink" href="#" target="_blank" rel="noopener noreferrer"> <i class="bi bi-box-arrow-up-right"></i> Open Reference </a>
               </div>
             </div>
             <div class="detail-divider"></div>
@@ -188,26 +132,19 @@
               <div class="detail-tags" id="dTags"></div>
             </div>
             <div class="detail-meta-row">
-              <div class="meta-chip">
-                <i class="bi bi-calendar3"></i> <span id="dDate"></span>
-              </div>
-              <div class="meta-chip">
-                <i class="bi bi-folder2"></i> <span id="dCategory"></span>
-              </div>
-              <div class="meta-chip">
-                <i class="bi bi-tag"></i> <span id="dSubLabel"></span>
-              </div>
+              <div class="meta-chip"><i class="bi bi-calendar3"></i> <span id="dDate"></span></div>
+              <div class="meta-chip"><i class="bi bi-folder2"></i> <span id="dCategory"></span></div>
+              <div class="meta-chip"><i class="bi bi-tag"></i> <span id="dSubLabel"></span></div>
             </div>
           </div>
         </div>
       </div>
-      <!-- /#page-detail -->
     </div>
     <!-- /.page-wrap -->
 
     <div id="layout-footer-root"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="scripts/layout-loader.js"></script>
+    <script src="scripts/global.js"></script>
+    <script src="scripts/app-home.js"></script>
   </body>
 </html>

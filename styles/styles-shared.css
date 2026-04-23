@@ -75,6 +75,10 @@ button {
   font-family: inherit;
 }
 
+/* =============================================
+   GLOBAL LOADER
+   Full-screen loader shown while page layout/scripts initialize.
+============================================= */
 .page-loader {
   position: fixed;
   inset: 0;
@@ -190,7 +194,8 @@ body.page-loading {
 }
 
 /* =============================================
-   TOPBAR
+   TOPBAR (GLOBAL HEADER)
+   Shared header bar across all pages.
 ============================================= */
 .topbar {
   top: 0;
@@ -198,22 +203,11 @@ body.page-loading {
   /* height: var(--topbar-h); */
   background: var(--clr-bg-card);
   border-bottom: 1px solid var(--clr-border);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px 28px;
-  box-shadow: var(--shadow-sm);
   transition:
     background var(--tr),
     border-color var(--tr);
 }
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
 a.brand {
-  text-decoration: none;
   color: inherit;
 }
 
@@ -227,20 +221,10 @@ a.brand {
   font-size: 11px;
   color: var(--clr-text-muted);
   letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-.topbar-right {
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 .topbar-btn {
   width: 36px;
   height: 36px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: var(--clr-text-muted);
   font-size: 16px;
   transition:
@@ -253,15 +237,9 @@ a.brand {
 }
 
 /* =============================================
-   SEARCH STYLES
+   HEADER SEARCH
+   Search input toggle styles inside the topbar.
 ============================================= */
-.search-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin-right: 8px;
-}
-
 .search-input {
   width: 0;
   height: 36px;
@@ -319,14 +297,11 @@ a.brand {
   .search-input.active {
     width: 160px;
   }
-
-  .search-container {
-    margin-right: 4px;
-  }
 }
 
 /* =============================================
-   DEPARTMENTS NAV BAR (Secondary Header)
+   DEPARTMENTS NAV BAR (SECONDARY HEADER)
+   Shared departments navigation with nested dropdowns.
 ============================================= */
 .dept-navbar {
   position: sticky;
@@ -364,9 +339,6 @@ a.brand {
 }
 
 .dept-navbar-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 8px 16px 10px;
   display: grid;
   /* Medium screens: 6 links per row (12 → two full rows) */
   grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -383,7 +355,6 @@ a.brand {
 @media (min-width: 1200px) {
   .dept-navbar-inner {
     grid-template-columns: repeat(8, minmax(0, 1fr));
-    padding: 0 20px 10px;
   }
 }
 
@@ -391,12 +362,29 @@ a.brand {
   position: relative;
   min-width: 0;
 }
+
+/* “New” ribbon on a dept link (e.g. Hand Over) */
+.dept-link-new-badge {
+  position: absolute;
+  top: 0px;
+  right: 2px;
+  z-index: 2;
+  padding: 4px 8px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #fff;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #0ea5c9 0%, #14b8a6 45%, #0d9488 100%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.25) inset,
+    0 3px 10px rgba(14, 165, 201, 0.45);
+  pointer-events: none;
+}
+
 .dept-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 6px;
   padding: 10px 8px;
   min-height: 46px;
   width: 100%;
@@ -404,7 +392,6 @@ a.brand {
   font-weight: 500;
   color: rgba(255, 255, 255, 0.72);
   white-space: normal;
-  text-align: center;
   line-height: 1.25;
   transition:
     color var(--tr),
@@ -476,16 +463,12 @@ a.brand {
   position: relative;
 }
 .dd-link {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 9px 18px;
   font-size: 13.5px;
   color: var(--clr-text);
   transition:
     background var(--tr),
     color var(--tr);
-  gap: 8px;
   cursor: pointer;
 }
 .dd-link:hover {
@@ -553,11 +536,6 @@ a.brand {
 .dd-sub-item:hover > .dept-subdropdown-l3 {
   display: block;
 }
-.dd-sub-link-has-children {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 .dd-l3-link {
   display: block;
   padding: 7px 16px;
@@ -572,27 +550,9 @@ a.brand {
   color: var(--clr-primary);
 }
 
-.slide-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 28px;
-  background: linear-gradient(135deg, var(--clr-primary), var(--clr-teal));
-  color: #fff;
-  font-weight: 600;
-  font-size: 14px;
-  border-radius: var(--r-sm);
-  box-shadow: 0 4px 20px rgba(14, 165, 201, 0.4);
-  transition:
-    transform var(--tr),
-    box-shadow var(--tr);
-}
-.slide-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 28px rgba(14, 165, 201, 0.55);
-}
 /* =============================================
-   LAYOUT
+   LAYOUT WRAPPER
+   Shared content container spacing for inner sections.
 ============================================= */
 .page-wrap {
   max-width: 1200px;
@@ -601,7 +561,8 @@ a.brand {
 }
 
 /* =============================================
-   NEWS SECTION
+   SHARED SECTION HEADING
+   Reusable heading/badge/line block style.
 ============================================= */
 .section-heading {
   display: flex;
@@ -631,31 +592,16 @@ a.brand {
   border: 1px solid rgba(14, 165, 201, 0.25);
 }
 /* =============================================
-   FOOTER
+   FOOTER (GLOBAL)
+   Shared footer columns, links, and bottom bar.
 ============================================= */
 .site-footer {
   background: var(--clr-sidebar);
   color: rgba(255, 255, 255, 0.7);
   padding: 0;
-  margin-top: auto;
-}
-@media (max-width: 768px) {
-  .site-footer {
-    text-align: center;
-  }
-  .footer-contact {
-    margin: auto;
-  }
-  .footer-contact li,
-  .footer-social {
-    justify-content: center;
-  }
 }
 .footer-inner {
-  display: grid;
   grid-template-columns: 2fr 1fr 1fr 1.5fr;
-  gap: 40px;
-  padding: 48px 48px 36px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -663,8 +609,6 @@ a.brand {
   font-family: var(--font-display);
   font-size: 22px;
   color: #fff;
-  margin-bottom: 8px;
-  display: block;
 }
 .footer-tagline {
   font-size: 13px;
@@ -679,12 +623,6 @@ a.brand {
   color: rgba(255, 255, 255, 0.5);
   margin-bottom: 14px;
 }
-.footer-links ul,
-.footer-contact ul {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
 .footer-links a,
 .footer-contact a {
   font-size: 13.5px;
@@ -695,29 +633,16 @@ a.brand {
   color: var(--clr-primary);
 }
 .footer-contact li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
   font-size: 13.5px;
 }
 .footer-contact li i {
   color: var(--clr-primary);
-  flex-shrink: 0;
-}
-.footer-social {
-  display: flex;
-  gap: 10px;
-  margin-top: 16px;
 }
 .social-btn {
   width: 36px;
   height: 36px;
-  border-radius: 9px;
   background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 16px;
   color: rgba(255, 255, 255, 0.6);
   transition:
@@ -731,24 +656,13 @@ a.brand {
   transform: translateY(-2px);
 }
 .footer-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 48px;
-  font-size: 12.5px;
   color: rgba(255, 255, 255, 0.35);
-  flex-wrap: wrap;
-  gap: 8px;
 }
-.footer-bottom-links {
-  display: flex;
-  gap: 20px;
-}
-.footer-bottom-links a {
+.footer-bottom a {
   color: rgba(255, 255, 255, 0.35);
   transition: color var(--tr);
 }
-.footer-bottom-links a:hover {
+.footer-bottom a:hover {
   color: var(--clr-primary);
 }
 @media (max-width: 1024px) {
@@ -771,8 +685,6 @@ a.brand {
     display: grid;
   }
   .dept-link {
-    justify-content: flex-start;
-    text-align: left;
     padding: 12px 16px;
     min-height: 48px;
     font-size: 14px;
@@ -826,14 +738,113 @@ a.brand {
   }
   .footer-inner {
     grid-template-columns: 1fr;
-    gap: 28px;
-    padding: 32px 24px 24px;
   }
-  .footer-bottom {
-    padding: 14px 24px;
-    flex-direction: column;
+}
+
+/*=============================================*/
+/* styles for pages */
+/* Overview page (minimal custom styles) */
+.overview-sections {
+  background: var(--clr-bg-card);
+  border-radius: var(--r-lg);
+}
+.overview-kicker {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--clr-primary);
+  font-weight: 700;
+}
+.overview-title {
+  font-family: var(--font-display);
+  color: var(--clr-text);
+}
+.overview-muted {
+  color: var(--clr-text-muted);
+}
+.overview-bullets {
+  list-style: disc;
+  padding-inline-start: 1.25rem;
+}
+@media (max-width: 768px) {
+  .section-image {
+    height: 220px;
   }
-  .dept-navbar-inner {
-    padding: 0 12px;
-  }
+}
+
+/* MCI-PLAN page (minimal custom styles) */
+
+.mci-content ul {
+  list-style: disc;
+}
+
+.mci-shell {
+  background: var(--clr-bg-card);
+}
+
+.mci-card {
+  background: var(--clr-bg-card);
+  color: var(--clr-text);
+}
+
+.mci-muted {
+  color: var(--clr-text-muted);
+}
+
+.mci-table {
+  --bs-table-bg: var(--clr-bg-card);
+  --bs-table-color: var(--clr-text);
+  --bs-table-border-color: var(--clr-border);
+}
+
+.mci-table-head {
+  background: color-mix(in srgb, var(--clr-primary) 10%, var(--clr-bg-card) 90%);
+}
+
+[data-theme="dark"] .mci-table-head {
+  background: color-mix(in srgb, var(--clr-primary) 18%, var(--clr-bg-card) 82%);
+}
+
+/* GBV page (minimal custom styles) */
+.gbv-ref-image {
+  border-color: var(--clr-border) !important;
+}
+
+[data-theme="dark"] .gbv-page .card {
+  background-color: var(--clr-bg-card);
+  border-color: var(--clr-border) !important;
+  color: var(--clr-text);
+  box-shadow: var(--shadow-card);
+}
+
+[data-theme="dark"] .gbv-page .card.border-0 {
+  border: 1px solid var(--clr-border) !important;
+}
+
+[data-theme="dark"] .gbv-page .text-body {
+  color: var(--clr-text) !important;
+}
+
+[data-theme="dark"] .gbv-page .text-muted {
+  color: var(--clr-text-muted) !important;
+}
+
+[data-theme="dark"] .gbv-page .gbv-ref-card .card-body {
+  background-color: var(--clr-bg);
+}
+
+[data-theme="dark"] .gbv-page .btn-outline-secondary {
+  color: var(--clr-text);
+  border-color: var(--clr-border);
+}
+
+[data-theme="dark"] .gbv-page .btn-outline-secondary:hover {
+  background-color: rgba(14, 165, 201, 0.15);
+  border-color: var(--clr-primary);
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .gbv-ref-image {
+  border-color: var(--clr-border) !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }

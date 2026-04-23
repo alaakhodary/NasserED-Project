@@ -1,87 +1,50 @@
-/* UK-MED Sponsorship Page Styles */
+/* UK-MED page styles (Bootstrap utilities first, minimal custom rules) */
 
 .uk-med-container {
   min-height: calc(100vh - 120px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 1rem;
   background: linear-gradient(135deg, var(--clr-bg) 0%, var(--clr-bg-card) 100%);
 }
 
 .uk-med-content {
-  text-align: center;
-  max-width: 800px;
-  width: 100%;
+  max-width: 860px;
   background: var(--clr-bg-card);
   border-radius: var(--r-lg);
-  padding: 3rem 2rem;
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--clr-border);
 }
 
-.uk-med-header {
-  margin-bottom: 2rem;
-}
-
-.uk-med-logo {
-  font-size: 4rem;
+.uk-med-logo,
+.feature-icon {
   color: var(--clr-primary);
-  margin-bottom: 1rem;
 }
 
-.uk-med-title {
+.uk-med-title,
+.uk-med-story-title,
+.uk-med-activities-title,
+.feature-card h3 {
   font-family: var(--font-display);
-  font-size: 2.5rem;
-  font-weight: 400;
   color: var(--clr-text);
-  margin-bottom: 0.5rem;
 }
 
-.uk-med-subtitle {
-  font-size: 1.1rem;
+.uk-med-subtitle,
+.uk-med-story p,
+.uk-med-activities p,
+.feature-card p,
+.uk-med-footer p {
   color: var(--clr-text-muted);
-  font-weight: 300;
 }
 
-.sponsorship-message {
-  margin-bottom: 3rem;
+.uk-med-story,
+.uk-med-activities {
+  max-width: 760px;
 }
 
-.sponsor-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-primary-dk) 100%);
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--r-md);
-  font-weight: 600;
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-  box-shadow: var(--shadow-sm);
-}
-
-.sponsor-description {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--clr-text-muted);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.uk-med-features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 3rem;
+.uk-med-story p,
+.uk-med-activities p {
+  line-height: 1.75;
 }
 
 .feature-card {
   background: var(--clr-bg);
-  border-radius: var(--r-md);
-  padding: 2rem 1.5rem;
-  border: 1px solid var(--clr-border);
+  border-color: var(--clr-border) !important;
   transition: transform var(--tr), box-shadow var(--tr);
 }
 
@@ -90,107 +53,21 @@
   box-shadow: var(--shadow-card);
 }
 
-.feature-icon {
-  font-size: 2.5rem;
+.contact-link.btn {
+  border-color: var(--clr-primary);
   color: var(--clr-primary);
-  margin-bottom: 1rem;
 }
 
-.feature-card h3 {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  color: var(--clr-text);
-  margin-bottom: 0.5rem;
-  font-weight: 400;
-}
-
-.feature-card p {
-  font-size: 0.9rem;
-  color: var(--clr-text-muted);
-  line-height: 1.5;
-}
-
-.uk-med-footer {
-  border-top: 1px solid var(--clr-border);
-  padding-top: 2rem;
-}
-
-.uk-med-footer p {
-  font-size: 1rem;
-  color: var(--clr-text-muted);
-  margin-bottom: 1rem;
-}
-
-.contact-info {
-  margin-top: 1rem;
-}
-
-.contact-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--clr-primary);
-  font-weight: 500;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--clr-primary);
-  border-radius: var(--r-sm);
-  transition: all var(--tr);
-}
-
-.contact-link:hover {
+.contact-link.btn:hover {
   background: var(--clr-primary);
-  color: white;
+  border-color: var(--clr-primary);
+  color: #fff;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .uk-med-content {
-    padding: 2rem 1.5rem;
-  }
-
-  .uk-med-title {
-    font-size: 2rem;
-  }
-
-  .uk-med-features {
-    grid-template-columns: 1fr;
-  }
-
-  .feature-card {
-    padding: 1.5rem 1rem;
-  }
-
-  .sponsor-badge {
-    flex-direction: column;
-    gap: 0.25rem;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-  }
+[data-theme="dark"] .uk-med-page .uk-med-content {
+  border-color: #2a3a50 !important;
 }
 
-@media (max-width: 480px) {
-  .uk-med-logo {
-    font-size: 3rem;
-  }
-
-  .uk-med-title {
-    font-size: 1.8rem;
-  }
-
-  .uk-med-subtitle {
-    font-size: 1rem;
-  }
-
-  .sponsor-description {
-    font-size: 0.9rem;
-  }
-
-  .feature-card h3 {
-    font-size: 1.2rem;
-  }
-
-  .feature-card p {
-    font-size: 0.85rem;
-  }
+[data-theme="dark"] .uk-med-page .uk-med-footer.border-top {
+  border-top-color: #2a3a50 !important;
 }

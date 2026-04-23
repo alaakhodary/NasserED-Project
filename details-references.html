@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" data-theme="" data-app="knowledge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="app-base" content="" />
+    <title>Reference Details | EMnasser</title>
+
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+
+    <!-- Shared + knowledge styles -->
+
+    <link rel="stylesheet" href="styles/styles-shared.css" />
+    <link rel="stylesheet" href="styles/details-references.css" />
+  </head>
+  <body>
+    <div id="layout-header-root"></div>
+
+    <div class="page-wrap">
+      <!-- ===== DETAIL PAGE ONLY ===== -->
+      <div id="page-detail" class="active">
+        <div class="back-bar">
+          <a class="back-btn" href="knowledge.html"><i class="bi bi-arrow-left"></i> Back to all references</a>
+          <div class="back-breadcrumb">References &rsaquo; <span id="bcSection">ACC/AHA Heart Failure Guidelines 2022</span></div>
+        </div>
+        <div class="detail-card">
+          <div class="detail-header">
+            <div class="detail-badges">
+              <span class="detail-badge-cat" id="dCat">Cardiology</span>
+              <span class="detail-badge-sub" id="dSub">Heart Failure</span>
+            </div>
+            <h2 class="detail-title" id="dTitle">ACC/AHA Heart Failure Guidelines 2022</h2>
+          </div>
+          <div class="detail-body">
+            <div class="detail-section" id="dNotesWrap">
+              <div class="ds-label"><i class="bi bi-card-text"></i>About This Reference</div>
+              <div class="ds-value" id="dNotes">"This comprehensive guideline provides a 2022 update for the management of patients with heart failure. It replaces the 2013 ACCF/AHA guideline and the 2017 focused update. The document emphasizes Guideline-Directed Medical Therapy (GDMT) for all stages, specifically focusing on the new 'Four Pillars' of treatment to improve survival rates and reduce hospitalization for HFrEF and HFpEF patients."This comprehensive guideline provides a 2022 update for the management of patients with heart failure. It replaces the 2013 ACCF/AHA guideline and the 2017 focused update. The document emphasizes Guideline-Directed Medical Therapy (GDMT) for all stages, specifically focusing on the new 'Four Pillars' of treatment to improve survival rates and reduce hospitalization for HFrEF and HFpEF patients."</div>
+            </div>
+            <div id="dLinkWrap">
+              <div class="detail-section">
+                <div class="ds-label"><i class="bi bi-link-45deg"></i>External Resource</div>
+                <div class="detail-link-box">
+                  <div class="dlb-url" id="dUrl">https://www.google.com</div>
+                  <a class="btn-open-link" id="dOpenLink" href="#" target="_blank" rel="noopener noreferrer"> <i class="bi bi-box-arrow-up-right"></i> Visit Resource </a>
+                </div>
+              </div>
+            </div>
+            <div class="detail-divider"></div>
+            <div class="detail-meta-row">
+              <div class="meta-chip"><i class="bi bi-calendar3"></i> <span id="dDate"></span>May 2022</div>
+              <div class="meta-chip"><i class="bi bi-folder2"></i> <span id="dCategory"></span>Cardiology</div>
+              <div class="meta-chip"><i class="bi bi-tag"></i> <span id="dSubLabel"></span>Clinical Guidelines</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /#page-detail -->
+    </div>
+
+    <div id="layout-footer-root"></div>
+    <script src="scripts/global.js"></script>
+  </body>
+</html>
