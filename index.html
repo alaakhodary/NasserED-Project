@@ -34,46 +34,113 @@
     <!-- ===================== HERO SLIDER ===================== -->
     <section class="hero-slider" aria-label="Emergency Department Highlights">
       <!-- Slide 1 -->
-      <div class="slide active">
-        <div class="slide-bg" style="background-image: url(&quot;img/doctor-2.jpeg&quot;)"></div>
+      <div class="slide active d-flex align-items-center">
+        <img
+          class="slide-bg slide-bg-img"
+          src="img/doctor-2.webp"
+          alt="Emergency physician in clinical setting"
+          width="1600"
+          height="900"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
         <div class="slide-overlay"></div>
-        <div class="slide-content">
-          <div class="slide-eyebrow"><i class="bi bi-shield-plus-fill"></i> NMC Emergency Department</div>
-          <h1 class="slide-title">Rapid Response.<br />Expert Care.</h1>
-          <p class="slide-desc">24/7 emergency services with a dedicated team of specialists ready to handle any critical situation with precision and speed.</p>
-          <a href="knowledge.html" class="slide-cta"><i class="bi bi-arrow-right-circle-fill"></i> Explore References.</a>
+        <div class="slide-content container px-4 px-lg-5">
+          <div
+            class="slide-eyebrow d-inline-flex align-items-center gap-2 text-uppercase fw-bold rounded-pill mb-3"
+          >
+            <i class="bi bi-shield-plus-fill"></i> NMC Emergency Department
+          </div>
+          <h1 class="slide-title text-white mb-3">
+            Rapid Response.<br />Expert Care.
+          </h1>
+          <p class="slide-desc mb-4">
+            24/7 emergency services with a dedicated team of specialists ready
+            to handle any critical situation with precision and speed.
+          </p>
+          <a href="knowledge.html" class="slide-cta"
+            ><i class="bi bi-arrow-right-circle-fill"></i> Explore
+            References.</a
+          >
         </div>
       </div>
 
       <!-- Slide 2 -->
-      <div class="slide">
-        <div class="slide-bg" style="background-image: url(&quot;https://images.unsplash.com/photo-1504813184591-01572f98c85f?w=1600&q=80&quot;)"></div>
+      <div class="slide d-flex align-items-center">
+        <img
+          class="slide-bg slide-bg-img"
+          src="img/doctor-1.webp"
+          alt="Emergency team in advanced resuscitation care"
+          width="1600"
+          height="900"
+          loading="lazy"
+          decoding="async"
+        />
         <div class="slide-overlay"></div>
-        <div class="slide-content">
-          <div class="slide-eyebrow"><i class="bi bi-heart-pulse-fill"></i> Advanced Resuscitation</div>
-          <h1 class="slide-title">Life-Saving<br />Protocols On Hand</h1>
-          <p class="slide-desc">Access up-to-date ACLS, BLS, and ATLS protocols designed to guide clinicians through every critical moment.</p>
-          <a href="mci-plan.html" class="slide-cta"><i class="bi bi-journals"></i> View Protocols</a>
+        <div class="slide-content container px-4 px-lg-5">
+          <div
+            class="slide-eyebrow d-inline-flex align-items-center gap-2 text-uppercase fw-bold rounded-pill mb-3"
+          >
+            <i class="bi bi-heart-pulse-fill"></i> Advanced Resuscitation
+          </div>
+          <h1 class="slide-title text-white mb-3">
+            Life-Saving<br />Protocols On Hand
+          </h1>
+          <p class="slide-desc mb-4">
+            Access up-to-date ACLS, BLS, and ATLS protocols designed to guide
+            clinicians through every critical moment.
+          </p>
+          <a href="mci-plan.html" class="slide-cta"
+            ><i class="bi bi-journals"></i> View Protocols</a
+          >
         </div>
       </div>
 
       <!-- Slide 3 -->
-      <div class="slide">
-        <div class="slide-bg" style="background-image: url(&quot;img/doctor-3.jpeg&quot;)"></div>
+      <div class="slide d-flex align-items-center">
+        <img
+          class="slide-bg slide-bg-img"
+          src="img/doctor-3.webp"
+          alt="Clinical team reviewing emergency care guidelines"
+          width="1600"
+          height="900"
+          loading="lazy"
+          decoding="async"
+        />
         <div class="slide-overlay"></div>
-        <div class="slide-content">
-          <div class="slide-eyebrow"><i class="bi bi-clipboard2-pulse-fill"></i> Clinical Guidelines</div>
-          <h1 class="slide-title">Evidence-Based<br />Decision Making</h1>
-          <p class="slide-desc">Curated clinical references and guidelines across all emergency specialties — all in one place for your team.</p>
-          <a href="#" class="slide-cta js-open-header-search"><i class="bi bi-search"></i> Browse Guidelines</a>
+        <div class="slide-content container px-4 px-lg-5">
+          <div
+            class="slide-eyebrow d-inline-flex align-items-center gap-2 text-uppercase fw-bold rounded-pill mb-3"
+          >
+            <i class="bi bi-clipboard2-pulse-fill"></i> Clinical Guidelines
+          </div>
+          <h1 class="slide-title text-white mb-3">
+            Evidence-Based<br />Decision Making
+          </h1>
+          <p class="slide-desc mb-4">
+            Curated clinical references and guidelines across all emergency
+            specialties — all in one place for your team.
+          </p>
+          <a href="#" class="slide-cta js-open-header-search"
+            ><i class="bi bi-search"></i> Browse Guidelines</a
+          >
         </div>
       </div>
 
       <!-- Controls -->
-      <button class="slider-prev d-flex align-items-center justify-content-center" id="sliderPrev" aria-label="Previous slide">
+      <button
+        class="slider-prev d-flex align-items-center justify-content-center"
+        id="sliderPrev"
+        aria-label="Previous slide"
+      >
         <i class="bi bi-chevron-left"></i>
       </button>
-      <button class="slider-next d-flex align-items-center justify-content-center" id="sliderNext" aria-label="Next slide">
+      <button
+        class="slider-next d-flex align-items-center justify-content-center"
+        id="sliderNext"
+        aria-label="Next slide"
+      >
         <i class="bi bi-chevron-right"></i>
       </button>
 
@@ -89,53 +156,279 @@
     <div class="page-wrap">
       <!-- ===== LIST PAGE ===== -->
       <div id="page-list">
-        <!-- News Section -->
-        <div class="section-heading" style="margin-top: 8px">
-          <span class="section-badge"><i class="bi bi-newspaper"></i> Latest</span>
-          <h2>Department News</h2>
-          <div class="section-heading-line"></div>
+        <!-- Department News -->
+        <div class="d-flex align-items-center flex-wrap gap-3 mb-4 mt-2">
+          <span
+            class="badge rounded-pill text-uppercase fw-bold small px-3 py-2 border department-news-badge"
+          >
+            <i class="bi bi-newspaper me-1" aria-hidden="true"></i>
+            Latest
+          </span>
+          <h2 class="h4 fw-semibold mb-0 department-news-title">
+            Department News
+          </h2>
+          <div
+            class="flex-grow-1 border-bottom d-none d-md-block department-news-rule"
+            role="presentation"
+          ></div>
         </div>
-        <div class="news-grid" id="newsGrid"></div>
-      </div>
-      <!-- /#page-list -->
 
-      <!-- ===== DETAIL PAGE ===== -->
-      <div id="page-detail">
-        <div class="back-bar">
-          <button class="back-btn" id="backBtn"><i class="bi bi-arrow-left"></i> Back to References</button>
-          <div class="back-breadcrumb">References &rsaquo; <span id="bcSection"></span></div>
-        </div>
-        <div class="detail-card">
-          <div class="detail-header">
-            <div class="detail-badges">
-              <span class="detail-badge-cat" id="dCat"></span>
-              <span class="detail-badge-sub" id="dSub"></span>
-            </div>
-            <h2 class="detail-title" id="dTitle"></h2>
-          </div>
-          <div class="detail-body">
-            <div class="detail-section" id="dNotesWrap">
-              <div class="ds-label"><i class="bi bi-card-text"></i> &nbsp;Content</div>
-              <div class="ds-value" id="dNotes"></div>
-            </div>
-            <div class="detail-divider"></div>
-            <div class="detail-section" id="dLinkWrap">
-              <div class="ds-label"><i class="bi bi-link-45deg"></i> &nbsp;Reference Link</div>
-              <div class="detail-link-box">
-                <div class="dlb-url" id="dUrl"></div>
-                <a class="btn-open-link" id="dOpenLink" href="#" target="_blank" rel="noopener noreferrer"> <i class="bi bi-box-arrow-up-right"></i> Open Reference </a>
+        <div class="row g-4 mb-5" aria-label="Department news articles">
+          <div class="col-lg-6">
+            <a
+              href="details-references.html"
+              role="article"
+              class="card h-100 overflow-hidden shadow-sm border rounded-3 news-card news-card--accent-rose text-decoration-none text-reset d-block"
+              aria-label="Open reference details: New Mass Casualty Protocol Implemented Across All Emergency Units"
+            >
+              <div class="row g-0 flex-column flex-md-row h-100">
+                <div
+                  class="col-12 col-md-auto news-card-img flex-shrink-0 overflow-hidden position-relative p-0"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=400&amp;q=80"
+                    class="w-100 h-100 d-block object-fit-cover news-card-img-el"
+                    alt="Emergency surgery team preparing patient care"
+                    width="400"
+                    height="280"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="col min-w-0 d-flex flex-column">
+                  <div
+                    class="card-body d-flex flex-column h-100 p-3 p-sm-4 gap-2"
+                  >
+                    <h3 class="h6 fw-semibold mb-0 news-card-title">
+                      New Mass Casualty Protocol Implemented Across All
+                      Emergency Units
+                    </h3>
+                    <p class="small mb-0 flex-grow-1 lh-base news-card-excerpt">
+                      The Emergency Department has adopted an updated mass
+                      casualty protocol to improve response time and
+                      coordination during large-scale incidents. The Emergency
+                      Department has adopted an updated mass casualty protocol
+                      to improve response time and coordination during
+                      large-scale incidents. The Emergency Department has
+                      adopted an updated mass casualty protocol to improve
+                      response time and coordination during large-scale
+                      incidents.
+                    </p>
+                    <div
+                      class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between flex-wrap gap-2 pt-2 mt-auto small border-top news-card-meta"
+                    >
+                      <div
+                        class="d-flex align-items-center gap-2 min-w-0 flex-grow-1"
+                      >
+                        <div
+                          class="news-author-avatar rounded-circle d-flex align-items-center justify-content-center text-white fw-semibold flex-shrink-0"
+                          aria-hidden="true"
+                        >
+                          AN
+                        </div>
+                        <span class="text-truncate news-card-author"
+                          >Dr. Ahmad Nassar</span
+                        >
+                      </div>
+                      <div
+                        class="d-flex align-items-center gap-1 flex-shrink-0 align-self-sm-end ms-sm-auto"
+                      >
+                        <i class="bi bi-calendar3" aria-hidden="true"></i>
+                        <time datetime="2026-04-08">Apr 8, 2026</time>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="detail-divider"></div>
-            <div class="detail-section" id="dTagsWrap" style="display: none">
-              <div class="ds-label"><i class="bi bi-tags"></i> &nbsp;Tags</div>
-              <div class="detail-tags" id="dTags"></div>
-            </div>
-            <div class="detail-meta-row">
-              <div class="meta-chip"><i class="bi bi-calendar3"></i> <span id="dDate"></span></div>
-              <div class="meta-chip"><i class="bi bi-folder2"></i> <span id="dCategory"></span></div>
-              <div class="meta-chip"><i class="bi bi-tag"></i> <span id="dSubLabel"></span></div>
-            </div>
+            </a>
+          </div>
+
+          <div class="col-lg-6">
+            <a
+              href="details-references.html"
+              role="article"
+              class="card h-100 overflow-hidden shadow-sm border rounded-3 news-card news-card--accent-sky text-decoration-none text-reset d-block"
+              aria-label="Open reference details: Advanced Trauma Life Support (ATLS) Workshop – Registration Open"
+            >
+              <div class="row g-0 flex-column flex-md-row h-100">
+                <div
+                  class="col-12 col-md-auto news-card-img flex-shrink-0 overflow-hidden position-relative p-0"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=400&amp;q=80"
+                    class="w-100 h-100 d-block object-fit-cover news-card-img-el"
+                    alt="Trauma workshop practical training in emergency department"
+                    width="400"
+                    height="280"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="col min-w-0 d-flex flex-column">
+                  <div
+                    class="card-body d-flex flex-column h-100 p-3 p-sm-4 gap-2"
+                  >
+                    <h3 class="h6 fw-semibold mb-0 news-card-title">
+                      Advanced Trauma Life Support (ATLS) Workshop –
+                      Registration Open
+                    </h3>
+                    <p class="small mb-0 flex-grow-1 lh-base news-card-excerpt">
+                      The department is hosting a 2-day ATLS certification
+                      workshop for all emergency physicians and nurses. Limited
+                      seats available.
+                    </p>
+                    <div
+                      class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between flex-wrap gap-2 pt-2 mt-auto small border-top news-card-meta"
+                    >
+                      <div
+                        class="d-flex align-items-center gap-2 min-w-0 flex-grow-1"
+                      >
+                        <div
+                          class="news-author-avatar rounded-circle d-flex align-items-center justify-content-center text-white fw-semibold flex-shrink-0"
+                          aria-hidden="true"
+                        >
+                          NE
+                        </div>
+                        <span class="text-truncate news-card-author"
+                          >Nursing Education Dept.</span
+                        >
+                      </div>
+                      <div
+                        class="d-flex align-items-center gap-1 flex-shrink-0 align-self-sm-end ms-sm-auto"
+                      >
+                        <i class="bi bi-calendar3" aria-hidden="true"></i>
+                        <time datetime="2026-04-06">Apr 6, 2026</time>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-6">
+            <a
+              href="details-references.html"
+              role="article"
+              class="card h-100 overflow-hidden shadow-sm border rounded-3 news-card news-card--accent-teal text-decoration-none text-reset d-block"
+              aria-label="Open reference details: Updated Sepsis Management Pathway – Effective Immediately"
+            >
+              <div class="row g-0 flex-column flex-md-row h-100">
+                <div
+                  class="col-12 col-md-auto news-card-img flex-shrink-0 overflow-hidden position-relative p-0"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&amp;q=80"
+                    class="w-100 h-100 d-block object-fit-cover news-card-img-el"
+                    alt="Medical brain illustration used for sepsis pathway update"
+                    width="400"
+                    height="280"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="col min-w-0 d-flex flex-column">
+                  <div
+                    class="card-body d-flex flex-column h-100 p-3 p-sm-4 gap-2"
+                  >
+                    <h3 class="h6 fw-semibold mb-0 news-card-title">
+                      Updated Sepsis Management Pathway – Effective Immediately
+                    </h3>
+                    <p class="small mb-0 flex-grow-1 lh-base news-card-excerpt">
+                      Following the latest international guidelines, the sepsis
+                      screening and management bundle has been revised with a
+                      new 1-hour treatment target.
+                    </p>
+                    <div
+                      class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between flex-wrap gap-2 pt-2 mt-auto small border-top news-card-meta"
+                    >
+                      <div
+                        class="d-flex align-items-center gap-2 min-w-0 flex-grow-1"
+                      >
+                        <div
+                          class="news-author-avatar rounded-circle d-flex align-items-center justify-content-center text-white fw-semibold flex-shrink-0"
+                          aria-hidden="true"
+                        >
+                          SK
+                        </div>
+                        <span class="text-truncate news-card-author"
+                          >Dr. Sara Al-Khalil</span
+                        >
+                      </div>
+                      <div
+                        class="d-flex align-items-center gap-1 flex-shrink-0 align-self-sm-end ms-sm-auto"
+                      >
+                        <i class="bi bi-calendar3" aria-hidden="true"></i>
+                        <time datetime="2026-04-03">Apr 3, 2026</time>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-6">
+            <a
+              href="details-references.html"
+              role="article"
+              class="card h-100 overflow-hidden shadow-sm border rounded-3 news-card news-card--accent-violet text-decoration-none text-reset d-block"
+              aria-label="Open reference details: New Point-of-Care Ultrasound Machines Now Available in Resuscitation Bay"
+            >
+              <div class="row g-0 flex-column flex-md-row h-100">
+                <div
+                  class="col-12 col-md-auto news-card-img flex-shrink-0 overflow-hidden position-relative p-0"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&amp;q=80"
+                    class="w-100 h-100 d-block object-fit-cover news-card-img-el"
+                    alt="Point-of-care ultrasound assessment in emergency setting"
+                    width="400"
+                    height="280"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="col min-w-0 d-flex flex-column">
+                  <div
+                    class="card-body d-flex flex-column h-100 p-3 p-sm-4 gap-2"
+                  >
+                    <h3 class="h6 fw-semibold mb-0 news-card-title">
+                      New Point-of-Care Ultrasound Machines Now Available in
+                      Resuscitation Bay
+                    </h3>
+                    <p class="small mb-0 flex-grow-1 lh-base news-card-excerpt">
+                      Three new portable ultrasound units have been installed in
+                      the resus bay, providing real-time imaging capabilities
+                      for critical patients.
+                    </p>
+                    <div
+                      class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between flex-wrap gap-2 pt-2 mt-auto small border-top news-card-meta"
+                    >
+                      <div
+                        class="d-flex align-items-center gap-2 min-w-0 flex-grow-1"
+                      >
+                        <div
+                          class="news-author-avatar rounded-circle d-flex align-items-center justify-content-center text-white fw-semibold flex-shrink-0"
+                          aria-hidden="true"
+                        >
+                          EM
+                        </div>
+                        <span class="text-truncate news-card-author"
+                          >Equipment Management</span
+                        >
+                      </div>
+                      <div
+                        class="d-flex align-items-center gap-1 flex-shrink-0 align-self-sm-end ms-sm-auto"
+                      >
+                        <i class="bi bi-calendar3" aria-hidden="true"></i>
+                        <time datetime="2026-03-28">Mar 28, 2026</time>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       </div>
