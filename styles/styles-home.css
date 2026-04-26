@@ -259,6 +259,15 @@ a.news-card:focus-visible {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+.news-card-category {
+  align-self: flex-start;
+  padding: 0.28rem 0.64rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.07em;
+  line-height: 1.05;
+}
+
 /* News excerpt: max 3 lines, then ellipsis (inside flex column) */
 .news-card-excerpt {
   color: var(--clr-text-muted);

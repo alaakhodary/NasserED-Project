@@ -1,62 +1,24 @@
 "use strict";
 
-/**Site-wide behaviour: layout injection, theme, loader, header search, dept nav.*/
+/**Site-wide behaviour: theme, loader, header search, dept nav.*/
 
 const NasserED = (window.NasserED = window.NasserED || {});
 
 /* =============================================================================
-   1) BASE PATH & DYNAMIC SCRIPT LOADING
+   1) NAV ACTIVE STATE
 ============================================================================= */
-
-function getAppBase() {
-  const m = document.querySelector('meta[name="app-base"]');
-  const v = m && m.getAttribute("content");
-  return v == null ? "" : v;
-}
-
-/* =============================================================================
-   2) HEADER & FOOTER INJECTION (partials)
-============================================================================= */
-
-function applyBaseTokens(html) {
-  const base = getAppBase();
-  return html.replace(/\{\{BASE\}\}/g, base);
-}
 
 function setActiveNavLink() {
-  const currentPath = location.pathname.split("/").pop() || "index.html";
+  const currentPath = (location.pathname.split("/").pop() || "index.html").toLowerCase();
   document.querySelectorAll(".dept-navbar .dept-link.active").forEach((el) => el.classList.remove("active"));
-  const activeLink = document.querySelector(`.dept-navbar a.dept-link[href$="${currentPath}"]`);
+  const activeLink = Array.from(document.querySelectorAll('.dept-navbar .dept-item > a.dept-link[href]:not([href="#"])')).find(
+    (link) => (link.getAttribute("href") || "").split("/").pop().toLowerCase() === currentPath
+  );
   if (activeLink) activeLink.classList.add("active");
 }
 
-async function injectLayout() {
-  const base = getAppBase();
-  const headerRoot = document.getElementById("layout-header-root");
-  const footerRoot = document.getElementById("layout-footer-root");
-  if (!headerRoot || !footerRoot) {
-    console.warn("global: missing #layout-header-root or #layout-footer-root");
-    return;
-  }
-
-  const [headerHtml, footerHtml] = await Promise.all([
-    fetch(base + "partials/header.html").then((r) => {
-      if (!r.ok) throw new Error("partials/header.html");
-      return r.text();
-    }),
-    fetch(base + "partials/footer.html").then((r) => {
-      if (!r.ok) throw new Error("partials/footer.html");
-      return r.text();
-    }),
-  ]);
-
-  headerRoot.innerHTML = applyBaseTokens(headerHtml);
-  footerRoot.innerHTML = applyBaseTokens(footerHtml);
-  setActiveNavLink();
-}
-
 /* =============================================================================
-   3) FULL-SCREEN PAGE LOADER (DOM NODE — created before fetch)
+   2) FULL-SCREEN PAGE LOADER
 ============================================================================= */
 
 function ensureGlobalPageLoader() {
@@ -88,8 +50,7 @@ const LOGO_DARK_SRC = "img/logo-dark.webp";
 function updateBrandLogo(isDark) {
   const logo = document.getElementById("brandLogo");
   if (!logo) return;
-  const base = getAppBase();
-  logo.src = (base || "") + (isDark ? LOGO_DARK_SRC : LOGO_LIGHT_SRC);
+  logo.src = isDark ? LOGO_DARK_SRC : LOGO_LIGHT_SRC;
 }
 
 function getStoredTheme() {
@@ -140,7 +101,7 @@ function bindThemeToggle() {
 }
 
 /* =============================================================================
-   5) HEADER SEARCH — INPUT TOGGLE + EXTERNAL TRIGGERS
+   4) HEADER SEARCH — INPUT TOGGLE + EXTERNAL TRIGGERS
 ============================================================================= */
 
 function initSearchToggle() {
@@ -194,7 +155,7 @@ function bindOpenHeaderSearchTriggers() {
 }
 
 /* =============================================================================
-   6) DEPARTMENTS NAV — MOBILE MENU & SUBMENUS
+   5) DEPARTMENTS NAV — MOBILE MENU & SUBMENUS
 ============================================================================= */
 
 function initDeptNav() {
@@ -273,7 +234,7 @@ function initDeptNav() {
 }
 
 /* =============================================================================
-   7) PAGE LOADER — HIDE AFTER LOAD & SHOW ON INTERNAL NAVIGATION
+   6) PAGE LOADER — HIDE AFTER LOAD & SHOW ON INTERNAL NAVIGATION
 ============================================================================= */
 
 function isInternalPageLink(anchor) {
@@ -350,10 +311,11 @@ function initPageLoader() {
 }
 
 /* =============================================================================
-   8) AFTER LAYOUT: WIRE ALL CHROME (order matters)
+   7) INIT SHARED UI BEHAVIOUR
 ============================================================================= */
 
 function initChromeAfterLayout() {
+  setActiveNavLink();
   initThemeFromStorage();
   bindThemeToggle();
   initDeptNav();
@@ -363,30 +325,14 @@ function initChromeAfterLayout() {
 }
 
 /* =============================================================================
-   9) ENTRY — callable manually if needed
+   8) ENTRY — callable manually if needed
 ============================================================================= */
 
-NasserED.startLayout = async function startLayout() {
+NasserED.startLayout = function startLayout() {
   if (NasserED.__layoutStarted) return;
   NasserED.__layoutStarted = true;
   ensureGlobalPageLoader();
-  try {
-    await injectLayout();
-  } catch (e) {
-    console.error(e);
-    const root = document.getElementById("layout-header-root");
-    if (root) {
-      const p = document.createElement("p");
-      p.style.cssText = "padding:12px 16px;background:#7f1d1d;color:#fff;font-size:14px;margin:0;";
-      p.textContent = "تعذّر تحميل الهيدر/الفوتر. شغّل الموقع عبر خادم محلي (مثل Live Server) وليس بفتح الملف مباشرة من القرص.";
-      root.appendChild(p);
-    }
-    return;
-  }
-
   initChromeAfterLayout();
-
-  // Global script stops here; page-specific scripts load from each page HTML.
 };
 
 // Allow direct usage via <script src="scripts/global.js"></script>

@@ -200,12 +200,12 @@ body.page-loading {
 .topbar {
   top: 0;
   z-index: 800;
-  /* height: var(--topbar-h); */
   background: var(--clr-bg-card);
   border-bottom: 1px solid var(--clr-border);
   transition:
     background var(--tr),
     border-color var(--tr);
+  min-height: 82px;
 }
 a.brand {
   color: inherit;
@@ -304,13 +304,12 @@ a.brand {
    Shared departments navigation with nested dropdowns.
 ============================================= */
 .dept-navbar {
-  position: sticky;
   background: var(--clr-sidebar);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   top: var(--topbar-h);
   z-index: 750;
   box-shadow: 0 2px 12px rgba(11, 45, 72, 0.18);
-  margin-top: 5.3rem;
+  margin-top: 5.2rem;
 }
 
 /* Mobile: open / close full menu */
