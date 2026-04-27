@@ -1,0 +1,231 @@
+/* Shared responsive rules for all dashboard pages — load after the page CSS */
+
+/* -------------------------------------------------------------------------- */
+/* Sidebar brand — logo size & typography (all dashboard pages)                */
+/* -------------------------------------------------------------------------- */
+.dashboard-shell .sidebar .brand img {
+  width: 9rem;
+  height: 7rem;
+  border-radius: 10px;
+}
+
+.dashboard-shell .sidebar .brand strong {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.dashboard-shell .sidebar .brand small {
+  font-size: 8px;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Layout: sidebar stacks; main area scrolls within the viewport (mobile)     */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+  .dashboard-shell {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+    height: 100dvh;
+    min-height: 0;
+  }
+
+  .sidebar {
+    border-right: 0;
+    border-bottom: 1px solid var(--border, #173862);
+    max-height: min(50vh, 22rem);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .main-panel {
+    height: auto;
+    min-height: 0;
+    padding: 16px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Topbar                                                                 */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+
+  .topbar h1 {
+    font-size: 1.35rem;
+  }
+
+  .topbar .topbar-left {
+    width: 100%;
+  }
+
+  .topbar .topbar-right {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Stat + action rows (Admins, Slider, Department News, Senior Staff, Impact) */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+  .admins-top-row,
+  .slider-top-row,
+  .news-top-row,
+  .staff-top-row,
+  .impact-top-row {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+
+  .admins-top-row .stat-card,
+  .slider-top-row .stat-card,
+  .staff-top-row .stat-card,
+  .impact-top-row .stat-card {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .news-top-row .stats-grid {
+    min-width: 0 !important;
+    width: 100%;
+  }
+
+  .news-add-wrap,
+  .admins-add-wrap,
+  .slider-add-wrap {
+    width: 100%;
+  }
+
+  .news-add-wrap .btn,
+  .admins-add-wrap .btn,
+  .slider-add-wrap .btn {
+    width: 100%;
+  }
+
+  .staff-actions-wrap,
+  .impact-actions-wrap {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .staff-actions-wrap .btn,
+  .impact-actions-wrap .btn {
+    width: 100%;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Panel title row (list + Clear All, etc.)                                  */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 575.98px) {
+  .panel-head.d-flex {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+
+  .panel-head.d-flex h2 {
+    text-align: left;
+  }
+
+  .panel-head.d-flex .btn {
+    width: 100%;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Data tables: smooth horizontal scroll on touch                              */
+/* -------------------------------------------------------------------------- */
+.table-wrap {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Action button groups in tables                                            */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 575.98px) {
+  .actions-cell {
+    flex-wrap: wrap;
+  }
+
+  .actions-cell .btn {
+    min-width: 2.25rem;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Senior staff: bio column on narrow viewports                                 */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 575.98px) {
+  .staff-bio-cell {
+    max-width: 200px;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Sidebar nav: two columns on very small screens to save vertical space   */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .sidebar .sidebar-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .sidebar .sidebar-nav .nav-title {
+    grid-column: 1 / -1;
+  }
+
+  .sidebar .nav-link-item {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Modals: usable on small phones                                            */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 575.98px) {
+  .modal-dialog {
+    margin: 0.5rem;
+    max-width: calc(100% - 1rem);
+  }
+
+  .modal-dialog.modal-lg {
+    max-width: calc(100% - 1rem);
+  }
+
+  .modal-body {
+    max-height: min(70dvh, 32rem);
+    overflow-y: auto;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Tighter padding on very small screens                                     */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 400px) {
+  .main-panel {
+    padding: 12px;
+  }
+
+  .panel-card {
+    padding: 12px;
+  }
+}
