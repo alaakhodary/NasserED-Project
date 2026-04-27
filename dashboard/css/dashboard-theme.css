@@ -1,0 +1,289 @@
+/* Light theme + Bootstrap bridges for the whole dashboard.
+   Structural colors (--bg-main, etc.) come from html[data-theme="light"] below.
+   Form/table/nav detail tokens come from dashboard-variables.css */
+
+html[data-theme="light"] {
+  --bg-main: #e8eef7;
+  --bg-sidebar: #d8e4f5;
+  --bg-card: #ffffff;
+  --bg-card-soft: #eef3fb;
+  --border: #b8c9e0;
+  --text-main: #0f2744;
+  --text-muted: #4a6282;
+  --accent-soft: rgba(37, 99, 235, 0.14);
+  --link-info: #0d6efd;
+  color-scheme: light;
+}
+
+html[data-theme="dark"],
+html:not([data-theme]) {
+  color-scheme: dark;
+}
+
+/* ----- Shell typography ----- */
+html[data-theme="light"] .dashboard-shell .topbar h1,
+html[data-theme="light"] .dashboard-shell .panel-head h2 {
+  color: var(--text-main);
+}
+
+html[data-theme="light"] .dashboard-shell .stat-card strong {
+  color: var(--text-main);
+}
+
+html[data-theme="light"] .dashboard-shell .sidebar-footer-brand {
+  color: var(--text-main);
+}
+
+html[data-theme="light"] .dashboard-shell .password-cell span {
+  color: var(--text-main);
+}
+
+/* ----- Nav (active state uses --dash-nav-active via page CSS) ----- */
+html[data-theme="light"] .dashboard-shell .nav-link-item.active {
+  border-color: rgba(37, 99, 235, 0.45);
+}
+
+/* ----- Forms: placeholder + file button + validation ----- */
+html[data-theme="light"] .dashboard-shell .form-control::placeholder,
+html[data-theme="light"] .modal .form-control::placeholder {
+  color: #6b7d95;
+  opacity: 1;
+}
+
+html[data-theme="light"] .dashboard-shell .form-control::file-selector-button,
+html[data-theme="light"] .modal .form-control::file-selector-button {
+  background: var(--bg-card-soft);
+  color: var(--text-main);
+  border-color: var(--border);
+}
+
+html[data-theme="light"] .dashboard-shell .was-validated .form-control:invalid,
+html[data-theme="light"] .modal .was-validated .form-control:invalid {
+  border-color: #dc3545;
+}
+
+html[data-theme="light"] .dashboard-shell .invalid-feedback,
+html[data-theme="light"] .modal .invalid-feedback {
+  color: #b42318;
+}
+
+/* ----- Links in tables ----- */
+html[data-theme="light"] .dashboard-shell a.link-info {
+  color: var(--link-info);
+}
+
+/* ----- Modals (Bootstrap bg-dark / text-light) ----- */
+html[data-theme="light"] .modal-content.bg-dark {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border) !important;
+}
+
+html[data-theme="light"] .modal-content.text-light,
+html[data-theme="light"] .modal-content.bg-dark.text-light,
+html[data-theme="light"] .modal-content.text-light .modal-body,
+html[data-theme="light"] .modal-content.text-light .modal-header,
+html[data-theme="light"] .modal-content.text-light .modal-footer,
+html[data-theme="light"] .modal-content.text-light .modal-title {
+  color: var(--text-main) !important;
+}
+
+html[data-theme="light"] .modal-content .modal-header.border-secondary,
+html[data-theme="light"] .modal-content .modal-footer.border-secondary {
+  border-color: var(--border) !important;
+}
+
+html[data-theme="light"] .modal-content .modal-title {
+  color: var(--text-main);
+}
+
+html[data-theme="light"] .modal-content .btn-close-white {
+  filter: invert(1) grayscale(1);
+}
+
+html[data-theme="light"] .modal-content .btn-outline-light {
+  color: var(--text-main);
+  border-color: var(--border);
+}
+
+html[data-theme="light"] .modal-content .btn-outline-light:hover {
+  background: var(--bg-card-soft);
+  color: var(--text-main);
+}
+
+html[data-theme="light"] .modal-content .text-secondary {
+  color: var(--text-muted) !important;
+}
+
+html[data-theme="light"] .modal-content .link-info {
+  color: var(--link-info);
+}
+
+html[data-theme="light"] .modal .btn-outline-info {
+  color: #0a58ca;
+  border-color: #6ea8fe;
+}
+
+html[data-theme="light"] .modal .btn-outline-info:hover {
+  background: #e7f1ff;
+  color: #052c65;
+}
+
+html[data-theme="light"] .modal-backdrop.show {
+  opacity: 0.45;
+}
+
+/* ----- Panel & main action buttons ----- */
+html[data-theme="light"] .dashboard-shell .panel-card .btn-outline-light {
+  color: var(--text-main);
+  border-color: var(--border);
+}
+
+html[data-theme="light"] .dashboard-shell .panel-card .btn-outline-light:hover {
+  background: var(--bg-card-soft);
+  color: var(--text-main);
+}
+
+html[data-theme="light"] .dashboard-shell .btn-outline-primary {
+  color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+html[data-theme="light"] .dashboard-shell .btn-outline-primary:hover {
+  background: #e7f1ff;
+  color: #0a58ca;
+}
+
+html[data-theme="light"] .dashboard-shell .btn-outline-danger {
+  color: #b02a37;
+  border-color: #dc3545;
+}
+
+html[data-theme="light"] .dashboard-shell .btn-outline-danger:hover {
+  background: #f8d7da;
+  color: #842029;
+}
+
+html[data-theme="light"] .dashboard-shell .btn-outline-warning {
+  color: #997404;
+  border-color: #ffc107;
+}
+
+html[data-theme="light"] .dashboard-shell .btn-outline-warning:hover {
+  background: #fff3cd;
+  color: #664d03;
+}
+
+html[data-theme="light"] .dashboard-shell .btn-outline-success {
+  color: #0f5132;
+  border-color: #198754;
+}
+
+html[data-theme="light"] .dashboard-shell .btn-outline-success:hover {
+  background: #d1e7dd;
+  color: #0a3622;
+}
+
+html[data-theme="light"] .dashboard-shell .btn-outline-info {
+  color: #0a58ca;
+  border-color: #6ea8fe;
+}
+
+html[data-theme="light"] .dashboard-shell .btn-outline-info:hover {
+  background: #e7f1ff;
+  color: #052c65;
+}
+
+/* ----- Inline code in tables ----- */
+html[data-theme="light"] .news-table code,
+html[data-theme="light"] .slides-table code {
+  color: var(--text-main);
+  background: rgba(15, 39, 68, 0.06);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+/* ----- Theme toggle ----- */
+.sidebar-theme-toggle-wrap {
+  margin-top: 6px;
+  margin-bottom: 8px;
+}
+
+.dashboard-theme-toggle {
+  --dt-toggle-border: rgba(255, 255, 255, 0.35);
+  --dt-toggle-bg: rgba(255, 255, 255, 0.06);
+  --dt-toggle-color: #e9f1ff;
+  border: 1px solid var(--dt-toggle-border);
+  background: var(--dt-toggle-bg);
+  color: var(--dt-toggle-color);
+  font-size: 13px;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+
+.dashboard-theme-toggle .theme-toggle-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.dashboard-theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+html[data-theme="light"] .dashboard-theme-toggle {
+  --dt-toggle-border: rgba(15, 39, 68, 0.2);
+  --dt-toggle-bg: rgba(255, 255, 255, 0.85);
+  --dt-toggle-color: var(--text-main);
+}
+
+html[data-theme="light"] .dashboard-theme-toggle:hover {
+  background: #fff;
+  color: var(--text-main);
+}
+
+html[data-theme="light"] input[type="date"],
+html[data-theme="light"] input[type="time"] {
+  color-scheme: light;
+}
+
+.dashboard-theme-toggle:focus-visible {
+  outline: 2px solid rgba(59, 130, 246, 0.65);
+  outline-offset: 2px;
+}
+
+/* Sidebar footer — support / attribution */
+.dashboard-shell .sidebar-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 12px 14px;
+}
+
+.dashboard-shell .sidebar-footer-eyebrow {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+.dashboard-shell .sidebar-footer-brand {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.dashboard-shell .sidebar-footer-year {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  opacity: 0.92;
+  margin-top: 1px;
+}

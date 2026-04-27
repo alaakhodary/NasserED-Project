@@ -1,0 +1,28 @@
+/* Shared tokens for dashboard UI — load before each page’s *.css */
+
+:root {
+  --dash-input-bg: #08203c;
+  --dash-input-border: #20436f;
+  --dash-label: #b9ccec;
+  --dash-th-text: #b6cae9;
+  --dash-th-bg: #0a213f;
+  --dash-td-text: #e8f1ff;
+  --dash-thumb-border: #2e5790;
+  --dash-nav-active: #bcd7ff;
+  --dash-topbar-status: #bcefd0;
+  --dash-bio-muted: #c8d9f0;
+}
+
+html[data-theme="light"] {
+  --dash-input-bg: #ffffff;
+  --dash-input-border: #8fa8c9;
+  --dash-label: #4a6282;
+  --dash-th-text: #3d5570;
+  --dash-th-bg: #e2ebf7;
+  --dash-td-text: #0f2744;
+  --dash-thumb-border: #b8c9e0;
+  --dash-nav-active: #1d4ed8;
+  --dash-topbar-status: #166534;
+  --dash-bio-muted: #4a6282;
+  --success: #16a34a;
+}
