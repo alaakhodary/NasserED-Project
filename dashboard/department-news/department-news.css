@@ -35,6 +35,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  min-height: 0;
 }
 
 .brand {

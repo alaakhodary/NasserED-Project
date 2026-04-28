@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NasserED Dashboard | UK-MED</title>
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("dashboard-theme");
+          if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="../css/dashboard-variables.css" />
+    <link rel="stylesheet" href="uk-med.css" />
+    <link rel="stylesheet" href="../css/dashboard-theme.css" />
+    <link rel="stylesheet" href="../css/dashboard-responsive.css" />
+  </head>
+  <body>
+    <div class="dashboard-shell">
+      <aside class="sidebar">
+        <a href="../../index.html" class="brand text-decoration-none">
+          <img src="../../img/logo-dark.webp" alt="NasserED" data-dashboard-logo />
+          <div>
+            <strong>NasserED</strong>
+            <small>NMC EMERGENCY DEPARTMENT</small>
+          </div>
+        </a>
+        <nav class="sidebar-nav">
+          <p class="nav-title">Content Management</p>
+          <a class="nav-link-item" href="../admins/index.html"><i class="bi bi-people"></i> Admins</a>
+          <a class="nav-link-item" href="../slider/index.html"><i class="bi bi-sliders"></i> Slider</a>
+          <a class="nav-link-item" href="../department-news/index.html"><i class="bi bi-newspaper"></i> Department News</a>
+          <a class="nav-link-item" href="../senior-staff/index.html"><i class="bi bi-person-badge"></i> Senior Staff</a>
+          <a class="nav-link-item" href="../impact/index.html"><i class="bi bi-bar-chart-line"></i> Impact</a>
+          <details class="nav-dropdown" open>
+            <summary class="nav-link-item active"><i class="bi bi-file-earmark-text"></i> Pages <i class="bi bi-chevron-down nav-caret"></i></summary>
+            <div class="nav-dropdown-menu">
+              <a class="nav-link-item nav-link-sub" href="index.html"><i class="bi bi-mic"></i> Podcast</a>
+              <a class="nav-link-item nav-link-sub" href="mci-plan.html"><i class="bi bi-journal-text"></i> MCI Plan</a>
+              <a class="nav-link-item nav-link-sub active" href="uk-med.html"><i class="bi bi-shield-check"></i> UK-MED</a>
+            </div>
+          </details>
+        </nav>
+        <div class="sidebar-theme-toggle-wrap px-1">
+          <button type="button" class="dashboard-theme-toggle w-100 d-flex align-items-center justify-content-center gap-2" data-theme-toggle>
+            <i class="bi bi-sun-fill" aria-hidden="true"></i>
+            <span class="theme-toggle-label">Theme</span>
+          </button>
+        </div>
+        <div class="sidebar-footer">
+          <span class="sidebar-footer-eyebrow">Support &amp; development</span>
+          <span class="sidebar-footer-brand">UK-MED</span>
+          <span class="sidebar-footer-year">&copy; 2026</span>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div class="topbar-left">
+            <h1>UK-MED</h1>
+            <p>Dashboard / Pages / UK-MED</p>
+          </div>
+          <div class="topbar-right">
+            <span class="status-dot"></span>
+            <span class="status-label">Page Builder</span>
+          </div>
+        </header>
+
+        <section class="ukmed-grid">
+          <article class="panel-card">
+            <div class="panel-head mb-3">
+              <h2 class="mb-0">Section 1 — Hero (Icon / Title / Subtitle)</h2>
+            </div>
+            <div class="row g-2">
+              <div class="col-12 col-lg-4">
+                <label class="form-label" for="ukMedHeroIcon">Icon (Bootstrap icon class)</label>
+                <input id="ukMedHeroIcon" class="form-control" type="text" placeholder="bi bi-shield-check" />
+              </div>
+              <div class="col-12 col-lg-4">
+                <label class="form-label" for="ukMedHeroTitle">Title</label>
+                <input id="ukMedHeroTitle" class="form-control" type="text" placeholder="UK-MED" />
+              </div>
+              <div class="col-12 col-lg-4">
+                <label class="form-label" for="ukMedHeroSubtitle">Subtitle</label>
+                <input id="ukMedHeroSubtitle" class="form-control" type="text" placeholder="Medical Excellence Partner" />
+              </div>
+            </div>
+
+            <div class="ukmed-preview mt-3">
+              <div class="ukmed-hero-preview" id="ukMedHeroPreview" aria-label="UK-MED hero preview"></div>
+            </div>
+          </article>
+
+          <article class="panel-card ukmed-editor-card">
+            <div class="panel-head d-flex align-items-center justify-content-between gap-2 mb-3">
+              <h2 class="mb-0">Section 2 — Rich Editor</h2>
+              <div class="d-flex gap-2 flex-wrap">
+                <select id="ukMedRichTarget" class="form-select form-select-sm w-auto">
+                  <option value="story">Story</option>
+                  <option value="activities">Activities</option>
+                </select>
+                <button class="btn btn-outline-light btn-sm" id="ukMedResetBtn" type="button"><i class="bi bi-arrow-counterclockwise"></i> Reset</button>
+                <button class="btn btn-primary btn-sm" id="ukMedSaveBtn" type="button"><i class="bi bi-floppy"></i> Save</button>
+              </div>
+            </div>
+            <textarea id="ukMedRichEditor" class="rich-editor" aria-label="UK-MED rich editor"></textarea>
+            <p class="editor-hint mb-0">This content will appear in the UK-MED page on the website.</p>
+          </article>
+
+          <article class="panel-card">
+            <div class="panel-head d-flex align-items-center justify-content-between gap-2 mb-3">
+              <h2 class="mb-0">Section 3 — Feature Cards</h2>
+              <div class="d-flex gap-2 flex-wrap">
+                <button class="btn btn-outline-light btn-sm" id="ukMedAddFeatureBtn" type="button"><i class="bi bi-plus-circle"></i> Add Card</button>
+                <button class="btn btn-outline-light btn-sm" id="ukMedClearFeaturesBtn" type="button"><i class="bi bi-trash3"></i> Clear</button>
+              </div>
+            </div>
+            <div id="ukMedFeaturesTableWrap" class="table-wrap"></div>
+            <div class="mt-3">
+              <div class="ukmed-features-preview row row-cols-1 row-cols-md-3 g-3 g-md-4" id="ukMedFeaturesPreview" aria-label="Feature cards preview"></div>
+            </div>
+          </article>
+
+          <article class="panel-card">
+            <div class="panel-head mb-3">
+              <h2 class="mb-0">Section 4 — UK-MED URL</h2>
+            </div>
+            <label class="form-label" for="ukMedUrl">Website Link</label>
+            <input id="ukMedUrl" class="form-control" type="url" placeholder="https://www.uk-med.org/..." />
+            <div class="ukmed-link-preview mt-3">
+              <a id="ukMedUrlPreview" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline-info d-inline-flex align-items-center gap-2">
+                <i class="bi bi-globe"></i>
+                <span>Open link</span>
+              </a>
+            </div>
+            <p class="editor-hint mb-0 mt-2">This link will update the main button on the UK-MED page.</p>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal fade" id="ukMedFeatureModal" tabindex="-1" aria-labelledby="ukMedFeatureModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content bg-dark text-light border-secondary">
+          <div class="modal-header border-secondary">
+            <h5 class="modal-title" id="ukMedFeatureModalLabel">Add Feature Card</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form id="ukMedFeatureForm" novalidate>
+            <div class="modal-body">
+              <div class="row g-3">
+                <div class="col-12 col-lg-4">
+                  <label for="ukMedFeatureIcon" class="form-label">Icon</label>
+                  <input id="ukMedFeatureIcon" name="icon" class="form-control" type="text" placeholder="bi bi-book-half" required />
+                  <div class="invalid-feedback">Icon is required.</div>
+                </div>
+                <div class="col-12 col-lg-4">
+                  <label for="ukMedFeatureTitle" class="form-label">Title</label>
+                  <input id="ukMedFeatureTitle" name="title" class="form-control" type="text" placeholder="Medical Education" required />
+                  <div class="invalid-feedback">Title is required.</div>
+                </div>
+                <div class="col-12 col-lg-4">
+                  <label for="ukMedFeatureSubtitle" class="form-label">Subtitle</label>
+                  <input id="ukMedFeatureSubtitle" name="subtitle" class="form-control" type="text" placeholder="Comprehensive training programs..." required />
+                  <div class="invalid-feedback">Subtitle is required.</div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer border-secondary">
+              <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
+              <button class="btn btn-primary" id="ukMedFeatureSubmitBtn" type="submit"><i class="bi bi-plus-circle"></i> Add Card</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tinymce@7/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="../js/dashboard-theme.js"></script>
+    <script src="uk-med.js"></script>
+  </body>
+</html>

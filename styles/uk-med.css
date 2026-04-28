@@ -24,6 +24,13 @@
   color: var(--clr-text);
 }
 
+.uk-med-title-text {
+  display: block;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .uk-med-subtitle,
 .uk-med-story p,
 .uk-med-activities p,

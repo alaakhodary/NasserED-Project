@@ -5,7 +5,7 @@
   const root = document.documentElement;
 
   function logoPath(theme) {
-    return theme === "light" ? "../../img/logo.webp" : "../../img/logo-dark.webp";
+    return "../../img/logo-dark.webp";
   }
 
   function apply(theme) {

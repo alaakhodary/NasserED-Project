@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NasserED Dashboard | Slider</title>
+    <title>NasserED Dashboard | Pages</title>
     <script>
       (function () {
         try {
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="../css/dashboard-variables.css" />
-    <link rel="stylesheet" href="slider.css" />
+    <link rel="stylesheet" href="podcast.css" />
     <link rel="stylesheet" href="../css/dashboard-theme.css" />
     <link rel="stylesheet" href="../css/dashboard-responsive.css" />
   </head>
@@ -32,16 +32,16 @@
         <nav class="sidebar-nav">
           <p class="nav-title">Content Management</p>
           <a class="nav-link-item" href="../admins/index.html"><i class="bi bi-people"></i> Admins</a>
-          <a class="nav-link-item active" href="index.html"><i class="bi bi-sliders"></i> Slider</a>
+          <a class="nav-link-item" href="../slider/index.html"><i class="bi bi-sliders"></i> Slider</a>
           <a class="nav-link-item" href="../department-news/index.html"><i class="bi bi-newspaper"></i> Department News</a>
           <a class="nav-link-item" href="../senior-staff/index.html"><i class="bi bi-person-badge"></i> Senior Staff</a>
           <a class="nav-link-item" href="../impact/index.html"><i class="bi bi-bar-chart-line"></i> Impact</a>
-          <details class="nav-dropdown">
-            <summary class="nav-link-item"><i class="bi bi-file-earmark-text"></i> Pages <i class="bi bi-chevron-down nav-caret"></i></summary>
+          <details class="nav-dropdown" open>
+            <summary class="nav-link-item active"><i class="bi bi-file-earmark-text"></i> Pages <i class="bi bi-chevron-down nav-caret"></i></summary>
             <div class="nav-dropdown-menu">
-              <a class="nav-link-item nav-link-sub" href="../pages/index.html"><i class="bi bi-mic"></i> Podcast</a>
-              <a class="nav-link-item nav-link-sub" href="../pages/mci-plan.html"><i class="bi bi-journal-text"></i> MCI Plan</a>
-              <a class="nav-link-item nav-link-sub" href="../pages/uk-med.html"><i class="bi bi-shield-check"></i> UK-MED</a>
+              <a class="nav-link-item nav-link-sub active" href="index.html"><i class="bi bi-mic"></i> Podcast</a>
+              <a class="nav-link-item nav-link-sub" href="mci-plan.html"><i class="bi bi-journal-text"></i> MCI Plan</a>
+              <a class="nav-link-item nav-link-sub" href="uk-med.html"><i class="bi bi-shield-check"></i> UK-MED</a>
             </div>
           </details>
         </nav>
@@ -61,125 +61,105 @@
       <main class="main-panel">
         <header class="topbar">
           <div class="topbar-left">
-            <h1>Slider</h1>
-            <p>Dashboard / Slider</p>
+            <h1>Pages</h1>
+            <p>Dashboard / Pages / Podcast</p>
           </div>
           <div class="topbar-right">
             <span class="status-dot"></span>
-            <span class="status-label">Controls Hero Slider</span>
+            <span class="status-label">Manage Podcast Page Content</span>
           </div>
         </header>
 
-        <section class="slider-top-row d-flex align-items-stretch justify-content-between gap-3 mb-3 flex-wrap">
+        <section class="podcast-top-row d-flex align-items-stretch justify-content-between gap-3 mb-3 flex-wrap">
           <article class="stat-card mb-0">
-            <div class="stat-head"><i class="bi bi-images"></i><span>Total Slides</span></div>
-            <strong id="totalSlides">0</strong>
+            <div class="stat-head"><i class="bi bi-mic-fill"></i><span>Podcast Items</span></div>
+            <strong id="totalPodcastItems">0</strong>
           </article>
-          <div class="slider-add-wrap d-flex align-items-center">
-            <button class="btn btn-primary btn-sm" id="openAddSlideBtn" type="button"><i class="bi bi-plus-circle"></i> Add Slide</button>
+          <div class="podcast-add-wrap d-flex align-items-center">
+            <button class="btn btn-primary btn-sm" id="openAddPodcastBtn" type="button"><i class="bi bi-plus-circle"></i> Add Podcast</button>
           </div>
         </section>
 
         <section class="content-grid content-grid-list-only">
           <article class="panel-card">
             <div class="panel-head d-flex align-items-center justify-content-between gap-2 mb-3">
-              <h2 class="mb-0">Slides List</h2>
-              <button class="btn btn-outline-light btn-sm" id="clearSlidesBtn" type="button"><i class="bi bi-trash3"></i> Clear All</button>
+              <h2 class="mb-0">Podcast List</h2>
+              <button class="btn btn-outline-light btn-sm" id="clearPodcastBtn" type="button"><i class="bi bi-trash3"></i> Clear All</button>
             </div>
-            <div id="slidesTableWrap" class="table-wrap"></div>
+            <div id="podcastTableWrap" class="table-wrap"></div>
           </article>
         </section>
       </main>
     </div>
-    <div class="modal fade" id="deleteSlideModal" tabindex="-1" aria-labelledby="deleteSlideModalLabel" aria-hidden="true">
+
+    <div class="modal fade" id="deletePodcastModal" tabindex="-1" aria-labelledby="deletePodcastModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content bg-dark text-light border-secondary">
           <div class="modal-header border-secondary">
-            <h5 class="modal-title" id="deleteSlideModalLabel">Confirm Delete</h5>
+            <h5 class="modal-title" id="deletePodcastModalLabel">Confirm Delete</h5>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">
-            Are you sure you want to delete this slide?
-          </div>
+          <div class="modal-body">Are you sure you want to delete this podcast item?</div>
           <div class="modal-footer border-secondary">
             <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-danger" id="confirmDeleteSlideBtn"><i class="bi bi-trash3"></i> Delete</button>
+            <button type="button" class="btn btn-danger" id="confirmDeletePodcastBtn"><i class="bi bi-trash3"></i> Delete</button>
           </div>
         </div>
       </div>
     </div>
-    <div class="modal fade" id="clearAllSlidesModal" tabindex="-1" aria-labelledby="clearAllSlidesModalLabel" aria-hidden="true">
+
+    <div class="modal fade" id="clearAllPodcastModal" tabindex="-1" aria-labelledby="clearAllPodcastModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content bg-dark text-light border-secondary">
           <div class="modal-header border-secondary">
-            <h5 class="modal-title" id="clearAllSlidesModalLabel">Confirm Clear All</h5>
+            <h5 class="modal-title" id="clearAllPodcastModalLabel">Confirm Clear All</h5>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">
-            Are you sure you want to delete all slides?
-          </div>
+          <div class="modal-body">Are you sure you want to delete all podcast items?</div>
           <div class="modal-footer border-secondary">
             <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-danger" id="confirmClearAllSlidesBtn"><i class="bi bi-trash3"></i> Clear All</button>
+            <button type="button" class="btn btn-danger" id="confirmClearAllPodcastBtn"><i class="bi bi-trash3"></i> Clear All</button>
           </div>
         </div>
       </div>
     </div>
-    <div class="modal fade" id="slideModal" tabindex="-1" aria-labelledby="slideModalLabel" aria-hidden="true">
+
+    <div class="modal fade" id="podcastModal" tabindex="-1" aria-labelledby="podcastModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content bg-dark text-light border-secondary">
           <div class="modal-header border-secondary">
-            <h5 class="modal-title" id="slideModalLabel">Add Slide</h5>
+            <h5 class="modal-title" id="podcastModalLabel">Add Podcast</h5>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <form id="sliderForm" novalidate>
+          <form id="podcastForm" novalidate>
             <div class="modal-body">
               <div class="mb-3">
-                <label for="image" class="form-label">Image</label>
-                <input id="image" name="image" class="form-control" type="file" accept="image/*" />
-                <div class="invalid-feedback">Please select an image.</div>
+                <label for="pageTitle" class="form-label">Page Title</label>
+                <input id="pageTitle" name="pageTitle" class="form-control" type="text" required />
+                <div class="invalid-feedback">Page title is required.</div>
               </div>
               <div class="mb-3">
-                <label for="title" class="form-label">Title</label>
-                <input id="title" name="title" class="form-control" type="text" required />
-                <div class="invalid-feedback">Title is required.</div>
-              </div>
-              <div class="mb-3">
-                <label for="subtitle" class="form-label">Subtitle</label>
-                <input id="subtitle" name="subtitle" class="form-control" type="text" required />
-                <div class="invalid-feedback">Subtitle is required.</div>
-              </div>
-              <div class="mb-3">
-                <label for="description" class="form-label">Description</label>
-                <textarea id="description" name="description" class="form-control" rows="3" required></textarea>
-                <div class="invalid-feedback">Description is required.</div>
-              </div>
-              <div class="mb-3">
-                <label for="descriptionIcon" class="form-label">Description Icon</label>
-                <input id="descriptionIcon" name="descriptionIcon" class="form-control" type="text" placeholder="bi bi-shield-plus-fill" required />
-                <div class="invalid-feedback">Icon class is required.</div>
-              </div>
-              <div class="mb-3">
-                <label for="buttonLabel" class="form-label">Button Label</label>
-                <input id="buttonLabel" name="buttonLabel" class="form-control" type="text" required />
-                <div class="invalid-feedback">Button label is required.</div>
+                <label for="videoLabel" class="form-label">Video Label</label>
+                <input id="videoLabel" name="videoLabel" class="form-control" type="text" required />
+                <div class="invalid-feedback">Video label is required.</div>
               </div>
               <div class="mb-1">
-                <label for="buttonRoute" class="form-label">Button Route</label>
-                <input id="buttonRoute" name="buttonRoute" class="form-control" type="text" placeholder="knowledge.html or https://..." required />
-                <div class="invalid-feedback">Button route is required.</div>
+                <label for="videoUrl" class="form-label">Video URL</label>
+                <input id="videoUrl" name="videoUrl" class="form-control" type="url" placeholder="https://..." required />
+                <div class="invalid-feedback">A valid video URL is required.</div>
               </div>
             </div>
             <div class="modal-footer border-secondary">
               <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
-              <button class="btn btn-primary" id="submitSlideBtn" type="submit"><i class="bi bi-plus-circle"></i> Add Slide</button>
+              <button class="btn btn-primary" id="submitPodcastBtn" type="submit"><i class="bi bi-plus-circle"></i> Add Podcast</button>
             </div>
           </form>
         </div>
       </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/dashboard-theme.js"></script>
-    <script src="slider.js"></script>
+    <script src="podcast.js"></script>
   </body>
 </html>

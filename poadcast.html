@@ -308,14 +308,14 @@
           <nav aria-label="breadcrumb" class="mb-3">
             <ol class="breadcrumb small mb-0">
               <li class="breadcrumb-item"><a href="index.html" class="text-primary">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Training videos</li>
+              <li class="breadcrumb-item active" id="podcastBreadcrumbTitle" aria-current="page">Training videos</li>
             </ol>
           </nav>
-          <h1 class="h2 fw-bold mb-2">Title here for this page</h1>
+          <h1 class="h2 fw-bold mb-2" id="podcastPageTitle">Title here for this page</h1>
         </header>
 
         <!-- col-12 → 1 / md-6 → 2 / lg-4 → 3 per row -->
-        <div class="row g-4 g-lg-5">
+        <div class="row g-4 g-lg-5" id="podcastTilesRow">
           <div class="col-12 col-md-6 col-lg-4">
             <article class="video-tile h-100 d-flex flex-column">
               <h2 class="h5 fw-semibold text-center mb-3 video-title">Wesam Awad</h2>
@@ -430,6 +430,7 @@
       </div>
     </footer>
 
+    <script src="scripts/podcast.js"></script>
     <script src="scripts/global.js"></script>
   </body>
 </html>

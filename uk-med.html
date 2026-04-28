@@ -314,15 +314,16 @@
         <div class="uk-med-content card border shadow-sm mx-auto text-center p-4 p-md-5">
           <div class="uk-med-header mb-4 mb-md-5">
             <div class="uk-med-logo display-3 mb-3">
-              <i class="bi bi-shield-check"></i>
+              <i id="ukMedHeroIcon" class="bi bi-shield-check" aria-hidden="true"></i>
             </div>
             <h1 class="uk-med-title h1 mb-2">
               <img id="ukMedTitleImage" src="img/uk-med.webp" data-light-src="img/uk-med.webp" data-dark-src="img/uk-med-dark.webp" alt="UK-MED" class="img-fluid w-75 mx-auto d-block" width="800" height="200" decoding="async" />
+              <span id="ukMedHeroTitleText" class="uk-med-title-text d-none"></span>
             </h1>
-            <p class="uk-med-subtitle fs-6 fw-light mb-0">Medical Excellence Partner</p>
+            <p id="ukMedHeroSubtitle" class="uk-med-subtitle fs-6 fw-light mb-0">Medical Excellence Partner</p>
           </div>
 
-          <div class="uk-med-story text-start mx-auto mb-4 mb-md-5">
+          <div class="uk-med-story text-start mx-auto mb-4 mb-md-5" id="ukMedRichContent">
             <h2 class="uk-med-story-title h2 text-center mb-3">UK-MED at Nasser Medical Complex</h2>
             <p>Nasser Medical Complex (NMC) serves as the primary tertiary referral centre for southern Gaza and the main hub for emergency, trauma, surgical, and medical services. UK-Med has played a key role in supporting the continuity and resilience of services at NMC, particularly within the Emergency Department.</p>
             <p>Despite sustained pressure from recurrent mass-casualty incidents, infrastructure degradation, and ongoing supply chain constraints, the facility continues to function as the critical point for stabilisation and referral in the region. The Emergency Department remains under continuous strain, reflecting its central role in managing both routine medical needs and sudden surges in trauma-related presentations.</p>
@@ -330,14 +331,16 @@
             <p>Support of Nasser Medical Complex's Emergency Department has been generously funded by the UK's Foreign Commonwealth and Development Office (FCDO), and the World Health Organization (WHO).</p>
           </div>
 
-          <div class="uk-med-activities text-start mx-auto mb-4 mb-md-5">
+          <div class="uk-med-activities text-start mx-auto mb-4 mb-md-5" id="ukMedActivities">
             <h3 class="uk-med-activities-title h3 text-center mb-3">Activities</h3>
-            <p>Since June 2024, UK-Med has contributed to the restoration and stabilisation of core emergency care functions through the deployment of international emergency medical teams, reinforcement of national staffing through incentive mechanisms, and the provision of staff incentives for personnel working within the Emergency Department. UK-Med has also supported rehabilitation works within the Emergency Department, improving patient flow and enhancing overall service efficiency.</p>
-            <p>UK-Med has also supported the development and implementation of clinical protocols and guidelines that are currently in use, strengthening standardisation of care and improving clinical decision-making. These efforts have been complemented by the re-establishment of triage systems, infection prevention and control standards, and essential clinical workflows, alongside targeted infrastructure rehabilitation and equipment restoration. Through continuous clinical mentorship and operational support, UK-Med has helped sustain uninterrupted service delivery, ensuring that the Emergency Department remains fully operational even during periods of high influx and structural constraint.</p>
-            <p>In addition, UK-Med operates a Type 2 Field Hospital in Al Mawasi, Type 1 Field Hospital in Deir al-Balah, PHCC in Jabalia, and supported the rehabilitation of Sheikh Radwan PHCC. Across the facilities, UK-Med has conducted over 1 million patient consultations.</p>
+            <div id="ukMedActivitiesBody">
+              <p>Since June 2024, UK-Med has contributed to the restoration and stabilisation of core emergency care functions through the deployment of international emergency medical teams, reinforcement of national staffing through incentive mechanisms, and the provision of staff incentives for personnel working within the Emergency Department. UK-Med has also supported rehabilitation works within the Emergency Department, improving patient flow and enhancing overall service efficiency.</p>
+              <p>UK-Med has also supported the development and implementation of clinical protocols and guidelines that are currently in use, strengthening standardisation of care and improving clinical decision-making. These efforts have been complemented by the re-establishment of triage systems, infection prevention and control standards, and essential clinical workflows, alongside targeted infrastructure rehabilitation and equipment restoration. Through continuous clinical mentorship and operational support, UK-Med has helped sustain uninterrupted service delivery, ensuring that the Emergency Department remains fully operational even during periods of high influx and structural constraint.</p>
+              <p>In addition, UK-Med operates a Type 2 Field Hospital in Al Mawasi, Type 1 Field Hospital in Deir al-Balah, PHCC in Jabalia, and supported the rehabilitation of Sheikh Radwan PHCC. Across the facilities, UK-Med has conducted over 1 million patient consultations.</p>
+            </div>
           </div>
 
-          <div class="uk-med-features row row-cols-1 row-cols-md-3 g-3 g-md-4 mb-4 mb-md-5">
+          <div id="ukMedFeatures" class="uk-med-features row row-cols-1 row-cols-md-3 g-3 g-md-4 mb-4 mb-md-5">
             <div class="col">
               <div class="feature-card h-100 border rounded-4 p-4 p-md-3">
                 <div class="feature-icon mb-3">
@@ -369,7 +372,7 @@
 
           <div class="uk-med-footer border-top pt-4">
             <p class="mb-3">Thank you to UK-MED for their generous support and partnership.</p>
-            <a href="https://www.uk-med.org/gaza-crisis-appeal/" class="contact-link btn btn-outline-info d-inline-flex align-items-center gap-2" target="_blank">
+            <a id="ukMedExternalLink" href="https://www.uk-med.org/gaza-crisis-appeal/" class="contact-link btn btn-outline-info d-inline-flex align-items-center gap-2" target="_blank">
               <i class="bi bi-globe"></i>
               Visit UK-MED Website
             </a>
