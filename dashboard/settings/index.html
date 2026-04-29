@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NasserED Dashboard | Settings</title>
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("dashboard-theme");
+          if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="../css/dashboard-variables.css" />
+    <link rel="stylesheet" href="../pages/ed-research.css" />
+    <link rel="stylesheet" href="../css/dashboard-theme.css" />
+    <link rel="stylesheet" href="../css/dashboard-responsive.css" />
+    <link rel="stylesheet" href="settings.css" />
+  </head>
+  <body>
+    <div class="dashboard-shell">
+      <aside class="sidebar">
+        <a href="../../index.html" class="brand text-decoration-none">
+          <img src="../../img/logo-dark.webp" alt="NasserED" data-dashboard-logo />
+          <div><strong>NasserED</strong><small>NMC EMERGENCY DEPARTMENT</small></div>
+        </a>
+        <nav class="sidebar-nav">
+          <p class="nav-title">Content Management</p>
+          <a class="nav-link-item" href="../admins/index.html"><i class="bi bi-people"></i> Admins</a>
+          <a class="nav-link-item" href="../slider/index.html"><i class="bi bi-sliders"></i> Slider</a>
+          <a class="nav-link-item" href="../department-news/index.html"><i class="bi bi-newspaper"></i> Department News</a>
+          <a class="nav-link-item" href="../senior-staff/index.html"><i class="bi bi-person-badge"></i> Senior Staff</a>
+          <a class="nav-link-item" href="../impact/index.html"><i class="bi bi-bar-chart-line"></i> Impact</a>
+          <a class="nav-link-item active" href="index.html"><i class="bi bi-gear"></i> Settings</a>
+          <details class="nav-dropdown">
+            <summary class="nav-link-item"><i class="bi bi-file-earmark-text"></i> Pages <i class="bi bi-chevron-down nav-caret"></i></summary>
+            <div class="nav-dropdown-menu">
+              <a class="nav-link-item nav-link-sub" href="../pages/index.html"><i class="bi bi-mic"></i> Podcast</a>
+              <a class="nav-link-item nav-link-sub" href="../pages/mci-plan.html"><i class="bi bi-journal-text"></i> MCI Plan</a>
+              <a class="nav-link-item nav-link-sub" href="../pages/uk-med.html"><i class="bi bi-shield-check"></i> UK-MED</a>
+              <a class="nav-link-item nav-link-sub" href="../pages/ed-research.html"><i class="bi bi-graph-up-arrow"></i> ED Research</a>
+              <a class="nav-link-item nav-link-sub" href="../pages/privacy-policy.html"><i class="bi bi-file-lock2"></i> Privacy Policy</a>
+              <a class="nav-link-item nav-link-sub" href="../pages/terms-of-use.html"><i class="bi bi-file-text"></i> Terms of Use</a>
+              <a class="nav-link-item nav-link-sub" href="../pages/disclaimer.html"><i class="bi bi-exclamation-triangle"></i> Disclaimer</a>
+              <a class="nav-link-item nav-link-sub" href="../pages/ipc.html"><i class="bi bi-shield"></i> IPC</a>
+              <a class="nav-link-item nav-link-sub" href="../pages/monitoring.html"><i class="bi bi-activity"></i> Monitoring</a>
+              <a class="nav-link-item nav-link-sub" href="../pages/checking-stocking.html"><i class="bi bi-box-seam"></i> Checking and Stocking</a>
+              <a class="nav-link-item nav-link-sub" href="../pages/training.html"><i class="bi bi-mortarboard"></i> Training</a>
+              <a class="nav-link-item nav-link-sub" href="../pages/overview.html"><i class="bi bi-grid-1x2"></i> Overview</a>
+              <a class="nav-link-item nav-link-sub" href="../pages/child-protection.html"><i class="bi bi-person-hearts"></i> Child Protection</a>
+              <a class="nav-link-item nav-link-sub" href="../pages/triage.html"><i class="bi bi-clipboard2-pulse"></i> Triage</a>
+              <a class="nav-link-item nav-link-sub" href="../pages/gbv.html"><i class="bi bi-shield-exclamation"></i> GBV</a>
+              <a class="nav-link-item nav-link-sub" href="../pages/registration.html"><i class="bi bi-person-plus"></i> Registration</a>
+            </div>
+          </details>
+        </nav>
+        <div class="sidebar-theme-toggle-wrap px-1">
+          <button type="button" class="dashboard-theme-toggle w-100 d-flex align-items-center justify-content-center gap-2" data-theme-toggle><i class="bi bi-sun-fill" aria-hidden="true"></i><span class="theme-toggle-label">Theme</span></button>
+        </div>
+        <div class="sidebar-footer">
+          <span class="sidebar-footer-eyebrow">Support &amp; development</span>
+          <span class="sidebar-footer-brand">UK-MED</span>
+          <span class="sidebar-footer-year">&copy; 2026</span>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div class="topbar-left"><h1>Settings</h1><p>Dashboard / Settings</p></div>
+          <div class="topbar-right"><span class="status-dot"></span><span class="status-label">Website & Footer Settings</span></div>
+        </header>
+        <nav class="settings-menu mb-3" aria-label="Settings sections">
+          <button type="button" class="settings-menu-item active" data-settings-tab="general">General</button>
+          <button type="button" class="settings-menu-item" data-settings-tab="resources">Footer Resources</button>
+          <button type="button" class="settings-menu-item" data-settings-tab="specialties">Footer Specialties</button>
+          <button type="button" class="settings-menu-item" data-settings-tab="social">Social Media</button>
+        </nav>
+        <section class="content-grid settings-content-grid">
+          <article class="panel-card settings-panel active" data-settings-panel="general">
+            <div class="panel-head d-flex align-items-center justify-content-between gap-2 mb-3">
+              <h2 class="mb-0">Global Site Settings</h2>
+              <div class="d-flex gap-2">
+                <button class="btn btn-outline-light btn-sm" type="button" id="resetSiteSettingsBtn"><i class="bi bi-arrow-counterclockwise"></i> Reset</button>
+                <button class="btn btn-primary btn-sm" type="button" id="saveSiteSettingsBtn"><i class="bi bi-floppy"></i> Save</button>
+              </div>
+            </div>
+            <form id="siteSettingsForm" class="row g-3">
+              <div class="col-md-6"><label class="form-label" for="webSiteName">Website Name</label><input id="webSiteName" class="form-control" type="text" /></div>
+              <div class="col-md-6">
+                <label class="form-label" for="departmentLogoFile">Department Logo (Upload from device)</label>
+                <input id="departmentLogoFile" class="form-control" type="file" accept="image/*" />
+                <input id="departmentLogo" type="hidden" />
+                <div class="small text-muted mt-1">Leave empty to keep current logo.</div>
+              </div>
+              <div class="col-md-6"><label class="form-label" for="browserLogo">Browser Logo URL (50x50)</label><input id="browserLogo" class="form-control" type="url" placeholder="https://..." /></div>
+              <div class="col-md-6"><label class="form-label" for="descriptionBrand">Description Brand</label><input id="descriptionBrand" class="form-control" type="text" /></div>
+              <div class="col-md-4"><label class="form-label" for="contactEmail">Email</label><input id="contactEmail" class="form-control" type="email" /></div>
+              <div class="col-md-4"><label class="form-label" for="contactPhone">Phone No.</label><input id="contactPhone" class="form-control" type="text" /></div>
+              <div class="col-md-4"><label class="form-label" for="contactAddress">Address</label><input id="contactAddress" class="form-control" type="text" /></div>
+              <div class="col-md-6"><label class="form-label" for="sponsoredLabel">Sponsored Label</label><input id="sponsoredLabel" class="form-control" type="text" placeholder="UK-MED" /></div>
+              <div class="col-md-6"><label class="form-label" for="sponsoredUrl">Sponsored URL</label><input id="sponsoredUrl" class="form-control" type="url" placeholder="https://..." /></div>
+            </form>
+          </article>
+          <article class="panel-card settings-panel" data-settings-panel="resources">
+            <div class="panel-head d-flex align-items-center justify-content-between gap-2 mb-3">
+              <h2 class="mb-0">Footer Resources</h2>
+              <button class="btn btn-outline-light btn-sm" type="button" id="addResourceBtn"><i class="bi bi-plus-circle"></i> Add Resource</button>
+            </div>
+            <div id="resourceListWrap" class="table-wrap settings-no-scroll-table"></div>
+          </article>
+          <article class="panel-card settings-panel" data-settings-panel="specialties">
+            <div class="panel-head d-flex align-items-center justify-content-between gap-2 mb-3">
+              <h2 class="mb-0">Footer Specialties</h2>
+              <button class="btn btn-outline-light btn-sm" type="button" id="addSpecialtyBtn"><i class="bi bi-plus-circle"></i> Add Specialty</button>
+            </div>
+            <div id="specialtyListWrap" class="table-wrap settings-no-scroll-table"></div>
+          </article>
+          <article class="panel-card settings-panel" data-settings-panel="social">
+            <div class="panel-head d-flex align-items-center justify-content-between gap-2 mb-3">
+              <h2 class="mb-0">Social Media</h2>
+              <button class="btn btn-outline-light btn-sm" type="button" id="addSocialBtn"><i class="bi bi-plus-circle"></i> Add</button>
+            </div>
+            <div id="socialListWrap" class="table-wrap"></div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal fade" id="socialModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark text-light border-secondary">
+          <div class="modal-header border-secondary">
+            <h5 class="modal-title" id="socialModalLabel">Add Social Media</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form id="socialForm" novalidate>
+            <div class="modal-body row g-3">
+              <div class="col-md-4"><label class="form-label" for="socialName">Social Name</label><input id="socialName" class="form-control" type="text" required /></div>
+              <div class="col-md-4"><label class="form-label" for="socialIcon">Icon class (Bootstrap Icons)</label><input id="socialIcon" class="form-control" type="text" placeholder="bi bi-twitter-x" required /></div>
+              <div class="col-md-4"><label class="form-label" for="socialUrl">URL</label><input id="socialUrl" class="form-control" type="url" placeholder="https://..." required /></div>
+            </div>
+            <div class="modal-footer border-secondary">
+              <button class="btn btn-outline-light" type="button" data-bs-dismiss="modal">Cancel</button>
+              <button class="btn btn-primary" id="saveSocialBtn" type="submit"><i class="bi bi-plus-circle"></i> Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="resourceModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content bg-dark text-light border-secondary">
+          <div class="modal-header border-secondary">
+            <h5 class="modal-title" id="resourceModalLabel">Add Resource</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form id="resourceForm" novalidate>
+            <div class="modal-body row g-3">
+              <div class="col-12"><label class="form-label" for="resourceLabel">Label</label><input id="resourceLabel" class="form-control" type="text" required /></div>
+              <div class="col-12"><label class="form-label" for="resourceUrl">URL</label><input id="resourceUrl" class="form-control" type="url" placeholder="https://..." required /></div>
+            </div>
+            <div class="modal-footer border-secondary">
+              <button class="btn btn-outline-light" type="button" data-bs-dismiss="modal">Cancel</button>
+              <button class="btn btn-primary" id="saveResourceBtn" type="submit"><i class="bi bi-plus-circle"></i> Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="specialtyModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content bg-dark text-light border-secondary">
+          <div class="modal-header border-secondary">
+            <h5 class="modal-title" id="specialtyModalLabel">Add Specialty</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form id="specialtyForm" novalidate>
+            <div class="modal-body row g-3">
+              <div class="col-12"><label class="form-label" for="specialtyLabel">Label</label><input id="specialtyLabel" class="form-control" type="text" required /></div>
+              <div class="col-12"><label class="form-label" for="specialtyUrl">URL</label><input id="specialtyUrl" class="form-control" type="text" placeholder="overview.html" required /></div>
+            </div>
+            <div class="modal-footer border-secondary">
+              <button class="btn btn-outline-light" type="button" data-bs-dismiss="modal">Cancel</button>
+              <button class="btn btn-primary" id="saveSpecialtyBtn" type="submit"><i class="bi bi-plus-circle"></i> Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="deleteSettingsItemModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-light border-secondary">
+          <div class="modal-header border-secondary">
+            <h5 class="modal-title" id="deleteSettingsItemModalLabel">Confirm Delete</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="deleteSettingsItemMessage">Are you sure you want to delete this item?</div>
+          <div class="modal-footer border-secondary">
+            <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger" id="confirmDeleteSettingsItemBtn"><i class="bi bi-trash3"></i> Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/dashboard-theme.js"></script>
+    <script src="settings.js"></script>
+  </body>
+</html>

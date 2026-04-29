@@ -1,0 +1,66 @@
+.settings-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--bg-panel) 85%, transparent);
+}
+
+.settings-menu-item {
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-muted);
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.settings-menu-item:hover {
+  color: var(--text-main);
+  border-color: var(--border);
+}
+
+.settings-menu-item.active {
+  color: #fff;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.3);
+}
+
+.settings-content-grid {
+  display: block;
+}
+
+.settings-panel {
+  display: none;
+}
+
+.settings-panel.active {
+  display: block;
+}
+
+html[data-theme="light"] .settings-menu {
+  background: #f8fbff;
+}
+
+html[data-theme="light"] .settings-menu-item.active {
+  color: #fff;
+}
+
+.settings-no-scroll-table {
+  overflow-x: hidden;
+}
+
+.settings-no-scroll-table .research-table {
+  min-width: 0;
+  width: 100%;
+}
+
+.settings-no-scroll-table .research-table td:nth-child(2) a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}

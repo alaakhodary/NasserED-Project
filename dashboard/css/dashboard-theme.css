@@ -26,6 +26,10 @@ html[data-theme="light"] .dashboard-shell .panel-head h2 {
   color: var(--text-main);
 }
 
+.dashboard-shell .text-muted {
+  color: var(--text-muted) !important;
+}
+
 html[data-theme="light"] .dashboard-shell .stat-card strong {
   color: var(--text-main);
 }
@@ -253,6 +257,66 @@ html[data-theme="light"] .dashboard-shell .btn-outline-info:hover {
   color: #052c65;
 }
 
+/* ----- Add buttons only (top actions) ----- */
+.dashboard-shell button[id^="openAdd"],
+.dashboard-shell #addSocialBtn,
+.dashboard-shell #ukMedAddFeatureBtn {
+  border: 1px solid rgba(125, 211, 252, 0.45);
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 45%, #0ea5e9 100%);
+  color: #f8fbff;
+  border-radius: 12px;
+  padding: 0.45rem 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  box-shadow: 0 10px 22px rgba(14, 116, 255, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: transform 0.16s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.dashboard-shell button[id^="openAdd"]:hover,
+.dashboard-shell #addSocialBtn:hover,
+.dashboard-shell #ukMedAddFeatureBtn:hover {
+  transform: translateY(-1px);
+  filter: saturate(1.08);
+  box-shadow: 0 14px 26px rgba(14, 116, 255, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+.dashboard-shell button[id^="openAdd"]:focus-visible,
+.dashboard-shell #addSocialBtn:focus-visible,
+.dashboard-shell #ukMedAddFeatureBtn:focus-visible {
+  box-shadow: 0 0 0 0.23rem rgba(125, 211, 252, 0.32), 0 14px 26px rgba(14, 116, 255, 0.34);
+}
+
+.dashboard-shell button[id^="openAdd"] i,
+.dashboard-shell #addSocialBtn i,
+.dashboard-shell #ukMedAddFeatureBtn i {
+  margin-right: 0.2rem;
+}
+
+/* Light mode specific tuning for add buttons */
+html[data-theme="light"] .dashboard-shell button[id^="openAdd"],
+html[data-theme="light"] .dashboard-shell #addSocialBtn,
+html[data-theme="light"] .dashboard-shell #ukMedAddFeatureBtn {
+  border-color: #93c5fd !important;
+  background: #eff6ff !important;
+  color: #1d4ed8 !important;
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.16) !important;
+}
+
+html[data-theme="light"] .dashboard-shell button[id^="openAdd"]:hover,
+html[data-theme="light"] .dashboard-shell #addSocialBtn:hover,
+html[data-theme="light"] .dashboard-shell #ukMedAddFeatureBtn:hover {
+  background: #dbeafe !important;
+  border-color: #60a5fa !important;
+  color: #1e40af !important;
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2) !important;
+}
+
+html[data-theme="light"] .dashboard-shell button[id^="openAdd"]:focus-visible,
+html[data-theme="light"] .dashboard-shell #addSocialBtn:focus-visible,
+html[data-theme="light"] .dashboard-shell #ukMedAddFeatureBtn:focus-visible {
+  box-shadow: 0 0 0 0.23rem rgba(59, 130, 246, 0.25), 0 12px 24px rgba(37, 99, 235, 0.28);
+}
+
 /* ----- Inline code in tables ----- */
 html[data-theme="light"] .news-table code,
 html[data-theme="light"] .slides-table code {
@@ -263,24 +327,43 @@ html[data-theme="light"] .slides-table code {
 }
 
 /* ----- Theme toggle ----- */
-.dashboard-shell .sidebar-nav {
+.dashboard-shell .sidebar {
+  overflow: hidden;
+}
+
+.dashboard-shell .sidebar .brand {
+  position: relative;
+  z-index: 4;
+  background: var(--bg-sidebar);
+  margin-bottom: 0;
+}
+
+.dashboard-shell .sidebar-scroll-body {
   flex: 1 1 auto;
   min-height: 0;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-shell .sidebar-nav {
+  flex: 0 0 auto;
+  min-height: 0;
+  overflow: visible;
   padding-right: 4px;
   margin-bottom: 8px;
 }
 
-.dashboard-shell .sidebar-nav::-webkit-scrollbar {
+.dashboard-shell .sidebar-scroll-body::-webkit-scrollbar {
   width: 8px;
 }
 
-.dashboard-shell .sidebar-nav::-webkit-scrollbar-thumb {
+.dashboard-shell .sidebar-scroll-body::-webkit-scrollbar-thumb {
   background: rgba(145, 171, 208, 0.35);
   border-radius: 999px;
 }
 
-.dashboard-shell .sidebar-nav::-webkit-scrollbar-track {
+.dashboard-shell .sidebar-scroll-body::-webkit-scrollbar-track {
   background: transparent;
 }
 

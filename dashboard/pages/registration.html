@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NasserED Dashboard | MCI Plan</title>
+    <title>NasserED Dashboard | Registration</title>
     <script>
       (function () {
         try {
@@ -15,19 +15,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="../css/dashboard-variables.css" />
-    <link rel="stylesheet" href="mci-plan.css" />
+    <link rel="stylesheet" href="simple-page-editor.css" />
     <link rel="stylesheet" href="../css/dashboard-theme.css" />
     <link rel="stylesheet" href="../css/dashboard-responsive.css" />
   </head>
-  <body>
+  <body data-page-editor-config data-storage-key="dashboard-pages-registration-html" data-default-title="Registration">
     <div class="dashboard-shell">
       <aside class="sidebar">
         <a href="../../index.html" class="brand text-decoration-none">
           <img src="../../img/logo-dark.webp" alt="NasserED" data-dashboard-logo />
-          <div>
-            <strong>NasserED</strong>
-            <small>NMC EMERGENCY DEPARTMENT</small>
-          </div>
+          <div><strong>NasserED</strong><small>NMC EMERGENCY DEPARTMENT</small></div>
         </a>
         <nav class="sidebar-nav">
           <p class="nav-title">Content Management</p>
@@ -41,7 +38,7 @@
             <summary class="nav-link-item active"><i class="bi bi-file-earmark-text"></i> Pages <i class="bi bi-chevron-down nav-caret"></i></summary>
             <div class="nav-dropdown-menu">
               <a class="nav-link-item nav-link-sub" href="index.html"><i class="bi bi-mic"></i> Podcast</a>
-              <a class="nav-link-item nav-link-sub active" href="mci-plan.html"><i class="bi bi-journal-text"></i> MCI Plan</a>
+              <a class="nav-link-item nav-link-sub" href="mci-plan.html"><i class="bi bi-journal-text"></i> MCI Plan</a>
               <a class="nav-link-item nav-link-sub" href="uk-med.html"><i class="bi bi-shield-check"></i> UK-MED</a>
               <a class="nav-link-item nav-link-sub" href="ed-research.html"><i class="bi bi-graph-up-arrow"></i> ED Research</a>
               <a class="nav-link-item nav-link-sub" href="privacy-policy.html"><i class="bi bi-file-lock2"></i> Privacy Policy</a>
@@ -55,15 +52,12 @@
               <a class="nav-link-item nav-link-sub" href="child-protection.html"><i class="bi bi-person-hearts"></i> Child Protection</a>
               <a class="nav-link-item nav-link-sub" href="triage.html"><i class="bi bi-clipboard2-pulse"></i> Triage</a>
               <a class="nav-link-item nav-link-sub" href="gbv.html"><i class="bi bi-shield-exclamation"></i> GBV</a>
-              <a class="nav-link-item nav-link-sub" href="registration.html"><i class="bi bi-person-plus"></i> Registration</a>
+              <a class="nav-link-item nav-link-sub active" href="registration.html"><i class="bi bi-person-plus"></i> Registration</a>
             </div>
           </details>
         </nav>
         <div class="sidebar-theme-toggle-wrap px-1">
-          <button type="button" class="dashboard-theme-toggle w-100 d-flex align-items-center justify-content-center gap-2" data-theme-toggle>
-            <i class="bi bi-sun-fill" aria-hidden="true"></i>
-            <span class="theme-toggle-label">Theme</span>
-          </button>
+          <button type="button" class="dashboard-theme-toggle w-100 d-flex align-items-center justify-content-center gap-2" data-theme-toggle><i class="bi bi-sun-fill" aria-hidden="true"></i><span class="theme-toggle-label">Theme</span></button>
         </div>
         <div class="sidebar-footer">
           <span class="sidebar-footer-eyebrow">Support &amp; development</span>
@@ -71,46 +65,33 @@
           <span class="sidebar-footer-year">&copy; 2026</span>
         </div>
       </aside>
-
       <main class="main-panel">
         <header class="topbar">
-          <div class="topbar-left">
-            <h1>MCI Plan</h1>
-            <p>Dashboard / Pages / MCI Plan</p>
-          </div>
-          <div class="topbar-right">
-            <span class="status-dot"></span>
-            <span class="status-label">Rich Editor</span>
-          </div>
+          <div class="topbar-left"><h1>Registration</h1><p>Dashboard / Pages / Registration</p></div>
+          <div class="topbar-right"><span class="status-dot"></span><span class="status-label">Rich Editor</span></div>
         </header>
-
         <section class="editor-layout">
           <article class="panel-card">
             <div class="panel-head d-flex align-items-center justify-content-between gap-2 mb-3">
-              <h2 class="mb-0">MCI Plan Content</h2>
+              <h2 class="mb-0">Registration Content</h2>
               <div class="d-flex gap-2 flex-wrap">
                 <button class="btn btn-outline-light btn-sm" id="resetContentBtn" type="button"><i class="bi bi-arrow-counterclockwise"></i> Reset</button>
                 <button class="btn btn-primary btn-sm" id="saveContentBtn" type="button"><i class="bi bi-floppy"></i> Save</button>
               </div>
             </div>
-
-            <textarea id="mciEditor" class="rich-editor" aria-label="MCI plan rich editor"></textarea>
+            <textarea id="simplePageEditor" class="rich-editor" aria-label="Registration rich editor"></textarea>
             <p class="editor-hint mb-0">Use TinyMCE toolbar controls, then press Save.</p>
           </article>
-
           <article class="panel-card">
-            <div class="panel-head mb-3">
-              <h2 class="mb-0">Live Preview</h2>
-            </div>
-            <div id="mciPreview" class="preview-content"></div>
+            <div class="panel-head mb-3"><h2 class="mb-0">Live Preview</h2></div>
+            <div id="simplePagePreview" class="preview-content"></div>
           </article>
         </section>
       </main>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tinymce@7/tinymce.min.js" referrerpolicy="origin"></script>
     <script src="../js/dashboard-theme.js"></script>
-    <script src="mci-plan.js"></script>
+    <script src="simple-page-editor.js"></script>
   </body>
 </html>
