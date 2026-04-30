@@ -42,7 +42,7 @@
       }
     </style>
   </head>
-  <body>
+  <body data-simple-content-page data-storage-key="dashboard-pages-hand-over-html">
     <header class="topbar fixed-top d-flex align-items-center justify-content-between shadow-sm py-1 px-3 px-lg-4">
       <a class="brand d-flex align-items-center gap-3 text-decoration-none" href="index.html">
         <div class="brand-icon flex-shrink-0">
@@ -333,7 +333,7 @@
                 </div>
                 <h1 class="display-5 fw-semibold mb-2">Hand Over</h1>
                 <p class="lead handover-subtitle mb-4">Clinical Shift Transition</p>
-                <div class="handover-divider pt-4">
+                <div class="handover-divider pt-4" id="simpleContentPageContent">
                   <h2 class="h3 mb-3 text-primary fw-bold">Future Work</h2>
                   <p class="mb-0 handover-note">We are preparing structured handover resources to improve communication, continuity, and patient safety between shifts.</p>
                 </div>
@@ -402,5 +402,6 @@
     </footer>
 
     <script src="scripts/global.js"></script>
+    <script src="scripts/simple-content-page.js"></script>
   </body>
 </html>

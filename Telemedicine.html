@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="styles/styles-shared.css" />
     <link rel="stylesheet" href="styles/Telemedicine.css" />
   </head>
-  <body>
+  <body data-simple-content-page data-storage-key="dashboard-pages-telemedicine-html">
     <header class="topbar fixed-top d-flex align-items-center justify-content-between shadow-sm py-1 px-3 px-lg-4">
       <a class="brand d-flex align-items-center gap-3 text-decoration-none" href="index.html">
         <div class="brand-icon flex-shrink-0">
@@ -316,7 +316,7 @@
           </div>
           <h1 class="coming-soon-title">Telemedicine</h1>
           <p class="coming-soon-subtitle">Remote Clinical Support</p>
-          <div class="coming-soon-message">
+          <div class="coming-soon-message" id="simpleContentPageContent">
             <h2>Coming Soon</h2>
             <p>We're preparing telemedicine workflows and resources to improve remote consultations and continuity of emergency care.</p>
           </div>
@@ -382,5 +382,6 @@
     </footer>
 
     <script src="scripts/global.js"></script>
+    <script src="scripts/simple-content-page.js"></script>
   </body>
 </html>
