@@ -138,7 +138,6 @@
     }
 
     var items = [
-      { type: "link", href: prefix + "admins/index.html", title: "Admins", icon: "bi-people" },
       {
         type: "dropdown",
         title: "Home",
@@ -186,6 +185,16 @@
         links: [
           { href: prefix + "pages/gbv.html", label: "GBV", icon: "bi-shield-exclamation" },
           { href: prefix + "pages/child-protection.html", label: "Child Protection", icon: "bi-people" },
+        ],
+      },
+      {
+        type: "dropdown",
+        title: "Legal",
+        icon: "bi-file-earmark-text",
+        links: [
+          { href: prefix + "pages/privacy-policy.html", label: "Privacy Policy", icon: "bi-file-lock2" },
+          { href: prefix + "pages/terms-of-use.html", label: "Terms of Use", icon: "bi-file-text" },
+          { href: prefix + "pages/disclaimer.html", label: "Disclaimer", icon: "bi-exclamation-triangle" },
         ],
       },
       { type: "link", href: prefix + "pages/uk-med.html", title: "UK-MED", icon: "bi-shield-check" },
@@ -241,9 +250,10 @@
         var hasActiveChild = item.links.some(function (child) {
           return isHrefActive(child.href);
         });
+        var shouldOpenDropdown = hasActiveChild && item.title !== "Home";
         html.push(
           '<details class="nav-dropdown"' +
-            (hasActiveChild ? " open" : "") +
+            (shouldOpenDropdown ? " open" : "") +
             ">" +
             '<summary class="nav-link-item' +
             (hasActiveChild ? " active" : "") +
