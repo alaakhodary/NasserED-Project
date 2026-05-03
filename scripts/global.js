@@ -11,61 +11,8 @@ const NasserED = (window.NasserED = window.NasserED || {});
 function setActiveNavLink() {
   const currentPath = (location.pathname.split("/").pop() || "index.html").toLowerCase();
   document.querySelectorAll(".dept-navbar .dept-link.active").forEach((el) => el.classList.remove("active"));
-  const activeLink = Array.from(document.querySelectorAll('.dept-navbar .dept-item > a.dept-link[href]:not([href="#"])')).find(
-    (link) => (link.getAttribute("href") || "").split("/").pop().toLowerCase() === currentPath
-  );
+  const activeLink = Array.from(document.querySelectorAll('.dept-navbar .dept-item > a.dept-link[href]:not([href="#"])')).find((link) => (link.getAttribute("href") || "").split("/").pop().toLowerCase() === currentPath);
   if (activeLink) activeLink.classList.add("active");
-}
-
-function normalizeNursingLinks() {
-  const panel = document.getElementById("deptNavPanel");
-  if (!panel) return;
-  const NAV_CACHE_KEY = "emnasser-dept-nav-html";
-
-  if (panel.querySelector(".dept-item")) {
-    try {
-      sessionStorage.setItem(NAV_CACHE_KEY, panel.innerHTML);
-    } catch {
-      /* ignore sessionStorage errors */
-    }
-  } else {
-    let cached = "";
-    try {
-      cached = sessionStorage.getItem(NAV_CACHE_KEY) || "";
-    } catch {
-      cached = "";
-    }
-    if (cached.trim()) panel.innerHTML = cached;
-  }
-
-  if (!panel.querySelector(".dept-item")) {
-    panel.innerHTML = `
-      <div class="dept-item"><a class="dept-link d-flex flex-wrap align-items-center gap-2 justify-content-start justify-content-sm-center text-start text-sm-center" href="index.html"><i class="bi bi-house-door-fill"></i> Home</a></div>
-      <div class="dept-item"><a class="dept-link d-flex flex-wrap align-items-center gap-2 justify-content-start justify-content-sm-center text-start text-sm-center" href="overview.html"><i class="bi bi-grid-1x2-fill"></i> Overview</a></div>
-      <div class="dept-item"><a class="dept-link d-flex flex-wrap align-items-center gap-2 justify-content-start justify-content-sm-center text-start text-sm-center" href="Senior-Staff.html"><i class="bi bi-person-badge-fill"></i> Senior Staff</a></div>
-      <div class="dept-item">
-        <a class="dept-link d-flex flex-wrap align-items-center gap-2 justify-content-start justify-content-sm-center text-start text-sm-center" href="#"><i class="bi bi-hospital"></i> Nursing <i class="bi bi-chevron-down dept-arrow"></i></a>
-        <div class="dept-dropdown">
-          <div class="dd-item"><a class="dd-link d-flex align-items-center justify-content-between gap-2" href="IPC.html">IPC</a></div>
-          <div class="dd-item"><a class="dd-link d-flex align-items-center justify-content-between gap-2" href="Monitoring.html">Monitoring</a></div>
-          <div class="dd-item"><a class="dd-link d-flex align-items-center justify-content-between gap-2" href="Checking-and-Stocking.html">Checking and Stocking</a></div>
-          <div class="dd-item"><a class="dd-link d-flex align-items-center justify-content-between gap-2" href="Training.html">Training</a></div>
-        </div>
-      </div>
-    `;
-  }
-
-  const map = {
-    ipc: "IPC.html",
-    monitoring: "Monitoring.html",
-    "checking and stocking": "Checking-and-Stocking.html",
-    training: "Training.html",
-  };
-
-  panel.querySelectorAll(".dd-link").forEach((link) => {
-    const label = (link.textContent || "").trim().toLowerCase();
-    if (map[label]) link.setAttribute("href", map[label]);
-  });
 }
 
 /* =============================================================================
@@ -95,19 +42,12 @@ function ensureGlobalPageLoader() {
 ============================================================================= */
 
 const THEME_STORAGE_KEY = "emnasser-theme";
-const SITE_SETTINGS_KEY = "dashboard-site-settings-v1";
 const LOGO_LIGHT_SRC = "img/logo.webp";
 const LOGO_DARK_SRC = "img/logo-dark.webp";
 
 function updateBrandLogo(isDark) {
   const logo = document.getElementById("brandLogo");
   if (!logo) return;
-  const settings = readSiteSettings();
-  const customLogo = (settings?.departmentLogo || "").trim();
-  if (customLogo) {
-    logo.src = customLogo;
-    return;
-  }
   logo.src = isDark ? LOGO_DARK_SRC : LOGO_LIGHT_SRC;
 }
 
@@ -155,181 +95,6 @@ function bindThemeToggle() {
     const next = dark ? "light" : "dark";
     applyTheme(next);
     setStoredTheme(next);
-  });
-}
-
-function readSiteSettings() {
-  try {
-    const raw = localStorage.getItem(SITE_SETTINGS_KEY);
-    const parsed = raw ? JSON.parse(raw) : null;
-    return parsed && typeof parsed === "object" ? parsed : null;
-  } catch {
-    return null;
-  }
-}
-
-function applySiteSettings() {
-  const escHtml = (value) =>
-    String(value)
-      .replaceAll("&", "&amp;")
-      .replaceAll("<", "&lt;")
-      .replaceAll(">", "&gt;")
-      .replaceAll('"', "&quot;")
-      .replaceAll("'", "&#39;");
-  const settings = readSiteSettings() || {};
-  const siteName = (settings.webSiteName || "").trim();
-  const brandDesc = (settings.descriptionBrand || "").trim();
-  const logo = (settings.departmentLogo || "").trim();
-  const browserLogo = (settings.browserLogo || "").trim();
-  const email = (settings.contactEmail || "").trim();
-  const phone = (settings.contactPhone || "").trim();
-  const address = (settings.contactAddress || "").trim();
-  const sponsorLabel = (settings.sponsoredLabel || "").trim();
-  const sponsorUrl = (settings.sponsoredUrl || "").trim();
-  const fallbackResources = [
-    {
-      label: (settings.resourceClinicalGuidelinesLabel || "Clinical Guidelines").trim(),
-      url: (settings.resourceClinicalGuidelinesUrl || "").trim(),
-    },
-    {
-      label: (settings.resourceDrugDatabaseLabel || "Drug Database").trim(),
-      url: (settings.resourceDrugDatabaseUrl || "").trim(),
-    },
-    {
-      label: (settings.resourceResearchLibraryLabel || "Research Library").trim(),
-      url: (settings.resourceResearchLibraryUrl || "").trim(),
-    },
-    {
-      label: (settings.resourceCaseStudiesLabel || "Case Studies").trim(),
-      url: (settings.resourceCaseStudiesUrl || "").trim(),
-    },
-  ];
-  const resources = Array.isArray(settings.resources) && settings.resources.length
-    ? settings.resources
-        .map((item) => ({
-          label: String(item?.label || "").trim(),
-          url: String(item?.url || "").trim(),
-        }))
-        .filter((item) => item.label || item.url)
-    : fallbackResources.filter((item) => item.label || item.url);
-  const fallbackSpecialties = [
-    { label: "Emergency Medicine", url: "" },
-    { label: "Cardiology", url: "" },
-    { label: "Neurology", url: "" },
-    { label: "Diagnostics", url: "" },
-  ];
-  const specialties = Array.isArray(settings.specialties) && settings.specialties.length
-    ? settings.specialties
-        .map((item) => ({
-          label: String(item?.label || "").trim(),
-          url: String(item?.url || "").trim(),
-        }))
-        .filter((item) => item.label || item.url)
-    : fallbackSpecialties;
-
-  if (siteName) {
-    document.querySelectorAll(".brand-name, .footer-brand-name").forEach((el) => (el.textContent = siteName));
-  }
-  if (brandDesc) {
-    document.querySelectorAll(".brand-sub, .footer-tagline").forEach((el) => (el.textContent = brandDesc));
-  }
-  if (logo) {
-    document.querySelectorAll("#brandLogo").forEach((img) => (img.src = logo));
-    document.querySelectorAll(".footer-brand img").forEach((img) => (img.src = logo));
-  }
-  let normalizedBrowserLogo = browserLogo || LOGO_LIGHT_SRC;
-  if (normalizedBrowserLogo.indexOf("../../img/") === 0) {
-    normalizedBrowserLogo = normalizedBrowserLogo.replace("../../", "");
-  }
-  if (normalizedBrowserLogo) {
-    let link = document.querySelector('link[rel="icon"]');
-    if (!link) {
-      link = document.createElement("link");
-      link.rel = "icon";
-      document.head.appendChild(link);
-    }
-    link.href = normalizedBrowserLogo;
-  }
-  if (email) {
-    document.querySelectorAll('a[href^="mailto:"]').forEach((a) => {
-      a.href = "mailto:" + email;
-      a.textContent = email;
-    });
-  }
-  if (phone) {
-    document.querySelectorAll('a[href^="tel:"]').forEach((a) => {
-      a.href = "tel:" + phone.replace(/\s+/g, "");
-      a.textContent = phone;
-    });
-  }
-  if (address) {
-    const addressIcon = document.querySelector(".footer-contact .bi-geo-alt-fill");
-    if (addressIcon && addressIcon.parentElement) {
-      const li = addressIcon.parentElement;
-      li.innerHTML = `<i class="bi bi-geo-alt-fill flex-shrink-0" aria-hidden="true"></i> ${address}`;
-    }
-  }
-  if (sponsorLabel) {
-    const sponsor = document.querySelector(".footer-sponsor a");
-    if (sponsor) sponsor.textContent = sponsorLabel;
-  }
-  if (sponsorUrl) {
-    const sponsor = document.querySelector(".footer-sponsor a");
-    if (sponsor) sponsor.href = sponsorUrl;
-  }
-  if (Array.isArray(settings.socials)) {
-    const wrap = document.querySelector(".footer-social");
-    if (wrap && settings.socials.length) {
-      wrap.innerHTML = settings.socials
-        .map((s) => `<a href="${s.url}" aria-label="${s.name}" target="_blank" rel="noopener noreferrer" class="social-btn d-inline-flex align-items-center justify-content-center rounded-3"><i class="${s.icon}"></i></a>`)
-        .join("");
-    }
-  }
-
-  const resourcesHeading = Array.from(document.querySelectorAll(".footer-links .footer-heading")).find(
-    (el) => (el.textContent || "").trim().toLowerCase() === "resources",
-  );
-  const resourcesList = resourcesHeading ? resourcesHeading.parentElement?.querySelector("ul") : null;
-  if (resourcesList && resources.length) {
-    resourcesList.innerHTML = resources
-      .map((item) => {
-        const label = escHtml(item.label || item.url || "Resource");
-        const href = escHtml(item.url || "#");
-        const openInNewTab = item.url ? ' target="_blank" rel="noopener noreferrer"' : "";
-        return `<li><a href="${href}"${openInNewTab}>${label}</a></li>`;
-      })
-      .join("");
-  }
-
-  const specialtiesHeading = Array.from(document.querySelectorAll(".footer-links .footer-heading")).find(
-    (el) => (el.textContent || "").trim().toLowerCase() === "specialties",
-  );
-  const specialtiesList = specialtiesHeading ? specialtiesHeading.parentElement?.querySelector("ul") : null;
-  if (specialtiesList && specialties.length) {
-    specialtiesList.innerHTML = specialties
-      .map((item) => {
-        const label = escHtml(item.label || item.url || "Specialty");
-        const href = escHtml(item.url || "#");
-        return `<li><a href="${href}">${label}</a></li>`;
-      })
-      .join("");
-  }
-
-  document.querySelectorAll(".footer-bottom-links a").forEach((a) => {
-    const text = (a.textContent || "").trim().toLowerCase();
-    if (text === "privacy policy") a.setAttribute("href", "Privacy-Policy.html");
-    if (text === "terms of use") a.setAttribute("href", "Terms-of-Use.html");
-    if (text === "disclaimer") a.setAttribute("href", "Disclaimer.html");
-  });
-}
-
-function bindSiteSettingsSync() {
-  window.addEventListener("storage", (event) => {
-    if (event.key !== SITE_SETTINGS_KEY) return;
-    applySiteSettings();
-  });
-  window.addEventListener("dashboard-site-settings-updated", () => {
-    applySiteSettings();
   });
 }
 
@@ -548,9 +313,6 @@ function initPageLoader() {
 ============================================================================= */
 
 function initChromeAfterLayout() {
-  normalizeNursingLinks();
-  applySiteSettings();
-  bindSiteSettingsSync();
   setActiveNavLink();
   initThemeFromStorage();
   bindThemeToggle();

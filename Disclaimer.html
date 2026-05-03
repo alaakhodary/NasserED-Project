@@ -4,7 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="app-base" content="" />
-    <script>(function(){try{var s=localStorage.getItem("emnasser-theme");if(s==="dark")document.documentElement.setAttribute("data-theme","dark");else if(s==="light")document.documentElement.setAttribute("data-theme","");}catch(e){}})();</script>
+    <script>
+      (function () {
+        try {
+          var storedTheme = localStorage.getItem("emnasser-theme");
+          if (storedTheme === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+          } else if (storedTheme === "light") {
+            document.documentElement.setAttribute("data-theme", "");
+          }
+        } catch (error) {}
+      })();
+    </script>
     <title>EMnasser | Disclaimer</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
@@ -14,10 +25,298 @@
     <link rel="stylesheet" href="styles/styles-shared.css" />
     <link rel="stylesheet" href="styles/Registration.css" />
   </head>
-  <body data-legal-page data-storage-key="dashboard-pages-disclaimer-html" data-page-title="Disclaimer">
-    <header class="topbar fixed-top d-flex align-items-center justify-content-between shadow-sm py-1 px-3 px-lg-4"><a class="brand d-flex align-items-center gap-3 text-decoration-none" href="index.html"><div class="brand-icon flex-shrink-0"><img id="brandLogo" src="img/logo.webp" alt="NasserED" width="80" /></div><div><div class="brand-name">NasserED</div><div class="brand-sub text-uppercase">NMC EMERGENCY DEPARTMENT</div></div></a><div class="topbar-right d-flex align-items-center gap-2"><div class="search-container position-relative d-flex align-items-center me-1 me-sm-2"><input type="text" class="search-input" id="searchInput" placeholder="Search..." aria-label="Search" /><button type="button" class="topbar-btn search-btn d-inline-flex align-items-center justify-content-center rounded-3" id="searchBtn" title="Search" aria-label="Search"><i class="bi bi-search"></i></button></div><button type="button" class="topbar-btn d-inline-flex align-items-center justify-content-center rounded-3" id="themeToggleBtn" title="Toggle theme" aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button></div></header>
-    <nav class="dept-navbar" aria-label="Departments Navigation"><button type="button" class="dept-nav-toggle" id="deptNavToggle" aria-expanded="false" aria-controls="deptNavPanel"><i class="bi bi-list"></i><span class="dept-nav-toggle-label">Departments menu</span></button><div class="dept-navbar-inner container-xxl px-3 py-2" id="deptNavPanel"></div></nav>
-    <div class="page-wrap"><div class="coming-soon-container"><div class="coming-soon-content"><div class="coming-soon-icon"><i class="bi bi-exclamation-triangle"></i></div><h1 class="coming-soon-title">Disclaimer</h1><p class="coming-soon-subtitle">Legal</p><div class="coming-soon-message" id="legalPageContent"><h2>Disclaimer</h2><p>This page is coming soon.</p></div></div></div></div>
+  <body>
+    <header class="topbar fixed-top d-flex align-items-center justify-content-between shadow-sm py-1 px-3 px-lg-4">
+      <a class="brand d-flex align-items-center gap-3 text-decoration-none" href="index.html">
+        <div class="brand-icon flex-shrink-0">
+          <img id="brandLogo" src="img/logo.webp" alt="NasserED" width="80" loading="eager" fetchpriority="high" decoding="async" />
+        </div>
+        <div>
+          <div class="brand-name">NasserED</div>
+          <div class="brand-sub text-uppercase">NMC EMERGENCY DEPARTMENT</div>
+        </div>
+      </a>
+
+      <div class="topbar-right d-flex align-items-center gap-2">
+        <div class="search-container position-relative d-flex align-items-center me-1 me-sm-2">
+          <input type="text" class="search-input" id="searchInput" placeholder="Search..." aria-label="Search" />
+          <button type="button" class="topbar-btn search-btn d-inline-flex align-items-center justify-content-center rounded-3" id="searchBtn" title="Search" aria-label="Search">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+        <button type="button" class="topbar-btn d-inline-flex align-items-center justify-content-center rounded-3" id="themeToggleBtn" title="Toggle theme" aria-label="Toggle dark mode">
+          <i class="bi bi-moon-stars"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- DEPARTMENTS NAV BAR -->
+    <nav class="dept-navbar" aria-label="Departments Navigation">
+      <button type="button" class="dept-nav-toggle" id="deptNavToggle" aria-expanded="false" aria-controls="deptNavPanel">
+        <i class="bi bi-list" aria-hidden="true"></i>
+        <span class="dept-nav-toggle-label">Departments menu</span>
+      </button>
+      <div class="dept-navbar-inner container-xxl px-3 py-2" id="deptNavPanel">
+        <div class="dept-item">
+          <a class="dept-link d-flex flex-wrap align-items-center gap-2 justify-content-start justify-content-sm-center text-start text-sm-center" href="index.html"> <i class="bi bi-house-door-fill"></i> Home </a>
+        </div>
+
+        <div class="dept-item">
+          <a class="dept-link d-flex flex-wrap align-items-center gap-2 justify-content-start justify-content-sm-center text-start text-sm-center" href="overview.html"> <i class="bi bi-grid-1x2-fill"></i> Overview </a>
+        </div>
+
+        <div class="dept-item">
+          <a class="dept-link d-flex flex-wrap align-items-center gap-2 justify-content-start justify-content-sm-center text-start text-sm-center" href="Senior-Staff.html"> <i class="bi bi-person-badge-fill"></i> Senior Staff </a>
+        </div>
+
+        <div class="dept-item">
+          <a class="dept-link d-flex flex-wrap align-items-center gap-2 justify-content-start justify-content-sm-center text-start text-sm-center" href="#">
+            <i class="bi bi-hospital"></i> theED
+            <i class="bi bi-chevron-down dept-arrow"></i>
+          </a>
+          <div class="dept-dropdown">
+            <div class="dd-item"><a class="dd-link d-flex align-items-center justify-content-between gap-2" href="mci-plan.html">MCI Plan</a></div>
+            <div class="dd-item"><a class="dd-link d-flex align-items-center justify-content-between gap-2" href="Registration.html">Registration</a></div>
+            <div class="dd-item"><a class="dd-link d-flex align-items-center justify-content-between gap-2" href="Triage.html">Triage</a></div>
+          </div>
+        </div>
+
+        <div class="dept-item">
+          <a class="dept-link d-flex flex-wrap align-items-center gap-2 justify-content-start justify-content-sm-center text-start text-sm-center" href="#">
+            <i class="bi bi-hospital"></i> Nursing
+            <i class="bi bi-chevron-down dept-arrow"></i>
+          </a>
+          <div class="dept-dropdown">
+            <div class="dd-item"><a class="dd-link d-flex align-items-center justify-content-between gap-2" href="IPC.html">IPC</a></div>
+            <div class="dd-item">
+              <a class="dd-link d-flex align-items-center justify-content-between gap-2" href="Monitoring.html">Monitoring</a>
+            </div>
+            <div class="dd-item">
+              <a class="dd-link d-flex align-items-center justify-content-between gap-2" href="Checking-and-Stocking.html">Checking and Stocking</a>
+            </div>
+            <div class="dd-item"><a class="dd-link d-flex align-items-center justify-content-between gap-2" href="Training.html">Training</a></div>
+          </div>
+        </div>
+
+        <div class="dept-item">
+          <a class="dept-link d-flex flex-wrap align-items-center gap-2 justify-content-start justify-content-sm-center text-start text-sm-center" href="#">
+            <i class="bi bi-person-hearts"></i> Safeguarding
+            <i class="bi bi-chevron-down dept-arrow"></i>
+          </a>
+          <div class="dept-dropdown">
+            <div class="dd-item"><a class="dd-link d-flex align-items-center justify-content-between gap-2" href="GBV.html">GBV</a></div>
+            <div class="dd-item"><a class="dd-link d-flex align-items-center justify-content-between gap-2" href="Safeguarding.html">Child Protection</a></div>
+          </div>
+        </div>
+
+        <div class="dept-item">
+          <a class="dept-link d-flex flex-wrap align-items-center gap-2 justify-content-start justify-content-sm-center text-start text-sm-center" href="uk-med.html"> <i class="bi bi-shield-check"></i> UK-MED </a>
+        </div>
+
+        <div class="dept-item">
+          <a class="dept-link d-flex flex-wrap align-items-center gap-2 justify-content-start justify-content-sm-center text-start text-sm-center" href="ED-Research.html"> <i class="bi bi-graph-up-arrow"></i> ED Research </a>
+        </div>
+
+        <div class="dept-item">
+          <a class="dept-link d-flex flex-wrap align-items-center gap-2 justify-content-start justify-content-sm-center text-start text-sm-center" href="#">
+            <i class="bi bi-journal-medical"></i> Knowledge
+            <i class="bi bi-chevron-down dept-arrow"></i>
+          </a>
+          <div class="dept-dropdown">
+            <div class="dd-item">
+              <a class="dd-link dd-sub-link-has-children d-flex align-items-center justify-content-between gap-2" href="#"> Resus Protocols <i class="bi bi-chevron-right dd-arrow"></i> </a>
+              <div class="dept-subdropdown">
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">NLS/APLS/ALS Drowning choking sepsis </a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Video guides in resus </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="dd-item">
+              <a class="dd-link dd-sub-link-has-children d-flex align-items-center justify-content-between gap-2" href="#"> Medicine <i class="bi bi-chevron-right dd-arrow"></i> </a>
+              <div class="dept-subdropdown">
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Neurology</a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Respiratory</a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html"> Cardiovascular </a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Gastrointestinal</a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Rheumatological</a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Endocrine</a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Oncology</a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Dermatological</a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Hematology</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="dd-item">
+              <a class="dd-link dd-sub-link-has-children d-flex align-items-center justify-content-between gap-2" href="#"> Surgery <i class="bi bi-chevron-right dd-arrow"></i> </a>
+              <div class="dept-subdropdown">
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Neurosurgery </a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Ophthalmology</a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">ENT</a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Cardiothoracic</a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">General surgery </a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Orthopaedics and MSK </a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Obstetric and Gynaecology</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="dd-item">
+              <a class="dd-link dd-sub-link-has-children d-flex align-items-center justify-content-between gap-2" href="#"> Paediatrics <i class="bi bi-chevron-right dd-arrow"></i> </a>
+              <div class="dept-subdropdown">
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Neurology</a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Respiratory</a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Cardiovascular</a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Gastrointestinal</a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Rheumatological </a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Endocrine</a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Oncology</a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Dermatological</a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Hematology</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="dd-item">
+              <a class="dd-link dd-sub-link-has-children d-flex align-items-center justify-content-between gap-2" href="#"> Paediatric Surgery <i class="bi bi-chevron-right dd-arrow"></i> </a>
+              <div class="dept-subdropdown">
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Neurosurgery </a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Ophthalmology</a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">ENT</a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Cardiothoracic</a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">General surgery </a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Orthopaedics and MSK</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="dd-item">
+              <a class="dd-link dd-sub-link-has-children d-flex align-items-center justify-content-between gap-2" href="#">
+                Major Trauma Quick Guides
+                <i class="bi bi-chevron-right dd-arrow"></i>
+              </a>
+              <div class="dept-subdropdown">
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Catastrophic Bleeding</a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Spine injuries</a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Airway</a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Chest</a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Abdo</a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Pelvis</a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Brain injuries</a>
+                </div>
+                <div class="dd-sub-item">
+                  <a class="dd-sub-link" href="knowledge.html">Burns</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dept-item">
+          <a class="dept-link d-flex flex-wrap align-items-center gap-2 justify-content-start justify-content-sm-center text-start text-sm-center" href="Telemedicine.html"> <i class="bi bi-camera-video-fill"></i> Telemedicine </a>
+        </div>
+
+        <div class="dept-item">
+          <a class="dept-link d-flex flex-wrap align-items-center gap-2 justify-content-start justify-content-sm-center text-start text-sm-center" href="podcast.html"> <i class="bi bi-mic-fill"></i> Podcast </a>
+        </div>
+
+        <div class="dept-item">
+          <span class="dept-link-new-badge" aria-hidden="true">New</span>
+          <a class="dept-link d-flex flex-wrap align-items-center gap-2 justify-content-start justify-content-sm-center text-start text-sm-center" href="Hand-Over.html">
+            <i class="bi bi-box-arrow-right"></i>
+            Hand Over
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="page-wrap">
+      <div class="coming-soon-container">
+        <div class="coming-soon-content">
+          <div class="coming-soon-icon"><i class="bi bi-exclamation-triangle"></i></div>
+          <h1 class="coming-soon-title">Disclaimer</h1>
+          <p class="coming-soon-subtitle">Legal</p>
+          <div class="coming-soon-message" id="legalPageContent">
+            <h2>Disclaimer</h2>
+            <p>This page is coming soon.</p>
+          </div>
+        </div>
+      </div>
+    </div>
     <footer class="site-footer text-center text-lg-start mt-auto" role="contentinfo">
       <div class="footer-inner container-xxl mx-auto d-grid gap-4 gap-lg-5 px-3 px-lg-4 px-xl-5 py-5 pb-4">
         <div class="footer-brand d-flex flex-column flex-md-row align-items-center gap-2 gap-md-3 text-center text-md-start">
@@ -75,6 +374,5 @@
       </div>
     </footer>
     <script src="scripts/global.js"></script>
-    <script src="scripts/legal-page.js"></script>
   </body>
 </html>
