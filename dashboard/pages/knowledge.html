@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NasserED Dashboard | Knowledge</title>
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("dashboard-theme");
+          if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="../css/dashboard-variables.css" />
+    <link rel="stylesheet" href="simple-page-editor.css" />
+    <link rel="stylesheet" href="knowledge.css" />
+    <link rel="stylesheet" href="../css/dashboard-theme.css" />
+    <link rel="stylesheet" href="../css/dashboard-responsive.css" />
+  </head>
+  <body>
+    <div class="dashboard-shell">
+      <aside class="sidebar">
+        <a href="../../index.html" class="brand text-decoration-none">
+          <img src="../../img/logo-dark.webp" alt="NasserED" data-dashboard-logo />
+          <div>
+            <strong>NasserED</strong>
+            <small>NMC EMERGENCY DEPARTMENT</small>
+          </div>
+        </a>
+        <nav class="sidebar-nav">
+          <p class="nav-title">Content Management</p>
+        </nav>
+        <div class="sidebar-theme-toggle-wrap px-1">
+          <button type="button" class="dashboard-theme-toggle w-100 d-flex align-items-center justify-content-center gap-2" data-theme-toggle>
+            <i class="bi bi-sun-fill" aria-hidden="true"></i>
+            <span class="theme-toggle-label">Theme</span>
+          </button>
+        </div>
+        <div class="sidebar-footer">
+          <span class="sidebar-footer-eyebrow">Support &amp; development</span>
+          <span class="sidebar-footer-brand">UK-MED</span>
+          <span class="sidebar-footer-year">&copy; 2026</span>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div class="topbar-left">
+            <h1>Knowledge</h1>
+            <p>Dashboard / Knowledge</p>
+          </div>
+          <div class="topbar-right">
+            <span class="status-dot"></span>
+            <span class="status-label">Protocols</span>
+          </div>
+        </header>
+
+        <section class="content-grid">
+          <article class="panel-card panel-span-2">
+            <div class="protocol-toolbar-main">
+              <article class="protocol-total-card" aria-live="polite">
+                <span class="protocol-total-label">Total Protocols</span>
+                <strong id="protocolTotalLabel">0</strong>
+              </article>
+              <div class="protocol-controls">
+                <button class="btn btn-primary btn-sm" id="openAddProtocolBtn" type="button"><i class="bi bi-plus-circle"></i> Add Protocol</button>
+                <label class="protocol-control-item">
+                  <span>Category</span>
+                  <select id="protocolCategoryFilter" class="form-select form-select-sm">
+                    <option value="all">All</option>
+                  </select>
+                </label>
+                <label class="protocol-control-item">
+                  <span>Subcategory</span>
+                  <select id="protocolSubcategoryFilter" class="form-select form-select-sm">
+                    <option value="all">All</option>
+                  </select>
+                </label>
+                <label class="protocol-control-item">
+                  <span>Limit</span>
+                  <select id="protocolLimit" class="form-select form-select-sm">
+                    <option value="5">5</option>
+                    <option value="10" selected>10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+            <div id="topicListWrap" class="table-wrap mt-2"></div>
+            <nav class="pagination-wrap mt-3" aria-label="Protocols pagination">
+              <ul class="pagination pagination-sm mb-0 knowledge-pagination" id="protocolPagination"></ul>
+            </nav>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal fade" id="protocolModal" tabindex="-1" aria-labelledby="protocolModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark text-light border-secondary">
+          <div class="modal-header border-secondary">
+            <h5 class="modal-title" id="protocolModalLabel">Add Protocol</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form id="protocolModalForm" novalidate>
+            <div class="modal-body">
+              <input type="hidden" id="protocolModalTopicId" />
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="protocolTitleInput">title</label>
+                  <input id="protocolTitleInput" class="form-control" type="text" required />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="protocolCategoryInput">category</label>
+                  <select id="protocolCategoryInput" class="form-select" required>
+                    <option value="" selected disabled>Select category</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="protocolSubcategoryInput">subcategory</label>
+                  <select id="protocolSubcategoryInput" class="form-select">
+                    <option value="">Select subcategory</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="protocolSummaryInput">summary - subtitle</label>
+                  <textarea id="protocolSummaryInput" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="protocolExternalResourceInput">External Resource</label>
+                  <input id="protocolExternalResourceInput" class="form-control" type="url" placeholder="https://..." />
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer border-secondary">
+              <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-primary" id="saveProtocolModalBtn"><i class="bi bi-arrow-right-circle"></i> Next</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="protocolActionConfirmModal" tabindex="-1" aria-labelledby="protocolActionConfirmModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-light border-secondary">
+          <div class="modal-header border-secondary">
+            <h5 class="modal-title" id="protocolActionConfirmModalLabel">Confirm Action</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="protocolActionConfirmModalBody">Are you sure?</div>
+          <div class="modal-footer border-secondary">
+            <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="confirmProtocolActionBtn">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/dashboard-theme.js"></script>
+    <script src="knowledge.js"></script>
+  </body>
+</html>

@@ -1,0 +1,351 @@
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.panel-span-2 {
+  grid-column: 1 / -1;
+}
+
+.table-wrap {
+  border: 1px solid var(--line-soft);
+  border-radius: 12px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  background: var(--bg-card);
+  padding: 8px;
+}
+
+.knowledge-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: auto;
+  min-width: 1220px;
+  background: var(--bg-card);
+  border: 1px solid var(--line-soft);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.knowledge-table th,
+.knowledge-table td {
+  padding: 0.72rem 0.75rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.28);
+  border-right: 1px solid rgba(148, 163, 184, 0.28);
+  vertical-align: middle;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.knowledge-table th {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  font-weight: 700;
+  white-space: normal;
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid var(--line-soft);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.knowledge-table th:last-child,
+.knowledge-table td:last-child {
+  border-right: 0;
+}
+
+.knowledge-table td {
+  color: var(--text-main);
+  word-break: normal;
+  overflow-wrap: break-word;
+  background: var(--bg-card);
+}
+
+.knowledge-table tbody tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.knowledge-table tbody tr:hover td {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.knowledge-table th:nth-child(1),
+.knowledge-table td:nth-child(1) {
+  min-width: 130px;
+}
+
+.knowledge-table th:nth-child(2),
+.knowledge-table td:nth-child(2) {
+  min-width: 130px;
+}
+
+.knowledge-table th:nth-child(3),
+.knowledge-table td:nth-child(3) {
+  min-width: 300px;
+}
+
+.knowledge-table th:nth-child(4),
+.knowledge-table td:nth-child(4) {
+  min-width: 130px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.knowledge-table th:nth-child(5),
+.knowledge-table td:nth-child(5) {
+  min-width: 220px;
+}
+
+.knowledge-table th:nth-child(6),
+.knowledge-table td:nth-child(6) {
+  min-width: 170px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.knowledge-table td:nth-child(5) a {
+  display: block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.protocol-title-cell {
+  font-weight: 600;
+  white-space: normal;
+  word-break: normal !important;
+  overflow-wrap: break-word;
+}
+
+.protocol-link {
+  text-decoration: none;
+}
+
+.protocol-empty-row {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 1.2rem !important;
+}
+
+#protocolModal .form-control,
+#protocolModal .form-select,
+#protocolModal textarea.form-control {
+  height: 42px;
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: var(--dash-input-bg);
+  border: 1px solid var(--dash-input-border);
+  color: var(--text-main);
+  padding-inline: 0.9rem;
+}
+
+#protocolModal textarea.form-control {
+  min-height: 110px;
+  height: auto;
+  line-height: 1.5;
+  resize: vertical;
+  padding-block: 0.65rem;
+}
+
+#protocolModal .form-control:focus,
+#protocolModal .form-select:focus,
+#protocolModal textarea.form-control:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.2);
+}
+
+#protocolModal .form-label {
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.knowledge-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.actions-cell {
+  display: inline-flex;
+  gap: 0.45rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.actions-cell .btn {
+  min-width: 68px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0 0.55rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.status-chip {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.status-chip.is-published {
+  background: rgba(41, 219, 159, 0.16);
+  color: #53f3be;
+}
+
+.status-chip.is-draft {
+  background: rgba(255, 193, 7, 0.14);
+  color: #ffd65c;
+}
+
+.protocol-toolbar-main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 0.75rem 1rem;
+  flex-wrap: wrap;
+}
+
+.protocol-total-card {
+  min-width: 250px;
+  padding: 0.95rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--line-soft);
+  background: var(--bg-card-soft);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.protocol-total-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.protocol-total-card strong {
+  font-size: 1.7rem;
+  line-height: 1.15;
+}
+
+.protocol-controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+#openAddProtocolBtn {
+  height: 38px;
+  padding-inline: 0.95rem;
+}
+
+.protocol-control-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 130px;
+}
+
+.protocol-control-item span {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.protocol-control-item .form-select {
+  min-width: 140px;
+  height: 38px;
+}
+
+#protocolCategoryFilter,
+#protocolSubcategoryFilter,
+#protocolLimit {
+  height: 38px;
+  border-radius: 10px;
+  background: var(--dash-input-bg);
+  border: 1px solid var(--dash-input-border);
+  color: var(--text-main);
+  font-weight: 600;
+  padding-inline: 0.85rem;
+}
+
+#protocolCategoryFilter:focus,
+#protocolSubcategoryFilter:focus,
+#protocolLimit:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.2);
+}
+
+.pagination-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.25rem;
+}
+
+.knowledge-pagination {
+  --bs-pagination-color: var(--text-muted);
+  --bs-pagination-bg: var(--bg-card);
+  --bs-pagination-border-color: var(--line-soft);
+  --bs-pagination-hover-color: #3b82f6;
+  --bs-pagination-hover-bg: rgba(59, 130, 246, 0.12);
+  --bs-pagination-hover-border-color: #3b82f6;
+  --bs-pagination-active-color: #ffffff;
+  --bs-pagination-active-bg: #3b82f6;
+  --bs-pagination-active-border-color: #3b82f6;
+  --bs-pagination-disabled-color: #94a3b8;
+  --bs-pagination-disabled-bg: var(--bg-card);
+  --bs-pagination-disabled-border-color: var(--line-soft);
+  gap: 0.35rem;
+}
+
+.knowledge-pagination .page-link {
+  min-width: 2.6rem;
+  text-align: center;
+  border-radius: 0.55rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 0 6px 16px rgba(2, 8, 23, 0.12);
+}
+
+.knowledge-pagination .page-item.active .page-link {
+  font-weight: 600;
+}
+
+.panel-card {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.table-wrap .knowledge-table th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.table-wrap .knowledge-table th:last-child {
+  border-top-right-radius: 12px;
+}
+
+@media (max-width: 1100px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .knowledge-table th,
+  .knowledge-table td {
+    font-size: 0.85rem;
+    padding: 0.6rem;
+  }
+}
+

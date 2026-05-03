@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NasserED Dashboard | Content View</title>
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("dashboard-theme");
+          if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="../css/dashboard-variables.css" />
+    <link rel="stylesheet" href="simple-page-editor.css" />
+    <link rel="stylesheet" href="../css/dashboard-theme.css" />
+    <link rel="stylesheet" href="../css/dashboard-responsive.css" />
+  </head>
+  <body>
+    <div class="dashboard-shell">
+      <aside class="sidebar">
+        <a href="../../index.html" class="brand text-decoration-none">
+          <img src="../../img/logo-dark.webp" alt="NasserED" data-dashboard-logo />
+          <div>
+            <strong>NasserED</strong>
+            <small>NMC EMERGENCY DEPARTMENT</small>
+          </div>
+        </a>
+        <nav class="sidebar-nav">
+          <p class="nav-title">Content Management</p>
+        </nav>
+        <div class="sidebar-theme-toggle-wrap px-1">
+          <button type="button" class="dashboard-theme-toggle w-100 d-flex align-items-center justify-content-center gap-2" data-theme-toggle>
+            <i class="bi bi-sun-fill" aria-hidden="true"></i>
+            <span class="theme-toggle-label">Theme</span>
+          </button>
+        </div>
+        <div class="sidebar-footer">
+          <span class="sidebar-footer-eyebrow">Support &amp; development</span>
+          <span class="sidebar-footer-brand">UK-MED</span>
+          <span class="sidebar-footer-year">&copy; 2026</span>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div class="topbar-left">
+            <h1>Content View</h1>
+            <p>Dashboard / Knowledge / Content View</p>
+          </div>
+          <div class="topbar-right">
+            <span class="status-dot"></span>
+            <span class="status-label" id="contentViewStatus">Protocol Content</span>
+          </div>
+        </header>
+
+        <section class="editor-layout">
+          <article class="panel-card">
+            <div class="panel-head d-flex align-items-center justify-content-between gap-2 mb-3">
+              <h2 class="mb-0" id="contentViewTitle">Protocol Content</h2>
+              <div class="d-flex gap-2 flex-wrap">
+                <a class="btn btn-outline-light btn-sm" href="knowledge.html"><i class="bi bi-arrow-left"></i> Back</a>
+                <button class="btn btn-outline-light btn-sm" id="resetContentBtn" type="button"><i class="bi bi-arrow-counterclockwise"></i> Reset</button>
+                <button class="btn btn-primary btn-sm" id="saveContentBtn" type="button"><i class="bi bi-floppy"></i> Save</button>
+              </div>
+            </div>
+            <textarea id="protocolContentEditor" class="rich-editor" aria-label="Protocol content rich editor"></textarea>
+            <p class="editor-hint mb-0">Edit protocol content, preview it, then press Save to store and return to the protocols table.</p>
+          </article>
+
+          <article class="panel-card">
+            <div class="panel-head mb-3"><h2 class="mb-0">Live Preview</h2></div>
+            <div id="protocolContentPreview" class="preview-content"></div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tinymce@7/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="../js/dashboard-theme.js"></script>
+    <script src="content-view.js"></script>
+  </body>
+</html>

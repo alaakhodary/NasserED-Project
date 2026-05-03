@@ -138,13 +138,14 @@
     }
 
     var items = [
+      { type: "link", href: prefix + "admins/index.html", title: "Admins", icon: "bi-people" },
       {
         type: "dropdown",
         title: "Home",
         icon: "bi-house-door",
         links: [
           { href: prefix + "slider/index.html", label: "Slider", icon: "bi-sliders" },
-          { href: prefix + "department-news/index.html", label: "Department", icon: "bi-newspaper" },
+          { href: prefix + "department-news/index.html", label: "News", icon: "bi-newspaper" },
         ],
       },
       { type: "link", href: prefix + "pages/overview.html", title: "Overview", icon: "bi-grid-1x2" },
@@ -199,7 +200,15 @@
       },
       { type: "link", href: prefix + "pages/uk-med.html", title: "UK-MED", icon: "bi-shield-check" },
       { type: "link", href: prefix + "pages/ed-research.html", title: "ED Research", icon: "bi-graph-up-arrow" },
-      { type: "link", href: "#", title: "Knowledge", icon: "bi-journal-medical" },
+      {
+        type: "dropdown",
+        title: "Knowledge",
+        icon: "bi-journal-medical",
+        links: [
+          { href: prefix + "pages/knowledge-categories.html", label: "Categories", icon: "bi-diagram-3" },
+          { href: prefix + "pages/knowledge.html", label: "Protocols", icon: "bi-journal-text" },
+        ],
+      },
       { type: "link", href: prefix + "pages/telemedicine.html", title: "Telemedicine", icon: "bi-camera-video" },
       { type: "link", href: prefix + "pages/index.html", title: "Podcast", icon: "bi-mic" },
       { type: "link", href: prefix + "pages/hand-over.html", title: "Hand Over", icon: "bi-box-arrow-right" },
@@ -250,7 +259,7 @@
         var hasActiveChild = item.links.some(function (child) {
           return isHrefActive(child.href);
         });
-        var shouldOpenDropdown = hasActiveChild && item.title !== "Home";
+        var shouldOpenDropdown = hasActiveChild;
         html.push(
           '<details class="nav-dropdown"' +
             (shouldOpenDropdown ? " open" : "") +
@@ -307,6 +316,8 @@
     nav.addEventListener("click", function (event) {
       var link = event.target.closest("a.nav-link-item");
       if (link) {
+        var hrefAttr = link.getAttribute("href") || "";
+        if (!hrefAttr || hrefAttr === "#") return;
         if (shouldSmoothNavigate(link)) {
           event.preventDefault();
           showDashboardPageLoader();
@@ -315,14 +326,20 @@
           }, 150);
           return;
         }
-        clearActiveState();
-        link.classList.add("active");
         return;
       }
       var summary = event.target.closest("summary.nav-link-item");
       if (summary) {
+        var details = summary.closest("details.nav-dropdown");
+        if (!details) return;
+        var willOpen = !details.open;
         clearActiveState();
         summary.classList.add("active");
+        if (willOpen) {
+          nav.querySelectorAll("details.nav-dropdown[open]").forEach(function (node) {
+            if (node !== details) node.open = false;
+          });
+        }
       }
     });
   }
@@ -377,7 +394,7 @@
       var parentTitle = cleanText(parentSummary);
       var childTitle = cleanText(activeChild);
       if (parentTitle && childTitle) {
-        breadcrumb.textContent = "Dashboard / " + parentTitle + " / " + childTitle;
+        breadcrumb.textContent = "Dashboard / " + childTitle;
         return;
       }
     }
