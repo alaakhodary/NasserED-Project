@@ -4,12 +4,18 @@
 ============================================= */
 
 .senior-staff-hero {
-  background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-primary-dk) 100%);
-  color: white;
+  position: relative;
+  overflow: hidden;
+  background: var(--clr-hero-grad);
+  color: #fff;
   padding: 3rem 0;
   margin-bottom: 3rem;
-  border-radius: var(--r-lg);
   box-shadow: var(--shadow-md);
+}
+
+.senior-staff-hero .container {
+  position: relative;
+  z-index: 1;
 }
 
 .senior-staff-hero h1 {
@@ -23,6 +29,28 @@
   font-size: 1.1rem;
   opacity: 0.9;
   margin-bottom: 0;
+}
+
+/* Night: same family as page bg — no loud cyan slab */
+[data-theme="dark"] .senior-staff-hero {
+  background: linear-gradient(165deg, var(--clr-bg) 0%, #121b2c 36%, #172033 64%, var(--clr-bg-card) 100%);
+  color: #f1f5f9;
+  border: 1px solid var(--clr-border);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.38);
+}
+
+[data-theme="dark"] .senior-staff-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 92% 58% at 92% -8%, rgba(14, 165, 201, 0.11), transparent 55%);
+}
+
+[data-theme="dark"] .senior-staff-hero p {
+  opacity: 1;
+  color: rgba(226, 232, 240, 0.88);
 }
 
 .staff-grid {
@@ -49,7 +77,7 @@
 }
 
 .staff-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
